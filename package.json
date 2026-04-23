@@ -1,0 +1,28 @@
+{
+  "name": "uni-advisor-id",
+  "version": "1.0.0",
+  "description": "Indonesian University Admission Advisor — Jalur Mandiri Sarjana Program Analyzer",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "scrape:all": "node src/scrapers/index.js --all"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "lowdb": "^1.0.0",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.3",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

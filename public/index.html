@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Advisor — Jalur Mandiri Analysis</title>
+  <meta name="description" content="Analytical tool for Indonesian university Jalur Mandiri admissions. Identifies Sarjana programs with highest acceptance probability at minimum passing scores.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root {
+      --bg: #080808;
+      --bg-raised: #0f0f0f;
+      --bg-inset: #050505;
+      --border: #1a1a1a;
+      --border-hover: #2a2a2a;
+      --text: #f2ede6;
+      --text-dim: #8a8478;
+      --text-faint: #3d3a36;
+      --accent: #d4a843;
+      --accent-dim: rgba(212, 168, 67, 0.15);
+      --accent-bright: #e8c56d;
+      --green: #5a9a6b;
+      --red: #b35a5a;
+      --yellow: #c4a94d;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--text-faint); border-radius: 3px; }
+
+    /* ── Layout ──────────────────────────────────────── */
+    .shell { max-width: 1360px; margin: 0 auto; padding: 2rem 2.5rem 4rem; }
+
+    .rule { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    .rule--accent { border-color: var(--accent); opacity: 0.4; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; }
+    @media (max-width: 900px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } }
+
+    /* ── Typography ──────────────────────────────────── */
+    .t-serif { font-family: var(--serif); }
+    .t-headline {
+      font-family: var(--serif);
+      font-size: 2.75rem;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text);
+    }
+    .t-section {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .t-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .t-data {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1;
+    }
+    .t-dim { color: var(--text-dim); }
+    .t-faint { color: var(--text-faint); }
+    .t-accent { color: var(--accent); }
+    .t-small { font-size: 11px; }
+
+    /* ── Header ──────────────────────────────────────── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--text);
+    }
+    .header__sub {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 0.5rem;
+    }
+    .header__status {
+      text-align: right;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+    .header__status span { color: var(--accent); font-weight: 600; }
+
+    /* ── University Selector ─────────────────────────── */
+    .selector { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); }
+    @media (max-width: 768px) { .selector { grid-template-columns: repeat(2, 1fr); } }
+
+    .selector__item {
+      background: var(--bg);
+      padding: 1.25rem 1rem;
+      cursor: pointer;
+      transition: background 0.15s;
+      text-align: center;
+      border: none;
+      font-family: var(--mono);
+      color: var(--text-dim);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+    .selector__item:hover { background: var(--bg-raised); color: var(--text); }
+    .selector__item.is-active {
+      background: var(--bg-raised);
+      color: var(--accent);
+      box-shadow: inset 0 2px 0 var(--accent);
+    }
+    .selector__id {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+    .selector__item.is-active .selector__id { color: var(--accent); }
+    .selector__name { display: block; line-height: 1.4; }
+
+    /* ── Source Bar ───────────────────────────────────── */
+    .source-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+    .source-bar__left { display: flex; align-items: center; gap: 1.5rem; }
+    .source-dot {
+      width: 7px; height: 7px; border-radius: 50%; display: inline-block; margin-right: 0.4rem;
+    }
+    .source-dot--high { background: var(--green); }
+    .source-dot--medium { background: var(--yellow); }
+    .source-dot--low { background: var(--red); }
+    .confidence-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid;
+    }
+    .confidence-tag--high { border-color: var(--green); color: var(--green); }
+    .confidence-tag--medium { border-color: var(--yellow); color: var(--yellow); }
+    .confidence-tag--low { border-color: var(--red); color: var(--red); }
+
+    .btn {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn:disabled { opacity: 0.3; cursor: default; }
+
+    /* ── Recommendations ─────────────────────────────── */
+    .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 900px) { .rec-grid { grid-template-columns: 1fr; } }
+
+    .rec-card {
+      border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative;
+    }
+    .rec-card:first-child { border-color: var(--accent); }
+    .rec-card:first-child .rec-card__rank { color: var(--accent); border-color: var(--accent); }
+
+    .rec-card__rank {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+      border: 1px solid var(--text-faint);
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .rec-card__program {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+      max-width: 80%;
+    }
+    .rec-card__faculty { font-size: 11px; color: var(--text-dim); margin-bottom: 1.5rem; }
+    .rec-card__rate {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      line-height: 1;
+    }
+    .rec-card:first-child .rec-card__rate { color: var(--accent); }
+    .rec-card__rate-unit { font-size: 1rem; color: var(--text-dim); margin-left: 0.25rem; }
+    .rec-card__rate-label { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.25rem; }
+
+    .rec-card__row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .rec-card__metric { display: block; }
+    .rec-card__metric-val { font-size: 16px; font-weight: 500; }
+    .rec-card__metric-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+    .rec-card__insight {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--text-dim);
+      font-style: italic;
+      font-family: var(--serif);
+    }
+
+    .trend-up { color: var(--red); }
+    .trend-down { color: var(--green); }
+    .trend-flat { color: var(--yellow); }
+
+    /* ── Stat Strip ──────────────────────────────────── */
+    .stat-strip { background: var(--border); }
+    .stat-cell {
+      background: var(--bg);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-cell__val {
+      font-size: 1.75rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-cell__label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ── Charts ──────────────────────────────────────── */
+    .chart-wrap {
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+    .chart-canvas { height: 360px; position: relative; }
+
+    /* ── Table ────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    thead { position: sticky; top: 0; z-index: 2; }
+    th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: var(--bg-raised);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    th:hover { color: var(--text); }
+    th .sort-arrow { margin-left: 4px; font-size: 8px; }
+    td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #111;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+    tbody tr { transition: background 0.1s; }
+    tbody tr:hover { background: var(--bg-raised); }
+    tbody tr:hover td { color: var(--text); }
+    .row-top td { color: var(--text); }
+    .row-top td:first-child {
+      border-left: 2px solid var(--accent);
+    }
+    .row-top .col-program { color: var(--accent); font-weight: 500; }
+    .col-rate { font-weight: 500; color: var(--text); }
+    .col-ease {
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+    }
+    .source-pip {
+      display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    }
+    .source-pip--official { background: var(--green); }
+    .source-pip--affiliated, .source-pip--estimated { background: var(--yellow); }
+    .source-pip--hardcoded { background: var(--red); }
+
+    /* ── Loading ──────────────────────────────────────── */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.04; }
+      50% { opacity: 0.08; }
+    }
+    .skel {
+      background: var(--text);
+      animation: pulse 1.8s ease-in-out infinite;
+      border-radius: 2px;
+    }
+    .skel--line { height: 14px; margin-bottom: 8px; }
+    .skel--big { height: 48px; width: 50%; margin-bottom: 12px; }
+
+    /* ── Reveal ───────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: revealIn 0.4s ease forwards;
+    }
+    @keyframes revealIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hidden { display: none !important; }
+
+    /* ── Footer ──────────────────────────────────────── */
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--text-faint);
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    /* ── Warning/Error ───────────────────────────────── */
+    .banner {
+      padding: 0.75rem 1rem;
+      font-size: 11px;
+      border: 1px solid;
+    }
+    .banner--warn { border-color: var(--yellow); color: var(--yellow); }
+    .banner--err { border-color: var(--red); color: var(--red); }
+
+    /* ── Data Archives ───────────────────────────────── */
+    .archives {
+      margin-top: 0;
+    }
+    .archives__toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 1rem 0;
+    }
+    .archives__toggle:hover .archives__arrow { color: var(--accent); }
+    .archives__arrow {
+      font-size: 12px;
+      color: var(--text-dim);
+      transition: transform 0.25s, color 0.15s;
+    }
+    .archives__arrow.is-open { transform: rotate(180deg); }
+    .archives__body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .archives__body.is-open { max-height: 3000px; }
+    .archives__sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .src-card {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      flex: 1 1 280px;
+      max-width: 420px;
+      font-size: 11px;
+      line-height: 1.6;
+      transition: border-color 0.15s;
+    }
+    .src-card:hover { border-color: var(--accent-dim); }
+    .src-card__title {
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    .src-card__meta { color: var(--text-dim); font-size: 10px; }
+    .src-card__link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+    }
+    .src-card__link:hover { text-decoration: underline; }
+    .src-badge {
+      display: inline-block;
+      padding: 1px 6px;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid;
+      margin-left: 0.5rem;
+    }
+    .src-badge--official-portal { border-color: var(--green); color: var(--green); }
+    .src-badge--news-report { border-color: var(--accent); color: var(--accent); }
+    .src-badge--education-platform { border-color: #5a8ab5; color: #5a8ab5; }
+    .src-badge--government-data { border-color: var(--green); color: var(--green); }
+    .reliability-dot {
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+    .reliability-dot--high { background: var(--green); }
+    .reliability-dot--medium { background: var(--yellow); }
+    .reliability-dot--low { background: var(--red); }
+    .archives-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    .archives-table thead th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      background: var(--bg-inset);
+      border-bottom: 1px solid var(--border);
+      cursor: default;
+    }
+    .archives-table td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #0e0e0e;
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+    .archives-table tbody tr:hover { background: var(--bg-raised); }
+    .archives-table tbody tr:hover td { color: var(--text); }
+    .archives-table .cite-links {
+      display: flex;
+      gap: 4px;
+    }
+    .cite-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px; height: 16px;
+      font-size: 8px;
+      font-weight: 600;
+      border: 1px solid var(--text-faint);
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .cite-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .archives__count {
+      font-size: 10px;
+      color: var(--text-faint);
+      letter-spacing: 0.06em;
+      margin-left: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+
+    <!-- Header -->
+    <header class="header">
+      <div>
+        <h1 class="t-headline">Admission Advisor</h1>
+        <div class="header__sub">Jalur Mandiri &middot; Sarjana (S1) Programs &middot; Minimum Score Analysis</div>
+      </div>
+      <div class="header__status hidden" id="header-status">
+        <span id="header-uni-label">—</span><br>
+        Last update: <span id="header-time">—</span>
+      </div>
+    </header>
+
+    <!-- University Selector -->
+    <section style="margin-top: 2rem;">
+      <div class="t-label" style="margin-bottom: 0.75rem;">Select University</div>
+      <div class="selector" id="university-selector"></div>
+    </section>
+
+    <!-- Banner -->
+    <div id="error-banner" class="banner banner--warn hidden" style="margin-top: 1.5rem;">
+      <span id="error-message"></span>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+
+      <!-- Source Indicator -->
+      <div class="source-bar" style="margin-top: 1.5rem;">
+        <div class="source-bar__left">
+          <span><span id="source-dot" class="source-dot"></span> <span id="source-name">—</span></span>
+          <span id="confidence-tag" class="confidence-tag">—</span>
+          <span id="scraped-time" class="t-faint">—</span>
+        </div>
+        <button class="btn" id="refresh-btn">Refresh</button>
+      </div>
+
+      <hr class="rule rule--accent">
+
+      <!-- Top 2 Recommendations -->
+      <section>
+        <div class="t-section">Recommended Programs</div>
+        <div class="rec-grid" id="rec-container"></div>
+      </section>
+
+      <hr class="rule">
+
+      <!-- Stat Strip -->
+      <section class="stat-strip grid-4" id="stat-strip"></section>
+
+      <hr class="rule">
+
+      <!-- Charts -->
+      <section>
+        <div class="t-section">Distribution</div>
+        <div class="grid-2">
+          <div class="chart-wrap">
+            <div class="t-label" style="margin-bottom: 1rem;">Top Acceptance Rates</div>
+            <div class="chart-canvas"><canvas id="chartAcceptance"></canvas></div>
+          </div>
+          <div class="chart-wrap">
+            <div class="t-label" style="margin-bottom: 1rem;">Lowest Passing Scores</div>
+            <div class="chart-canvas"><canvas id="chartScores"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule">
+
+      <!-- Trend -->
+      <section>
+        <div class="t-section">Score Trend — Top 5 Easiest Programs</div>
+        <div class="chart-wrap">
+          <div class="chart-canvas"><canvas id="chartTrend"></canvas></div>
+        </div>
+      </section>
+
+      <hr class="rule">
+
+      <!-- Table -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+          <div class="t-section" style="margin-bottom: 0;">All Sarjana Programs</div>
+          <div class="t-label t-faint">Click column headers to sort</div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-col="rank"># <span class="sort-arrow"></span></th>
+                <th data-col="program">Program <span class="sort-arrow"></span></th>
+                <th data-col="faculty">Faculty <span class="sort-arrow"></span></th>
+                <th data-col="quota_mandiri">Quota <span class="sort-arrow"></span></th>
+                <th data-col="applicants_mandiri">Applicants <span class="sort-arrow"></span></th>
+                <th data-col="acceptance_rate">Rate <span class="sort-arrow"></span></th>
+                <th data-col="avg_min_score">Avg Score <span class="sort-arrow"></span></th>
+                <th data-col="score_trend">Trend <span class="sort-arrow"></span></th>
+                <th data-col="ease_score">Ease <span class="sort-arrow">&#9660;</span></th>
+                <th>Src</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <hr class="rule">
+
+      <!-- Data Archives -->
+      <section class="archives" id="archives-section">
+        <div class="archives__toggle" id="archives-toggle">
+          <div style="display:flex;align-items:baseline;">
+            <div class="t-section" style="margin-bottom:0;">Data Archives</div>
+            <span class="archives__count" id="archives-count"></span>
+          </div>
+          <span class="archives__arrow" id="archives-arrow">&#9660;</span>
+        </div>
+        <div class="archives__body" id="archives-body">
+          <div id="archives-sources" class="archives__sources"></div>
+          <div class="table-wrap">
+            <table class="archives-table">
+              <thead>
+                <tr>
+                  <th>Program</th>
+                  <th>Faculty</th>
+                  <th>Quota</th>
+                  <th>Applicants</th>
+                  <th>Rate</th>
+                  <th>2022</th>
+                  <th>2023</th>
+                  <th>2024</th>
+                  <th>Type</th>
+                  <th>Sources</th>
+                </tr>
+              </thead>
+              <tbody id="archives-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      Data sourced from official university admissions portals and affiliated educational platforms.<br>
+      Historical minimum scores are estimates derived from public records. For informational purposes only.<br>
+      Not affiliated with any university or government body.
+    </footer>
+  </div>
+  <script>
+    const S = {
+      uni: null, data: null, loading: false,
+      sortCol: 'ease_score', sortDir: 'desc',
+      charts: {},
+      archives: null, archivesOpen: false
+    };
+
+    const API = '/api';
+
+    // ── Helpers ──────────────────────────────────────────
+    const trendText = t => t === 'decreasing' ? 'Decreasing' : t === 'increasing' ? 'Increasing' : 'Stable';
+    const trendClass = t => t === 'decreasing' ? 'trend-down' : t === 'increasing' ? 'trend-up' : 'trend-flat';
+    const trendArrow = t => t === 'decreasing' ? '\u2193' : t === 'increasing' ? '\u2191' : '\u2192';
+    const srcDot = t => t === 'official' ? 'source-pip--official' : (t === 'affiliated' || t === 'estimated') ? 'source-pip--affiliated' : 'source-pip--hardcoded';
+    const srcLabel = s => {
+      if (s === 'official') return 'Official Portal';
+      if (s === 'cache') return 'Cached Data';
+      if (s.startsWith('affiliated')) return s.replace('affiliated:', '').toUpperCase();
+      if (s.startsWith('estimated')) return 'Public Records Estimate';
+      return 'Curated Data';
+    };
+    const confLevel = c => c === 'high' ? 'high' : c === 'medium' ? 'medium' : 'low';
+
+    function animateNum(el, end, dur) {
+      const isInt = Number.isInteger(end);
+      let start = null;
+      const step = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / dur, 1);
+        const v = p * end;
+        el.textContent = isInt ? Math.floor(v) : v.toFixed(2);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    // ── Fetchers ─────────────────────────────────────────
+    async function fetchUnis() {
+      try { const r = await fetch(`${API}/universities`); return await r.json(); }
+      catch { showBanner('Failed to load university list.', true); return []; }
+    }
+
+    async function fetchData(id, refresh = false) {
+      S.loading = true;
+      showSkeleton();
+      hideBanner();
+      try {
+        const url = `${API}/admissions/${id}${refresh ? '/refresh' : ''}`;
+        const r = await fetch(url);
+        const d = await r.json();
+        if (d.error) throw new Error(d.message);
+        S.data = d;
+        S.sortCol = 'ease_score';
+        S.sortDir = 'desc';
+        render();
+        fetchArchives(id);
+      } catch (e) {
+        showBanner(e.message, true);
+        document.getElementById('dashboard').classList.add('hidden');
+      } finally {
+        S.loading = false;
+        const btn = document.getElementById('refresh-btn');
+        btn.disabled = false;
+        btn.textContent = 'Refresh';
+      }
+    }
+
+    // ── Render: Selector ─────────────────────────────────
+    function renderSelector(unis) {
+      document.getElementById('university-selector').innerHTML = unis.map(u =>
+        `<button class="selector__item" data-id="${u.id}" onclick="pick('${u.id}')">
+          <span class="selector__id">${u.id}</span>
+          <span class="selector__name">${u.name}</span>
+        </button>`
+      ).join('');
+    }
+
+    function pick(id) {
+      if (S.loading) return;
+      S.uni = id;
+      document.querySelectorAll('.selector__item').forEach(el =>
+        el.classList.toggle('is-active', el.dataset.id === id)
+      );
+      fetchData(id);
+    }
+
+    // ── Render: Dashboard ────────────────────────────────
+    function render() {
+      const d = S.data;
+      const dash = document.getElementById('dashboard');
+      dash.classList.remove('hidden');
+
+      // Header status
+      const hs = document.getElementById('header-status');
+      hs.classList.remove('hidden');
+      document.getElementById('header-uni-label').textContent = d.university_name;
+      document.getElementById('header-time').textContent = new Date(d.scraped_at).toLocaleString();
+
+      renderSource();
+      renderRecs();
+      renderStats();
+      renderCharts();
+      renderTable();
+      renderArchivesReset();
+    }
+
+    // ── Render: Source Bar ────────────────────────────────
+    function renderSource() {
+      const { source, data_confidence, scraped_at } = S.data;
+      const cl = confLevel(data_confidence);
+
+      const dot = document.getElementById('source-dot');
+      dot.className = `source-dot source-dot--${cl}`;
+      document.getElementById('source-name').textContent = srcLabel(source);
+
+      const tag = document.getElementById('confidence-tag');
+      tag.className = `confidence-tag confidence-tag--${cl}`;
+      tag.textContent = cl.toUpperCase();
+
+      document.getElementById('scraped-time').textContent = new Date(scraped_at).toLocaleString();
+    }
+
+    // ── Render: Recommendations ──────────────────────────
+    function renderRecs() {
+      const { programs, recommendations } = S.data;
+      const c = document.getElementById('rec-container');
+      c.innerHTML = recommendations.map((rec, i) => {
+        const p = programs.find(x => x.id === rec.program_id);
+        if (!p) return '';
+        return `
+          <div class="rec-card reveal" style="animation-delay:${i * 0.12}s">
+            <div class="rec-card__rank">${rec.rank}</div>
+            <div class="rec-card__program">${p.program}</div>
+            <div class="rec-card__faculty">${p.faculty}</div>
+            <div class="rec-card__rate">
+              <span class="count-up" data-v="${p.acceptance_rate}">${p.acceptance_rate}</span><span class="rec-card__rate-unit">%</span>
+            </div>
+            <div class="rec-card__rate-label">Acceptance Rate &middot; Jalur Mandiri</div>
+            <div class="rec-card__row">
+              <div class="rec-card__metric">
+                <div class="rec-card__metric-val">${p.avg_min_score}</div>
+                <div class="rec-card__metric-label">Avg Min Score</div>
+              </div>
+              <div class="rec-card__metric">
+                <div class="rec-card__metric-val ${trendClass(p.score_trend)}">${trendArrow(p.score_trend)} ${trendText(p.score_trend)}</div>
+                <div class="rec-card__metric-label">Score Trend</div>
+              </div>
+              <div class="rec-card__metric">
+                <div class="rec-card__metric-val">${parseFloat(p.ease_score).toFixed(1)}</div>
+                <div class="rec-card__metric-label">Ease Score</div>
+              </div>
+            </div>
+            <div class="rec-card__insight">${rec.insight}</div>
+          </div>`;
+      }).join('');
+      runCountUp();
+    }
+
+    // ── Render: Stats ────────────────────────────────────
+    function renderStats() {
+      const m = S.data.meta;
+      document.getElementById('stat-strip').innerHTML = [
+        [m.total_programs, 'Total Programs', true],
+        [m.avg_acceptance_rate, 'Avg Acceptance %', false],
+        [m.lowest_min_score, 'Lowest Score', true],
+        [m.highest_competition_ratio, 'Top Competition', null],
+      ].map(([v, l, isInt], i) => `
+        <div class="stat-cell reveal" style="animation-delay:${0.05 * i}s">
+          <div class="stat-cell__val ${isInt !== null ? 'count-up' : ''}" ${isInt !== null ? `data-v="${v}" data-int="${isInt}"` : ''}>${v}</div>
+          <div class="stat-cell__label">${l}</div>
+        </div>
+      `).join('');
+      runCountUp();
+    }
+
+    // ── Render: Charts ───────────────────────────────────
+    function renderCharts() {
+      const { programs, recommendations } = S.data;
+      const recIds = recommendations.map(r => r.program_id);
+
+      Chart.defaults.color = '#8a8478';
+      Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+      Chart.defaults.font.size = 11;
+
+      const ttip = {
+        backgroundColor: '#0f0f0f',
+        titleColor: '#f2ede6',
+        bodyColor: '#d4a843',
+        borderColor: '#1a1a1a',
+        borderWidth: 1,
+        padding: 10,
+        cornerRadius: 0,
+      };
+      const grid = { color: 'rgba(255,255,255,0.04)' };
+
+      // Chart A: Acceptance rates
+      const byRate = [...programs].sort((a, b) => b.acceptance_rate - a.acceptance_rate).slice(0, 10);
+      if (S.charts.a) S.charts.a.destroy();
+      S.charts.a = new Chart(document.getElementById('chartAcceptance'), {
+        type: 'bar',
+        data: {
+          labels: byRate.map(p => p.program.length > 22 ? p.program.slice(0, 22) + '...' : p.program),
+          datasets: [{
+            data: byRate.map(p => p.acceptance_rate),
+            backgroundColor: byRate.map(p => recIds.includes(p.id) ? '#d4a843' : '#1a1a1a'),
+            borderColor: byRate.map(p => recIds.includes(p.id) ? '#d4a843' : '#2a2a2a'),
+            borderWidth: 1,
+            borderRadius: 0,
+          }]
+        },
+        options: {
+          indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+          animation: { duration: 800 },
+          plugins: { legend: { display: false }, tooltip: ttip },
+          scales: { x: { grid }, y: { grid: { display: false } } }
+        }
+      });
+
+      // Chart B: Lowest scores
+      const byScore = [...programs].filter(p => p.avg_min_score).sort((a, b) => a.avg_min_score - b.avg_min_score).slice(0, 10);
+      const yMin = Math.max(0, Math.min(...byScore.map(p => p.avg_min_score)) - 30);
+      if (S.charts.b) S.charts.b.destroy();
+      S.charts.b = new Chart(document.getElementById('chartScores'), {
+        type: 'bar',
+        data: {
+          labels: byScore.map(p => p.program.length > 16 ? p.program.slice(0, 16) + '...' : p.program),
+          datasets: [{
+            data: byScore.map(p => p.avg_min_score),
+            backgroundColor: byScore.map(p => recIds.includes(p.id) ? '#d4a843' : '#1a1a1a'),
+            borderColor: byScore.map(p => recIds.includes(p.id) ? '#d4a843' : '#2a2a2a'),
+            borderWidth: 1,
+            borderRadius: 0,
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          animation: { duration: 800 },
+          plugins: { legend: { display: false }, tooltip: ttip },
+          scales: { x: { grid: { display: false } }, y: { grid, min: yMin } }
+        }
+      });
+
+      // Chart C: Trend lines
+      const top5 = [...programs].sort((a, b) => b.ease_score - a.ease_score).slice(0, 5);
+      const palette = ['#d4a843', '#f2ede6', '#8a8478', '#5a9a6b', '#b35a5a'];
+      if (S.charts.c) S.charts.c.destroy();
+      S.charts.c = new Chart(document.getElementById('chartTrend'), {
+        type: 'line',
+        data: {
+          labels: ['2022', '2023', '2024'],
+          datasets: top5.map((p, i) => ({
+            label: p.program,
+            data: [p.min_score_2022, p.min_score_2023, p.min_score_2024],
+            borderColor: palette[i],
+            backgroundColor: palette[i] + '15',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            pointBackgroundColor: palette[i],
+            borderWidth: 1.5,
+          }))
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          animation: { duration: 800 },
+          plugins: {
+            legend: { position: 'bottom', labels: { boxWidth: 10, padding: 20, font: { size: 10 } } },
+            tooltip: ttip
+          },
+          scales: { x: { grid }, y: { grid } }
+        }
+      });
+    }
+
+    // ── Render: Table ────────────────────────────────────
+    function renderTable() {
+      const { programs, recommendations } = S.data;
+      const recIds = recommendations.map(r => r.program_id);
+      const { sortCol, sortDir } = S;
+
+      const sorted = [...programs].sort((a, b) => {
+        let va = a[sortCol], vb = b[sortCol];
+        if (typeof va === 'string') return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+        return sortDir === 'asc' ? va - vb : vb - va;
+      });
+
+      document.querySelectorAll('th').forEach(th => {
+        const c = th.dataset.col;
+        if (!c) return;
+        const arrow = th.querySelector('.sort-arrow');
+        arrow.textContent = c === sortCol ? (sortDir === 'asc' ? '\u25B2' : '\u25BC') : '';
+      });
+
+      document.getElementById('table-body').innerHTML = sorted.map((p, i) => {
+        const top = recIds.includes(p.id);
+        return `<tr class="${top ? 'row-top' : ''}">
+          <td>${i + 1}</td>
+          <td class="col-program">${p.program}</td>
+          <td class="t-small">${p.faculty}</td>
+          <td>${p.quota_mandiri}</td>
+          <td>${p.applicants_mandiri}</td>
+          <td class="col-rate">${p.acceptance_rate}%</td>
+          <td>${p.avg_min_score}</td>
+          <td class="${trendClass(p.score_trend)}">${trendArrow(p.score_trend)} ${trendText(p.score_trend)}</td>
+          <td class="col-ease">${parseFloat(p.ease_score).toFixed(1)}</td>
+          <td><span class="source-pip ${srcDot(p.source_type)}" title="${p.source_type}"></span></td>
+        </tr>`;
+      }).join('');
+    }
+
+    // ── UI Helpers ───────────────────────────────────────
+    function showSkeleton() {
+      const dash = document.getElementById('dashboard');
+      dash.classList.remove('hidden');
+      const sk = '<div class="skel skel--line"></div>';
+      document.getElementById('rec-container').innerHTML =
+        `<div style="border:1px solid var(--border);padding:2rem">${'<div class="skel skel--line"></div>'.repeat(3)}<div class="skel skel--big"></div></div>`.repeat(2);
+      document.getElementById('stat-strip').innerHTML =
+        Array(4).fill('<div class="stat-cell"><div class="skel skel--big"></div><div class="skel skel--line" style="width:60%"></div></div>').join('');
+      document.getElementById('table-body').innerHTML =
+        Array(5).fill(`<tr>${Array(10).fill('<td><div class="skel skel--line"></div></td>').join('')}</tr>`).join('');
+    }
+
+    function runCountUp() {
+      document.querySelectorAll('.count-up').forEach(el => {
+        const v = parseFloat(el.dataset.v);
+        if (isNaN(v)) return;
+        const isInt = el.dataset.int === 'true' || Number.isInteger(v);
+        animateNum(el, v, 700);
+      });
+    }
+
+    function showBanner(msg, isErr = false) {
+      const b = document.getElementById('error-banner');
+      b.classList.remove('hidden', 'banner--warn', 'banner--err');
+      b.classList.add(isErr ? 'banner--err' : 'banner--warn');
+      document.getElementById('error-message').textContent = msg;
+    }
+    function hideBanner() { document.getElementById('error-banner').classList.add('hidden'); }
+
+    // ── Archives ─────────────────────────────────────────
+    async function fetchArchives(id) {
+      try {
+        const r = await fetch(`${API}/archives/${id}`);
+        const d = await r.json();
+        if (d.error) throw new Error(d.message);
+        S.archives = d;
+        renderArchives();
+      } catch (e) {
+        console.warn('[archives]', e.message);
+        S.archives = null;
+        renderArchivesReset();
+      }
+    }
+
+    function renderArchivesReset() {
+      document.getElementById('archives-count').textContent = '';
+      document.getElementById('archives-sources').innerHTML = '';
+      document.getElementById('archives-table-body').innerHTML = '';
+      S.archivesOpen = false;
+      document.getElementById('archives-body').classList.remove('is-open');
+      document.getElementById('archives-arrow').classList.remove('is-open');
+    }
+
+    function renderArchives() {
+      const a = S.archives;
+      if (!a) return;
+
+      document.getElementById('archives-count').textContent =
+        `${a.total_programs} programs  /  ${a.sources.length} sources`;
+
+      // Render source cards
+      document.getElementById('archives-sources').innerHTML = a.sources.map(s => `
+        <div class="src-card reveal" style="animation-delay:${s.id * 0.06}s">
+          <div class="src-card__title">
+            <span class="reliability-dot reliability-dot--${s.reliability}"></span>
+            ${s.title}
+            <span class="src-badge src-badge--${s.type}">${s.type.replace(/-/g, ' ')}</span>
+          </div>
+          <div class="src-card__meta">
+            ${s.publisher} &middot; Accessed ${s.accessed}
+          </div>
+          ${s.notes ? `<div class="src-card__meta" style="margin-top:0.25rem;color:var(--text-faint);">${s.notes}</div>` : ''}
+          <a class="src-card__link" href="${s.url}" target="_blank" rel="noopener">[${s.id}] ${s.publisher} &rarr;</a>
+        </div>
+      `).join('');
+
+      // Render full archive table
+      document.getElementById('archives-table-body').innerHTML = a.programs.map(p => {
+        const refs = (p.source_ref || []).map(idx => {
+          const src = a.sources.find(s => s.id === idx);
+          return src
+            ? `<a class="cite-link" href="${src.url}" target="_blank" title="${src.title}">${idx}</a>`
+            : `<span class="cite-link">${idx}</span>`;
+        }).join('');
+        const typeBadge = p.source_type || 'estimated';
+        return `<tr>
+          <td style="color:var(--text);font-weight:500;">${p.program}</td>
+          <td>${p.faculty}</td>
+          <td>${p.quota_mandiri}</td>
+          <td>${p.applicants_mandiri}</td>
+          <td>${p.acceptance_rate}%</td>
+          <td>${p.min_score_2022 || '—'}</td>
+          <td>${p.min_score_2023 || '—'}</td>
+          <td>${p.min_score_2024 || '—'}</td>
+          <td><span class="source-pip source-pip--${srcDot(typeBadge).split('--')[1]}" title="${typeBadge}"></span> ${typeBadge}</td>
+          <td><div class="cite-links">${refs}</div></td>
+        </tr>`;
+      }).join('');
+    }
+
+    // ── Events ───────────────────────────────────────────
+    document.getElementById('refresh-btn').addEventListener('click', () => {
+      if (!S.uni || S.loading) return;
+      const btn = document.getElementById('refresh-btn');
+      btn.disabled = true;
+      btn.textContent = 'Scraping...';
+      fetchData(S.uni, true);
+    });
+
+    document.querySelectorAll('th').forEach(th => {
+      th.addEventListener('click', () => {
+        const c = th.dataset.col;
+        if (!c || !S.data) return;
+        if (S.sortCol === c) S.sortDir = S.sortDir === 'asc' ? 'desc' : 'asc';
+        else { S.sortCol = c; S.sortDir = 'desc'; }
+        renderTable();
+      });
+    });
+
+    document.getElementById('archives-toggle').addEventListener('click', () => {
+      S.archivesOpen = !S.archivesOpen;
+      document.getElementById('archives-body').classList.toggle('is-open', S.archivesOpen);
+      document.getElementById('archives-arrow').classList.toggle('is-open', S.archivesOpen);
+    });
+
+    // ── Boot ─────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', async () => {
+      const unis = await fetchUnis();
+      renderSelector(unis);
+      if (unis.length) pick('ugm');
+    });
+  </script>
+</body>
+</html>

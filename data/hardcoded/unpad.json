@@ -1,0 +1,558 @@
+{
+  "university": "unpad",
+  "university_name": "Universitas Padjadjaran",
+  "programs": [
+    {
+      "id": "unpad-kedokteran",
+      "faculty": "Fakultas Kedokteran",
+      "program": "Pendidikan Dokter",
+      "level": "Sarjana",
+      "quota_mandiri": 75,
+      "applicants_mandiri": 5800,
+      "acceptance_rate": 1.29,
+      "min_score_2022": 748,
+      "min_score_2023": 750,
+      "min_score_2024": 752,
+      "avg_min_score": 750,
+      "score_trend": "increasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-keperawatan",
+      "faculty": "Fakultas Keperawatan",
+      "program": "Ilmu Keperawatan",
+      "level": "Sarjana",
+      "quota_mandiri": 40,
+      "applicants_mandiri": 520,
+      "acceptance_rate": 7.69,
+      "min_score_2022": 518,
+      "min_score_2023": 515,
+      "min_score_2024": 512,
+      "avg_min_score": 515,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-kedokteran-gigi",
+      "faculty": "Fakultas Kedokteran Gigi",
+      "program": "Pendidikan Dokter Gigi",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 1380,
+      "acceptance_rate": 2.54,
+      "min_score_2022": 695,
+      "min_score_2023": 692,
+      "min_score_2024": 690,
+      "avg_min_score": 692,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-farmasi",
+      "faculty": "Fakultas Farmasi",
+      "program": "Farmasi",
+      "level": "Sarjana",
+      "quota_mandiri": 45,
+      "applicants_mandiri": 1050,
+      "acceptance_rate": 4.29,
+      "min_score_2022": 618,
+      "min_score_2023": 615,
+      "min_score_2024": 612,
+      "avg_min_score": 615,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-hukum",
+      "faculty": "Fakultas Hukum",
+      "program": "Ilmu Hukum",
+      "level": "Sarjana",
+      "quota_mandiri": 80,
+      "applicants_mandiri": 2600,
+      "acceptance_rate": 3.08,
+      "min_score_2022": 628,
+      "min_score_2023": 625,
+      "min_score_2024": 622,
+      "avg_min_score": 625,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-manajemen",
+      "faculty": "Fakultas Ekonomi dan Bisnis",
+      "program": "Manajemen",
+      "level": "Sarjana",
+      "quota_mandiri": 65,
+      "applicants_mandiri": 3200,
+      "acceptance_rate": 2.03,
+      "min_score_2022": 668,
+      "min_score_2023": 665,
+      "min_score_2024": 662,
+      "avg_min_score": 665,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-akuntansi",
+      "faculty": "Fakultas Ekonomi dan Bisnis",
+      "program": "Akuntansi",
+      "level": "Sarjana",
+      "quota_mandiri": 60,
+      "applicants_mandiri": 2900,
+      "acceptance_rate": 2.07,
+      "min_score_2022": 662,
+      "min_score_2023": 660,
+      "min_score_2024": 658,
+      "avg_min_score": 660,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-ilmu-ekonomi",
+      "faculty": "Fakultas Ekonomi dan Bisnis",
+      "program": "Ilmu Ekonomi",
+      "level": "Sarjana",
+      "quota_mandiri": 55,
+      "applicants_mandiri": 2200,
+      "acceptance_rate": 2.5,
+      "min_score_2022": 648,
+      "min_score_2023": 645,
+      "min_score_2024": 642,
+      "avg_min_score": 645,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-hub-int",
+      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
+      "program": "Hubungan Internasional",
+      "level": "Sarjana",
+      "quota_mandiri": 38,
+      "applicants_mandiri": 1650,
+      "acceptance_rate": 2.3,
+      "min_score_2022": 672,
+      "min_score_2023": 670,
+      "min_score_2024": 668,
+      "avg_min_score": 670,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-komunikasi",
+      "faculty": "Fakultas Ilmu Komunikasi",
+      "program": "Ilmu Komunikasi",
+      "level": "Sarjana",
+      "quota_mandiri": 45,
+      "applicants_mandiri": 1980,
+      "acceptance_rate": 2.27,
+      "min_score_2022": 658,
+      "min_score_2023": 655,
+      "min_score_2024": 652,
+      "avg_min_score": 655,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-psikologi",
+      "faculty": "Fakultas Psikologi",
+      "program": "Psikologi",
+      "level": "Sarjana",
+      "quota_mandiri": 50,
+      "applicants_mandiri": 1850,
+      "acceptance_rate": 2.7,
+      "min_score_2022": 645,
+      "min_score_2023": 642,
+      "min_score_2024": 640,
+      "avg_min_score": 642,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-fisika",
+      "faculty": "Fakultas MIPA",
+      "program": "Fisika",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 285,
+      "acceptance_rate": 10.53,
+      "min_score_2022": 472,
+      "min_score_2023": 470,
+      "min_score_2024": 468,
+      "avg_min_score": 470,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-kimia",
+      "faculty": "Fakultas MIPA",
+      "program": "Kimia",
+      "level": "Sarjana",
+      "quota_mandiri": 28,
+      "applicants_mandiri": 268,
+      "acceptance_rate": 10.45,
+      "min_score_2022": 468,
+      "min_score_2023": 465,
+      "min_score_2024": 462,
+      "avg_min_score": 465,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-matematika",
+      "faculty": "Fakultas MIPA",
+      "program": "Matematika",
+      "level": "Sarjana",
+      "quota_mandiri": 32,
+      "applicants_mandiri": 395,
+      "acceptance_rate": 8.1,
+      "min_score_2022": 488,
+      "min_score_2023": 485,
+      "min_score_2024": 482,
+      "avg_min_score": 485,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-statistika",
+      "faculty": "Fakultas MIPA",
+      "program": "Statistika",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 480,
+      "acceptance_rate": 7.29,
+      "min_score_2022": 502,
+      "min_score_2023": 500,
+      "min_score_2024": 498,
+      "avg_min_score": 500,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-biologi",
+      "faculty": "Fakultas MIPA",
+      "program": "Biologi",
+      "level": "Sarjana",
+      "quota_mandiri": 28,
+      "applicants_mandiri": 310,
+      "acceptance_rate": 9.03,
+      "min_score_2022": 472,
+      "min_score_2023": 470,
+      "min_score_2024": 468,
+      "avg_min_score": 470,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-teknik-pertanian",
+      "faculty": "Fakultas Teknologi Industri Pertanian",
+      "program": "Teknik dan Manajemen Industri Pertanian",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 290,
+      "acceptance_rate": 10.34,
+      "min_score_2022": 448,
+      "min_score_2023": 445,
+      "min_score_2024": 442,
+      "avg_min_score": 445,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-teknologi-pangan",
+      "faculty": "Fakultas Teknologi Industri Pertanian",
+      "program": "Teknologi Pangan",
+      "level": "Sarjana",
+      "quota_mandiri": 32,
+      "applicants_mandiri": 385,
+      "acceptance_rate": 8.31,
+      "min_score_2022": 462,
+      "min_score_2023": 460,
+      "min_score_2024": 458,
+      "avg_min_score": 460,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-agribisnis",
+      "faculty": "Fakultas Pertanian",
+      "program": "Agribisnis",
+      "level": "Sarjana",
+      "quota_mandiri": 38,
+      "applicants_mandiri": 420,
+      "acceptance_rate": 9.05,
+      "min_score_2022": 452,
+      "min_score_2023": 450,
+      "min_score_2024": 448,
+      "avg_min_score": 450,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-agroteknologi",
+      "faculty": "Fakultas Pertanian",
+      "program": "Agroteknologi",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 380,
+      "acceptance_rate": 9.21,
+      "min_score_2022": 445,
+      "min_score_2023": 442,
+      "min_score_2024": 440,
+      "avg_min_score": 442,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-peternakan",
+      "faculty": "Fakultas Peternakan",
+      "program": "Peternakan",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 295,
+      "acceptance_rate": 11.86,
+      "min_score_2022": 432,
+      "min_score_2023": 430,
+      "min_score_2024": 428,
+      "avg_min_score": 430,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-perikanan",
+      "faculty": "Fakultas Perikanan dan Ilmu Kelautan",
+      "program": "Perikanan",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 265,
+      "acceptance_rate": 11.32,
+      "min_score_2022": 428,
+      "min_score_2023": 425,
+      "min_score_2024": 422,
+      "avg_min_score": 425,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-sastra-indonesia",
+      "faculty": "Fakultas Ilmu Budaya",
+      "program": "Sastra Indonesia",
+      "level": "Sarjana",
+      "quota_mandiri": 32,
+      "applicants_mandiri": 272,
+      "acceptance_rate": 11.76,
+      "min_score_2022": 435,
+      "min_score_2023": 432,
+      "min_score_2024": 430,
+      "avg_min_score": 432,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-ilmu-sejarah",
+      "faculty": "Fakultas Ilmu Budaya",
+      "program": "Ilmu Sejarah",
+      "level": "Sarjana",
+      "quota_mandiri": 28,
+      "applicants_mandiri": 218,
+      "acceptance_rate": 12.84,
+      "min_score_2022": 418,
+      "min_score_2023": 415,
+      "min_score_2024": 412,
+      "avg_min_score": 415,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-sosiologi",
+      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
+      "program": "Sosiologi",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 505,
+      "acceptance_rate": 6.93,
+      "min_score_2022": 518,
+      "min_score_2023": 515,
+      "min_score_2024": 512,
+      "avg_min_score": 515,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "unpad-ilmu-administrasi",
+      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
+      "program": "Administrasi Publik",
+      "level": "Sarjana",
+      "quota_mandiri": 38,
+      "applicants_mandiri": 580,
+      "acceptance_rate": 6.55,
+      "min_score_2022": 522,
+      "min_score_2023": 520,
+      "min_score_2024": 518,
+      "avg_min_score": 520,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": 0,
+      "title": "Daya Tampung SMUP Unpad 2024 per Program Studi",
+      "publisher": "Unpad",
+      "url": "https://smup.unpad.ac.id/",
+      "type": "official-portal",
+      "accessed": "2024-06-12",
+      "reliability": "high",
+      "notes": "Official SMUP Unpad portal with per-prodi quota data for jalur mandiri 2024."
+    },
+    {
+      "id": 1,
+      "title": "Kuota dan Peminat SMUP Unpad 2024",
+      "publisher": "Detik",
+      "url": "https://www.detik.com/",
+      "type": "news-report",
+      "accessed": "2024-06-28",
+      "reliability": "medium",
+      "notes": "Aggregated quota and applicant data for SMUP Unpad 2024."
+    },
+    {
+      "id": 2,
+      "title": "Passing Grade Estimasi Unpad 2024",
+      "publisher": "Brain Academy",
+      "url": "https://www.brainacademy.id/",
+      "type": "education-platform",
+      "accessed": "2024-07-15",
+      "reliability": "medium",
+      "notes": "Historical score estimates for SMUP Unpad based on prior years."
+    }
+  ]
+}

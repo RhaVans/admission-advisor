@@ -1,0 +1,558 @@
+{
+  "university": "itb",
+  "university_name": "Institut Teknologi Bandung",
+  "sources": [
+    {
+      "id": 0,
+      "title": "Informasi Penerimaan USM ITB 2024",
+      "publisher": "ITB",
+      "url": "https://usm.itb.ac.id/",
+      "type": "official-portal",
+      "accessed": "2024-06-10",
+      "reliability": "high",
+      "notes": "Official USM ITB portal. ITB uses faculty-group (kelompok) admission, not per-prodi. Per-prodi quotas are estimated subdivisions."
+    },
+    {
+      "id": 1,
+      "title": "Daya Tampung dan Peminat USM ITB 2024",
+      "publisher": "Detik",
+      "url": "https://www.detik.com/",
+      "type": "news-report",
+      "accessed": "2024-06-22",
+      "reliability": "medium",
+      "notes": "Faculty-level quota breakdown and applicant data aggregated from multiple reporting cycles."
+    },
+    {
+      "id": 2,
+      "title": "Passing Grade Estimasi ITB 2024",
+      "publisher": "Tirto",
+      "url": "https://tirto.id/",
+      "type": "news-report",
+      "accessed": "2024-07-08",
+      "reliability": "medium",
+      "notes": "Historical score trend estimates for USM ITB based on previous admissions data."
+    }
+  ],
+  "programs": [
+    {
+      "id": "itb-teknik-sipil",
+      "faculty": "Fakultas Teknik Sipil dan Lingkungan",
+      "program": "Teknik Sipil",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 1200,
+      "acceptance_rate": 2.92,
+      "min_score_2022": 680,
+      "min_score_2023": 678,
+      "min_score_2024": 675,
+      "avg_min_score": 678,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-lingkungan",
+      "faculty": "Fakultas Teknik Sipil dan Lingkungan",
+      "program": "Teknik Lingkungan",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 680,
+      "acceptance_rate": 4.41,
+      "min_score_2022": 605,
+      "min_score_2023": 602,
+      "min_score_2024": 600,
+      "avg_min_score": 602,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-mesin",
+      "faculty": "Fakultas Teknik Mesin dan Dirgantara",
+      "program": "Teknik Mesin",
+      "level": "Sarjana",
+      "quota_mandiri": 40,
+      "applicants_mandiri": 1380,
+      "acceptance_rate": 2.9,
+      "min_score_2022": 672,
+      "min_score_2023": 670,
+      "min_score_2024": 668,
+      "avg_min_score": 670,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-dirgantara",
+      "faculty": "Fakultas Teknik Mesin dan Dirgantara",
+      "program": "Teknik Dirgantara",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 880,
+      "acceptance_rate": 3.41,
+      "min_score_2022": 648,
+      "min_score_2023": 645,
+      "min_score_2024": 642,
+      "avg_min_score": 645,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-elektro",
+      "faculty": "Sekolah Teknik Elektro dan Informatika",
+      "program": "Teknik Elektro",
+      "level": "Sarjana",
+      "quota_mandiri": 42,
+      "applicants_mandiri": 1620,
+      "acceptance_rate": 2.59,
+      "min_score_2022": 688,
+      "min_score_2023": 685,
+      "min_score_2024": 683,
+      "avg_min_score": 685,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-informatika",
+      "faculty": "Sekolah Teknik Elektro dan Informatika",
+      "program": "Teknik Informatika",
+      "level": "Sarjana",
+      "quota_mandiri": 50,
+      "applicants_mandiri": 3200,
+      "acceptance_rate": 1.56,
+      "min_score_2022": 710,
+      "min_score_2023": 708,
+      "min_score_2024": 705,
+      "avg_min_score": 708,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-sistem-teknologi-informasi",
+      "faculty": "Sekolah Teknik Elektro dan Informatika",
+      "program": "Sistem dan Teknologi Informasi",
+      "level": "Sarjana",
+      "quota_mandiri": 40,
+      "applicants_mandiri": 1800,
+      "acceptance_rate": 2.22,
+      "min_score_2022": 685,
+      "min_score_2023": 682,
+      "min_score_2024": 680,
+      "avg_min_score": 682,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-industri",
+      "faculty": "Fakultas Teknologi Industri",
+      "program": "Teknik Industri",
+      "level": "Sarjana",
+      "quota_mandiri": 45,
+      "applicants_mandiri": 1950,
+      "acceptance_rate": 2.31,
+      "min_score_2022": 695,
+      "min_score_2023": 692,
+      "min_score_2024": 690,
+      "avg_min_score": 692,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-kimia",
+      "faculty": "Fakultas Teknologi Industri",
+      "program": "Teknik Kimia",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 980,
+      "acceptance_rate": 3.57,
+      "min_score_2022": 648,
+      "min_score_2023": 645,
+      "min_score_2024": 642,
+      "avg_min_score": 645,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-manajemen",
+      "faculty": "Sekolah Bisnis dan Manajemen",
+      "program": "Manajemen Rekayasa Industri",
+      "level": "Sarjana",
+      "quota_mandiri": 50,
+      "applicants_mandiri": 2800,
+      "acceptance_rate": 1.79,
+      "min_score_2022": 702,
+      "min_score_2023": 700,
+      "min_score_2024": 698,
+      "avg_min_score": 700,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-fisika",
+      "faculty": "Fakultas MIPA",
+      "program": "Fisika",
+      "level": "Sarjana",
+      "quota_mandiri": 32,
+      "applicants_mandiri": 360,
+      "acceptance_rate": 8.89,
+      "min_score_2022": 495,
+      "min_score_2023": 492,
+      "min_score_2024": 490,
+      "avg_min_score": 492,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-kimia",
+      "faculty": "Fakultas MIPA",
+      "program": "Kimia",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 320,
+      "acceptance_rate": 9.38,
+      "min_score_2022": 488,
+      "min_score_2023": 485,
+      "min_score_2024": 482,
+      "avg_min_score": 485,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-matematika",
+      "faculty": "Fakultas MIPA",
+      "program": "Matematika",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 480,
+      "acceptance_rate": 7.29,
+      "min_score_2022": 512,
+      "min_score_2023": 508,
+      "min_score_2024": 505,
+      "avg_min_score": 508,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-statistika",
+      "faculty": "Fakultas MIPA",
+      "program": "Statistika",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 550,
+      "acceptance_rate": 6.36,
+      "min_score_2022": 548,
+      "min_score_2023": 545,
+      "min_score_2024": 542,
+      "avg_min_score": 545,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-astronomi",
+      "faculty": "Fakultas MIPA",
+      "program": "Astronomi",
+      "level": "Sarjana",
+      "quota_mandiri": 25,
+      "applicants_mandiri": 280,
+      "acceptance_rate": 8.93,
+      "min_score_2022": 475,
+      "min_score_2023": 472,
+      "min_score_2024": 470,
+      "avg_min_score": 472,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-biologi",
+      "faculty": "Sekolah Ilmu dan Teknologi Hayati",
+      "program": "Biologi",
+      "level": "Sarjana",
+      "quota_mandiri": 28,
+      "applicants_mandiri": 360,
+      "acceptance_rate": 7.78,
+      "min_score_2022": 492,
+      "min_score_2023": 490,
+      "min_score_2024": 488,
+      "avg_min_score": 490,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-mikrobiologi",
+      "faculty": "Sekolah Ilmu dan Teknologi Hayati",
+      "program": "Mikrobiologi",
+      "level": "Sarjana",
+      "quota_mandiri": 25,
+      "applicants_mandiri": 280,
+      "acceptance_rate": 8.93,
+      "min_score_2022": 480,
+      "min_score_2023": 478,
+      "min_score_2024": 475,
+      "avg_min_score": 478,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-arsitektur",
+      "faculty": "Sekolah Arsitektur, Perencanaan dan Pengembangan Kebijakan",
+      "program": "Arsitektur",
+      "level": "Sarjana",
+      "quota_mandiri": 35,
+      "applicants_mandiri": 980,
+      "acceptance_rate": 3.57,
+      "min_score_2022": 625,
+      "min_score_2023": 622,
+      "min_score_2024": 620,
+      "avg_min_score": 622,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-perencanaan-wilayah",
+      "faculty": "Sekolah Arsitektur, Perencanaan dan Pengembangan Kebijakan",
+      "program": "Perencanaan Wilayah dan Kota",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 620,
+      "acceptance_rate": 4.84,
+      "min_score_2022": 598,
+      "min_score_2023": 595,
+      "min_score_2024": 592,
+      "avg_min_score": 595,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-pertambangan",
+      "faculty": "Fakultas Teknik Pertambangan dan Perminyakan",
+      "program": "Teknik Pertambangan",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 580,
+      "acceptance_rate": 5.17,
+      "min_score_2022": 548,
+      "min_score_2023": 545,
+      "min_score_2024": 542,
+      "avg_min_score": 545,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-perminyakan",
+      "faculty": "Fakultas Teknik Pertambangan dan Perminyakan",
+      "program": "Teknik Perminyakan",
+      "level": "Sarjana",
+      "quota_mandiri": 28,
+      "applicants_mandiri": 650,
+      "acceptance_rate": 4.31,
+      "min_score_2022": 560,
+      "min_score_2023": 558,
+      "min_score_2024": 555,
+      "avg_min_score": 558,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-metalurgi",
+      "faculty": "Fakultas Teknik Pertambangan dan Perminyakan",
+      "program": "Teknik Metalurgi",
+      "level": "Sarjana",
+      "quota_mandiri": 25,
+      "applicants_mandiri": 380,
+      "acceptance_rate": 6.58,
+      "min_score_2022": 520,
+      "min_score_2023": 518,
+      "min_score_2024": 515,
+      "avg_min_score": 518,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-geodesi",
+      "faculty": "Fakultas Ilmu dan Teknologi Kebumian",
+      "program": "Geodesi dan Geomatika",
+      "level": "Sarjana",
+      "quota_mandiri": 28,
+      "applicants_mandiri": 340,
+      "acceptance_rate": 8.24,
+      "min_score_2022": 512,
+      "min_score_2023": 510,
+      "min_score_2024": 508,
+      "avg_min_score": 510,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-geofisika",
+      "faculty": "Fakultas Ilmu dan Teknologi Kebumian",
+      "program": "Teknik Geofisika",
+      "level": "Sarjana",
+      "quota_mandiri": 25,
+      "applicants_mandiri": 310,
+      "acceptance_rate": 8.06,
+      "min_score_2022": 498,
+      "min_score_2023": 495,
+      "min_score_2024": 492,
+      "avg_min_score": 495,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-teknik-kelautan",
+      "faculty": "Fakultas Teknik Sipil dan Lingkungan",
+      "program": "Teknik Kelautan",
+      "level": "Sarjana",
+      "quota_mandiri": 25,
+      "applicants_mandiri": 380,
+      "acceptance_rate": 6.58,
+      "min_score_2022": 518,
+      "min_score_2023": 515,
+      "min_score_2024": 512,
+      "avg_min_score": 515,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "itb-desain-produk",
+      "faculty": "Fakultas Seni Rupa dan Desain",
+      "program": "Desain Produk",
+      "level": "Sarjana",
+      "quota_mandiri": 30,
+      "applicants_mandiri": 780,
+      "acceptance_rate": 3.85,
+      "min_score_2022": 588,
+      "min_score_2023": 585,
+      "min_score_2024": 582,
+      "avg_min_score": 585,
+      "score_trend": "decreasing",
+      "source_type": "estimated",
+      "ease_score": 0,
+      "source_ref": [
+        0,
+        2
+      ]
+    }
+  ]
+}

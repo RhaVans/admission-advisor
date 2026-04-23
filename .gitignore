@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Cache
+data/cache/
+
+# Environment
+.env
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Playwright
+playwright-report/
+
+# Misc
+*.log
+gen.py
+generate_data.py
