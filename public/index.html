@@ -56,7 +56,8 @@
 
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; }
-    @media (max-width: 900px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; }
+    @media (max-width: 900px) { .grid-2, .grid-4, .grid-5 { grid-template-columns: 1fr; } }
 
     /* ── Typography ──────────────────────────────────── */
     .t-serif { font-family: var(--serif); }
@@ -342,6 +343,48 @@
     .source-pip--affiliated, .source-pip--estimated { background: var(--yellow); }
     .source-pip--hardcoded { background: var(--red); }
 
+    /* ── Crowding Risk ─────────────────────────────────── */
+    .crowding-badge {
+      display: inline-block;
+      padding: 1px 6px;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid;
+    }
+    .crowding-badge--low { border-color: var(--green); color: var(--green); }
+    .crowding-badge--moderate { border-color: var(--yellow); color: var(--yellow); }
+    .crowding-badge--high { border-color: var(--red); color: var(--red); }
+    .crowding-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+    .crowding-dot--low { background: var(--green); }
+    .crowding-dot--moderate { background: var(--yellow); }
+    .crowding-dot--high { background: var(--red); }
+    .vol-bar {
+      display: inline-block;
+      height: 4px;
+      border-radius: 2px;
+      min-width: 2px;
+      vertical-align: middle;
+    }
+    .vol-bar--low { background: var(--green); }
+    .vol-bar--moderate { background: var(--yellow); }
+    .vol-bar--high { background: var(--red); }
+    .rec-card__warning {
+      margin-top: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid rgba(179, 90, 90, 0.3);
+      background: rgba(179, 90, 90, 0.06);
+      font-size: 10px;
+      color: var(--red);
+      line-height: 1.5;
+    }
+
     /* ── Loading ──────────────────────────────────────── */
     @keyframes pulse {
       0%, 100% { opacity: 0.04; }
@@ -568,7 +611,7 @@
       <hr class="rule">
 
       <!-- Stat Strip -->
-      <section class="stat-strip grid-4" id="stat-strip"></section>
+      <section class="stat-strip grid-5" id="stat-strip"></section>
 
       <hr class="rule">
 
@@ -599,6 +642,16 @@
 
       <hr class="rule">
 
+      <!-- Volatility Scatter -->
+      <section>
+        <div class="t-section">Volatility vs Acceptance Rate</div>
+        <div class="chart-wrap">
+          <div class="chart-canvas" style="height:420px;"><canvas id="chartScatter"></canvas></div>
+        </div>
+      </section>
+
+      <hr class="rule">
+
       <!-- Table -->
       <section>
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
@@ -617,6 +670,8 @@
                 <th data-col="acceptance_rate">Rate <span class="sort-arrow"></span></th>
                 <th data-col="avg_min_score">Avg Score <span class="sort-arrow"></span></th>
                 <th data-col="score_trend">Trend <span class="sort-arrow"></span></th>
+                <th data-col="volatility_index">Volatility <span class="sort-arrow"></span></th>
+                <th data-col="crowding_penalty">Crowding <span class="sort-arrow"></span></th>
                 <th data-col="ease_score">Ease <span class="sort-arrow">&#9660;</span></th>
                 <th>Src</th>
               </tr>
@@ -692,6 +747,8 @@
       return 'Curated Data';
     };
     const confLevel = c => c === 'high' ? 'high' : c === 'medium' ? 'medium' : 'low';
+    const crowdColor = r => r === 'high' ? 'var(--red)' : r === 'moderate' ? 'var(--yellow)' : 'var(--green)';
+    const crowdLabel = r => r === 'high' ? 'High' : r === 'moderate' ? 'Moderate' : 'Low';
 
     function animateNum(el, end, dur) {
       const isInt = Number.isInteger(end);
@@ -821,8 +878,15 @@
                 <div class="rec-card__metric-val">${parseFloat(p.ease_score).toFixed(1)}</div>
                 <div class="rec-card__metric-label">Ease Score</div>
               </div>
+              <div class="rec-card__metric">
+                <div class="rec-card__metric-val" style="color:${crowdColor(p.crowding_risk)}">
+                  <span class="crowding-dot crowding-dot--${p.crowding_risk}"></span>${crowdLabel(p.crowding_risk)}
+                </div>
+                <div class="rec-card__metric-label">Crowding Risk</div>
+              </div>
             </div>
             <div class="rec-card__insight">${rec.insight}</div>
+            ${p.crowding_risk === 'high' ? '<div class="rec-card__warning">This program\'s recent score drop may attract significantly more applicants this cycle. Proceed with caution.</div>' : ''}
           </div>`;
       }).join('');
       runCountUp();
@@ -831,17 +895,23 @@
     // ── Render: Stats ────────────────────────────────────
     function renderStats() {
       const m = S.data.meta;
+      const crowdingVal = m.highest_crowding_risk || 'N/A';
       document.getElementById('stat-strip').innerHTML = [
         [m.total_programs, 'Total Programs', true],
         [m.avg_acceptance_rate, 'Avg Acceptance %', false],
         [m.lowest_min_score, 'Lowest Score', true],
         [m.highest_competition_ratio, 'Top Competition', null],
-      ].map(([v, l, isInt], i) => `
+        [crowdingVal, 'Highest Crowding Risk', null],
+      ].map(([v, l, isInt], i) => {
+        const isLast = i === 4;
+        const style = isLast ? 'color: var(--yellow);' : '';
+        return `
         <div class="stat-cell reveal" style="animation-delay:${0.05 * i}s">
-          <div class="stat-cell__val ${isInt !== null ? 'count-up' : ''}" ${isInt !== null ? `data-v="${v}" data-int="${isInt}"` : ''}>${v}</div>
+          <div class="stat-cell__val ${isInt !== null ? 'count-up' : ''}" ${isInt !== null ? `data-v="${v}" data-int="${isInt}"` : ''} style="${style}font-size:${isLast ? '1rem' : ''}">${v}</div>
           <div class="stat-cell__label">${l}</div>
         </div>
-      `).join('');
+      `;
+      }).join('');
       runCountUp();
     }
 
@@ -943,6 +1013,85 @@
           scales: { x: { grid }, y: { grid } }
         }
       });
+
+      // Chart D: Volatility vs Acceptance Rate (Scatter)
+      const riskColor = r => r === 'high' ? '#b35a5a' : r === 'moderate' ? '#c4a94d' : '#5a9a6b';
+      const maxVol = Math.max(...programs.map(p => p.volatility_index || 0), 0.01);
+      if (S.charts.d) S.charts.d.destroy();
+      S.charts.d = new Chart(document.getElementById('chartScatter'), {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            data: programs.map(p => ({
+              x: p.volatility_index || 0,
+              y: p.acceptance_rate,
+              r: Math.max(4, Math.min(14, (p.ease_score || 0) * 0.8)),
+              program: p.program,
+              crowding: p.crowding_risk,
+              penalty: p.crowding_penalty,
+              isRec: recIds.includes(p.id),
+            })),
+            backgroundColor: programs.map(p => riskColor(p.crowding_risk) + '99'),
+            borderColor: programs.map(p => recIds.includes(p.id) ? '#d4a843' : riskColor(p.crowding_risk)),
+            borderWidth: programs.map(p => recIds.includes(p.id) ? 2.5 : 1),
+            pointRadius: programs.map(p => Math.max(4, Math.min(14, (p.ease_score || 0) * 0.8))),
+            pointHoverRadius: programs.map(p => Math.max(6, Math.min(16, (p.ease_score || 0) * 0.8 + 2))),
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          animation: { duration: 800 },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              ...ttip,
+              callbacks: {
+                title: ctx => ctx[0]?.raw?.program || '',
+                label: ctx => {
+                  const d = ctx.raw;
+                  return [
+                    `Acceptance: ${d.y}%`,
+                    `Volatility: ${(d.x * 100).toFixed(2)}%`,
+                    `Crowding: ${d.crowding} (penalty: ${d.penalty.toFixed(2)})`,
+                    d.isRec ? '★ Recommended' : '',
+                  ].filter(Boolean);
+                }
+              }
+            },
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'Volatility Index', color: '#8a8478', font: { size: 10 } },
+              grid,
+              min: 0,
+              max: Math.ceil(maxVol * 120) / 100,
+            },
+            y: {
+              title: { display: true, text: 'Acceptance Rate (%)', color: '#8a8478', font: { size: 10 } },
+              grid,
+              min: 0,
+            }
+          }
+        },
+        plugins: [{
+          id: 'quadrantLabels',
+          afterDraw(chart) {
+            const { ctx, chartArea: { left, right, top, bottom } } = chart;
+            const midX = (left + right) / 2;
+            const midY = (top + bottom) / 2;
+            ctx.save();
+            ctx.font = "600 8px 'IBM Plex Mono', monospace";
+            ctx.globalAlpha = 0.12;
+            ctx.fillStyle = '#f2ede6';
+            ctx.textAlign = 'center';
+            ctx.fillText('SAFE ZONE', (left + midX) / 2, top + 18);
+            ctx.fillText('RISKY', (midX + right) / 2, top + 18);
+            ctx.fillText('STABLE BUT COMPETITIVE', (left + midX) / 2, bottom - 8);
+            ctx.fillText('AVOID', (midX + right) / 2, bottom - 8);
+            ctx.restore();
+          }
+        }]
+      });
     }
 
     // ── Render: Table ────────────────────────────────────
@@ -964,8 +1113,12 @@
         arrow.textContent = c === sortCol ? (sortDir === 'asc' ? '\u25B2' : '\u25BC') : '';
       });
 
+      const maxVol = Math.max(...programs.map(p => p.volatility_index || 0), 0.001);
       document.getElementById('table-body').innerHTML = sorted.map((p, i) => {
         const top = recIds.includes(p.id);
+        const vi = p.volatility_index || 0;
+        const volPct = Math.min((vi / maxVol) * 100, 100);
+        const volLevel = p.crowding_risk || 'low';
         return `<tr class="${top ? 'row-top' : ''}">
           <td>${i + 1}</td>
           <td class="col-program">${p.program}</td>
@@ -975,6 +1128,8 @@
           <td class="col-rate">${p.acceptance_rate}%</td>
           <td>${p.avg_min_score}</td>
           <td class="${trendClass(p.score_trend)}">${trendArrow(p.score_trend)} ${trendText(p.score_trend)}</td>
+          <td><span class="vol-bar vol-bar--${volLevel}" style="width:${Math.max(volPct, 4)}px;" title="${(vi * 100).toFixed(2)}%"></span> <span style="font-size:9px;color:var(--text-faint)">${(vi * 100).toFixed(1)}%</span></td>
+          <td><span class="crowding-badge crowding-badge--${p.crowding_risk || 'low'}">${crowdLabel(p.crowding_risk || 'low')}</span></td>
           <td class="col-ease">${parseFloat(p.ease_score).toFixed(1)}</td>
           <td><span class="source-pip ${srcDot(p.source_type)}" title="${p.source_type}"></span></td>
         </tr>`;
@@ -991,7 +1146,7 @@
       document.getElementById('stat-strip').innerHTML =
         Array(4).fill('<div class="stat-cell"><div class="skel skel--big"></div><div class="skel skel--line" style="width:60%"></div></div>').join('');
       document.getElementById('table-body').innerHTML =
-        Array(5).fill(`<tr>${Array(10).fill('<td><div class="skel skel--line"></div></td>').join('')}</tr>`).join('');
+        Array(5).fill(`<tr>${Array(12).fill('<td><div class="skel skel--line"></div></td>').join('')}</tr>`).join('');
     }
 
     function runCountUp() {
