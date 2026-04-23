@@ -2,6 +2,8 @@
 
 > Analytical platform for Indonesian university Jalur Mandiri admissions. Identifies Sarjana (S1) programs with highest acceptance probability at minimum passing scores across 5 top national universities.
 
+**Live:** [uni-advisor-kappa.vercel.app](https://uni-advisor-kappa.vercel.app)
+
 Built with an autonomous scraping pipeline that attempts official portals first, falls back to affiliated platforms, and defaults to curated public estimates. All data is transparent — every figure traces back to its source.
 
 ---
@@ -11,8 +13,11 @@ Built with an autonomous scraping pipeline that attempts official portals first,
 - **Real-time scraping** — Playwright + Cheerio pipeline targeting official university admissions portals
 - **Multi-source fallback** — Official → Affiliated (Zenius/Quipper/SNPMB) → Curated public estimates
 - **Ease Score ranking** — Composite metric favouring programs with highest acceptance probability at lowest passing score
+- **Volatility Index** — Measures historical instability (coefficient of variation) of a program's minimum passing score across 3 years
+- **Crowding Penalty** — Penalises programs with sharp score drops that attract applicant surges the following cycle (mean-reversion trap detection)
 - **Data Archives** — Full dataset transparency with per-program source citations and verified quota figures
 - **Score trend analysis** — 3-year minimum score trends (2022–2024) with directional indicators
+- **Mobile responsive** — Optimised for phones (390px+), tablets, and desktop viewports
 
 ## Supported Universities
 
@@ -43,6 +48,16 @@ Open **http://localhost:3000**
 
 ---
 
+## Deployment
+
+Hosted on Vercel with automatic deploys from `master`:
+
+```bash
+npx vercel --prod
+```
+
+---
+
 ## API
 
 | Method | Endpoint | Description |
@@ -52,6 +67,18 @@ Open **http://localhost:3000**
 | `GET` | `/api/admissions/:id/refresh` | Force fresh scrape, bypass cache |
 | `GET` | `/api/archives/:id` | Raw dataset with full source citations |
 | `GET` | `/api/health` | Server health and cache status |
+
+### Response Fields (Admissions)
+
+Each program object includes:
+
+| Field | Description |
+|---|---|
+| `ease_score` | Composite ranking metric (higher = easier to enter) |
+| `volatility_index` | Coefficient of variation of 3-year min scores (σ/μ) |
+| `sharp_drop_pct` | Year-over-year score drop percentage (0 if ≤3%) |
+| `crowding_penalty` | `(volatility × 3.0) + (sharpDrop × 5.0)`, capped at 2.0 |
+| `crowding_risk` | `low` / `moderate` / `high` based on penalty thresholds |
 
 ---
 
@@ -73,7 +100,7 @@ uni-advisor/
 │   │   └── fallback.js     # Curated JSON loader with source passthrough
 │   ├── utils/
 │   │   ├── parser.js       # Raw → unified schema normaliser
-│   │   ├── scorer.js       # Ease Score formula + insight generator
+│   │   ├── scorer.js       # Ease Score + Volatility Index + Crowding Penalty
 │   │   └── cache.js        # File-based JSON cache (24h TTL)
 │   └── server.js           # Express API
 ├── public/
@@ -86,6 +113,9 @@ uni-advisor/
 │       ├── itb.json        # 26 programs, 3 sources
 │       ├── its.json        # 25 programs, 3 sources
 │       └── unpad.json      # 26 programs, 3 sources
+├── directives/
+│   └── system_context.md   # Full operational context for agents
+├── vercel.json             # Vercel deployment config
 ├── .env
 ├── package.json
 └── README.md
@@ -127,14 +157,27 @@ Each program entry in the dataset includes `source_ref` indices pointing to veri
 Programs are ranked by a composite Ease Score:
 
 ```
-ease_score = (acceptance_rate × 0.6) + ((1 / avg_min_score) × 10000 × 0.4) + trend_bonus
+ease_score = (acceptance_rate × 0.6) + ((1 / avg_min_score) × 10000 × 0.4) + trend_bonus − crowding_penalty
 ```
 
-| Trend | Bonus | Meaning |
+| Component | Weight | Logic |
 |---|---|---|
-| Decreasing | `+0.5` | Getting easier over time |
-| Stable | `0` | No significant change |
-| Increasing | `-0.5` | Getting harder |
+| Acceptance rate | 60% | Higher rate = easier admission |
+| Inverse score | 40% | Lower min score = more accessible |
+| Trend bonus | ±0.5 | Decreasing = +0.5, Increasing = -0.5 |
+| Crowding penalty | 0–2.0 | Penalises volatile programs with sharp drops |
+
+### Crowding Penalty
+
+```
+crowding_penalty = min((volatility_index × 3.0) + (sharp_drop × 5.0), 2.0)
+```
+
+| Risk Level | Penalty Range | Meaning |
+|---|---|---|
+| Low | < 0.3 | Stable, safe to recommend |
+| Moderate | 0.3 – 1.0 | Some volatility, monitor closely |
+| High | ≥ 1.0 | Likely applicant surge, avoid recommending |
 
 ---
 
