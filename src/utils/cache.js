@@ -5,7 +5,13 @@ const path = require('path');
 const CACHE_DIR = path.join(__dirname, '../../data/cache');
 const TTL_HOURS = parseInt(process.env.CACHE_TTL_HOURS || '24', 10);
 
-if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
+let CACHE_WRITABLE = true;
+try {
+  if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
+} catch {
+  // Read-only filesystem (e.g. Vercel serverless) — cache disabled
+  CACHE_WRITABLE = false;
+}
 
 function cacheFile(universityId) {
   return path.join(CACHE_DIR, `${universityId}.json`);
@@ -32,15 +38,21 @@ function getCache(universityId) {
  * Persists data to cache with current timestamp.
  */
 function setCache(universityId, data) {
-  const payload = { ...data, scraped_at: new Date().toISOString() };
-  fs.writeFileSync(cacheFile(universityId), JSON.stringify(payload, null, 2), 'utf8');
-  return payload;
+  if (!CACHE_WRITABLE) return data;
+  try {
+    const payload = { ...data, scraped_at: new Date().toISOString() };
+    fs.writeFileSync(cacheFile(universityId), JSON.stringify(payload, null, 2), 'utf8');
+    return payload;
+  } catch {
+    return data;
+  }
 }
 
 /**
  * Deletes the cache file for a university.
  */
 function clearCache(universityId) {
+  if (!CACHE_WRITABLE) return;
   const file = cacheFile(universityId);
   if (fs.existsSync(file)) fs.unlinkSync(file);
 }

@@ -129,9 +129,11 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🟣 Uni Advisor running at http://localhost:${PORT}`);
-  console.log(`   API: /api/universities | /api/admissions/:id | /api/archives/:id | /api/health\n`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n🟣 Uni Advisor running at http://localhost:${PORT}`);
+    console.log(`   API: /api/universities | /api/admissions/:id | /api/archives/:id | /api/health\n`);
+  });
+}
 
 module.exports = app;
