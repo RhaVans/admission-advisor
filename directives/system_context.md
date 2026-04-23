@@ -309,6 +309,8 @@ The server auto-loads fallback data on first request if scraping fails. No exter
 
 5. **Port 3000** — Shared with other local services. The `bridge_connector.bat` script in the parent directory (`J:\PROJECT ANALYST\`) runs `taskkill /f /im node.exe` which kills this server. If the server dies unexpectedly, check if bridge_connector was run.
 
+6. **Cloudflare Tunnel is OFF-LIMITS** — The `cloudflared` quick tunnel (`*.trycloudflare.com` — URL changes on every restart) is **exclusively reserved** for the Phone Connect interface (`J:\PROJECT GLOBAL PHONE CHAT`). **NEVER** route any web app (including this one) through that tunnel. Do not run web apps on the port that `cloudflared` is tunneling. If you need to expose a web app publicly, use a separate tunnel or a different port.
+
 ---
 
 ## GitHub

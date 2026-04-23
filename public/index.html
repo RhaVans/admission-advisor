@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Admission Advisor — Jalur Mandiri Analysis</title>
   <meta name="description" content="Analytical tool for Indonesian university Jalur Mandiri admissions. Identifies Sarjana programs with highest acceptance probability at minimum passing scores.">
 
@@ -49,7 +49,7 @@
     ::-webkit-scrollbar-thumb { background: var(--text-faint); border-radius: 3px; }
 
     /* ── Layout ──────────────────────────────────────── */
-    .shell { max-width: 1360px; margin: 0 auto; padding: 2rem 2.5rem 4rem; }
+    .shell { max-width: 1360px; margin: 0 auto; padding: 2rem 2.5rem 4rem; -webkit-tap-highlight-color: transparent; }
 
     .rule { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     .rule--accent { border-color: var(--accent); opacity: 0.4; }
@@ -297,7 +297,7 @@
     .chart-canvas { height: 360px; position: relative; }
 
     /* ── Table ────────────────────────────────────────── */
-    .table-wrap { overflow-x: auto; border: 1px solid var(--border); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); -webkit-overflow-scrolling: touch; position: relative; }
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
     thead { position: sticky; top: 0; z-index: 2; }
     th {
@@ -409,6 +409,106 @@
     }
 
     .hidden { display: none !important; }
+
+    /* ── Mobile Responsive ────────────────────────────── */
+    @media (max-width: 768px) {
+      .shell { padding: 1.25rem 1rem 3rem; }
+
+      .t-headline { font-size: 1.75rem; }
+      .t-section { font-size: 1.15rem; margin-bottom: 1rem; }
+      .header__sub { font-size: 9px; letter-spacing: 0.06em; }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      .header__status {
+        text-align: left;
+        font-size: 10px;
+      }
+
+      .selector__item { padding: 0.9rem 0.5rem; }
+      .selector__id { font-size: 15px; }
+      .selector__name { font-size: 10px; }
+
+      .source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      .source-bar__left {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .rec-card { padding: 1.25rem; }
+      .rec-card__program { font-size: 1.2rem; max-width: 75%; }
+      .rec-card__rate { font-size: 2.25rem; }
+      .rec-card__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .rec-card__metric-val { font-size: 13px; }
+      .rec-card__metric-label { font-size: 8px; }
+      .rec-card__insight { font-size: 11px; }
+      .rec-card__warning { font-size: 9px; }
+
+      .stat-cell { padding: 1rem 0.75rem; }
+      .stat-cell__val { font-size: 1.25rem; }
+      .stat-cell__label { font-size: 8px; letter-spacing: 0.08em; }
+
+      .grid-5 { grid-template-columns: repeat(3, 1fr); }
+
+      .chart-wrap { padding: 1rem; }
+      .chart-canvas { height: 260px; }
+
+      .table-wrap {
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+      }
+      .table-wrap::after {
+        content: '\2192 Scroll';
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-faint);
+        pointer-events: none;
+        opacity: 0.6;
+      }
+      th { padding: 0.5rem 0.6rem; font-size: 8px; }
+      td { padding: 0.4rem 0.6rem; font-size: 11px; }
+
+      .archives__sources { gap: 0.5rem; }
+      .src-card { padding: 0.75rem; min-width: 200px; }
+      .footer { font-size: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .shell { padding: 1rem 0.75rem 2.5rem; }
+      .t-headline { font-size: 1.5rem; }
+
+      .selector { grid-template-columns: repeat(2, 1fr); }
+      .selector__item:last-child {
+        grid-column: span 2;
+      }
+
+      .rec-grid { gap: 1rem; }
+      .rec-card__rate { font-size: 2rem; }
+      .rec-card__rank { width: 24px; height: 24px; font-size: 10px; top: 1rem; right: 1rem; }
+
+      .grid-5 { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell__val { font-size: 1.1rem; }
+
+      .chart-canvas { height: 220px; }
+
+      .btn { padding: 0.5rem 1rem; font-size: 9px; }
+    }
 
     /* ── Footer ──────────────────────────────────────── */
     .footer {
