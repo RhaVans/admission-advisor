@@ -22,3 +22,5 @@ playwright-report/
 *.log
 gen.py
 generate_data.py
+
+.vercel
