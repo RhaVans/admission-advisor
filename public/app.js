@@ -103,33 +103,41 @@ function hideBanner() { document.getElementById('error-banner').classList.add('h
 
 // ── Selector Renderer ────────────────────────────────────────────
 function renderSelector(unis) {
-  const s1 = unis.filter(u => u.type !== 'D4');
-  const d4 = unis.filter(u => u.type === 'D4');
   const container = document.getElementById('university-selector');
 
-  const renderGroup = (title, items, badgeClass) => {
-    const cards = items.map(u =>
-      `<div class="selector__card" data-id="${u.id}" onclick="pick('${u.id}')">
-        <span class="selector__id">${u.id.replace('_', ' ').toUpperCase()}</span>
-        <span class="selector__name">${u.name}</span>
-        ${badgeClass ? `<span class="type-badge ${badgeClass}">${u.type}</span>` : ''}
-      </div>`
-    ).join('');
-    return `<div class="selector__group">
-      <div class="selector__group-title t-body" style="font-size: 0.75rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">${title}</div>
-      <div class="selector__grid">${cards}</div>
-    </div>`;
-  };
+  const html = unis.map(u => `
+    <div class="selector__card" onclick="pick('${u.id}')" id="sel-${u.id}">
+      <div class="selector__title">${u.short_name}</div>
+      <div class="selector__sub">${u.exam_type}</div>
+    </div>
+  `).join('');
+  container.innerHTML = html;
 
-  container.innerHTML = renderGroup('Universitas (S1)', s1, '') + renderGroup('Politeknik (D4)', d4, 'type-badge--d4');
+  const mobileHtml = unis.map(u => `
+    <button class="mobile-uni-card" onclick="pick('${u.id}'); toggleMobileDrawer();" id="msel-${u.id}">
+      <div class="mobile-uni-card__title">${u.short_name}</div>
+      <div class="mobile-uni-card__sub">${u.full_name} &middot; ${u.exam_type}</div>
+    </button>
+  `).join('');
+  const mobileSel = document.getElementById('mobile-university-selector');
+  if (mobileSel) mobileSel.innerHTML = mobileHtml;
 }
 
 function pick(id) {
   if (S.loading) return;
   S.uni = id;
-  document.querySelectorAll('.selector__card').forEach(el =>
-    el.classList.toggle('is-active', el.dataset.id === id)
-  );
+  document.querySelectorAll('.selector__card').forEach(el => el.classList.remove('active'));
+  document.getElementById(`sel-${id}`).classList.add('active');
+
+  // Mobile updates
+  document.querySelectorAll('.mobile-uni-card').forEach(el => el.classList.remove('active'));
+  const mSel = document.getElementById(`msel-${id}`);
+  if (mSel) mSel.classList.add('active');
+  const u = S.meta.find(x => x.id === id);
+  if (u) {
+    const bottomPill = document.getElementById('mobile-bottom-pill');
+    if (bottomPill) bottomPill.textContent = u.short_name;
+  }
   fetchData(id);
 }
 
@@ -148,7 +156,7 @@ function render() {
   // (Source bar removed from design spec, but we could add it back if needed. Skipping for now to match formal layout)
   // (Uni Info Bar removed from design spec, skipping)
   renderRecs();
-  renderComparativeSummary();
+  // renderComparativeSummary(); (Removed to match strict clean layout)
   // renderStats(); (Removed to match strict clean layout)
   renderCharts();
   renderTable();
@@ -221,85 +229,18 @@ function renderRecs() {
             <div class="rec-metric__label">Ease Score</div>
             <div class="rec-metric__val t-primary">${(m.ease_score || 0).toFixed(1)}</div>
           </div>
-          <div class="rec-metric">
-            <div class="rec-metric__label">Crowding</div>
-            <div class="rec-metric__val" style="color:${crowdColor(m.crowding_risk)}">${crowdLabel(m.crowding_risk)}</div>
-          </div>
-        </div>
-
-        <!-- Competition Profile -->
-        <div class="comp-profile">
-          <div class="comp-profile__title" style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Competition Profile</div>
-          <span class="intensity-badge intensity-badge--${cp.competition_intensity || 'low'}">${(cp.competition_intensity || 'low').replace('_',' ').toUpperCase()}</span>
-          <div class="comp-profile__row"><span>Ratio</span><span>${m.competition_ratio || '—'}:1</span></div>
-          ${cp.avg_competitor_utbk ? `<div class="comp-profile__row"><span>Avg Competitor UTBK</span><span>${cp.avg_competitor_utbk}</span></div>` : ''}
-          ${cp.local_dominance ? `<div class="comp-profile__row"><span>Local Dominance</span><span>${cp.local_dominance}</span></div>` : ''}
-          <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.3rem">${cp.intensity_rationale || ''}</div>
-        </div>
-
-        <!-- Rapor & UTBK -->
-        ${(ru.avg_rapor_accepted || ru.avg_utbk_accepted) ? `
-        <div class="comp-profile">
-          <div class="comp-profile__title" style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Rapor & UTBK Profile</div>
-          ${ru.avg_rapor_accepted ? `<div class="comp-profile__row"><span>Avg Rapor (Accepted)</span><span>${ru.avg_rapor_accepted}</span></div>` : ''}
-          ${ru.avg_utbk_accepted ? `<div class="comp-profile__row"><span>Avg UTBK (Accepted)</span><span>${ru.avg_utbk_accepted}</span></div>` : ''}
-          ${ru.rapor_note ? `<div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.2rem">${ru.rapor_note}</div>` : ''}
-          ${ru.utbk_note ? `<div style="font-size:0.75rem;color:var(--text-secondary)">${ru.utbk_note}</div>` : ''}
-          ${ru.data_caveat ? `<div style="font-size:0.7rem;color:var(--accent);margin-top:0.2rem">⚠ ${ru.data_caveat}</div>` : ''}
-        </div>` : ''}
-
-        <!-- Admission Pathways -->
-        ${pw.length ? `
-        <div class="pathways">
-          <div class="pathways__header" onclick="togglePathway('${pwId}')" style="display:flex; justify-content:space-between; cursor:pointer; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">
-            <span>Admission Pathways (${pw.length})</span>
-            <span class="archives__arrow" id="${pwId}-arrow">▼</span>
-          </div>
-          <div class="pathways__body" id="${pwId}" style="display:none; flex-direction:column; gap:0.5rem;">
-            ${pw.map(p => `
-              <div class="pathway-row" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
-                <div class="pathway-row__name" style="font-weight:600;">${p.name} <span style="color:var(--text-secondary); font-weight:normal;">(${p.type})</span></div>
-                <div class="pathway-row__detail">Fee: ${p.registration_fee_idr ? formatIDR(p.registration_fee_idr) : 'Free / Not listed'}</div>
-                <div class="pathway-row__detail">UKT: ${p.ukt_range || '—'}</div>
-                <div class="pathway-row__detail">${p.requirements_summary}</div>
-                ${p.open_period ? `<div class="pathway-row__detail">Period: ${p.open_period}</div>` : ''}
-                ${p.notes ? `<div class="pathway-row__detail" style="color:var(--text-secondary)">${p.notes}</div>` : ''}
-              </div>
-            `).join('')}
-          </div>
-        </div>` : ''}
-
-        <!-- Career Prospects -->
-        <div class="career-panel" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
-          <div class="career-panel__title" style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem;">Career Prospects</div>
-          <div class="career-panel__roles" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom: 0.5rem;">
-            ${(ca.top_roles || []).map(r => `<span class="role-tag" style="font-size:0.7rem; padding:0.2rem 0.5rem; border:1px solid var(--border); border-radius:4px;">${r}</span>`).join('')}
-          </div>
-          ${ca.avg_starting_salary_idr ? `<div class="career-panel__salary" style="font-weight:600; color:var(--gold); margin-bottom:0.2rem;">${formatIDR(ca.avg_starting_salary_idr)} avg starting</div>` : ''}
-          ${ca.salary_range ? `<div style="font-size:0.75rem;color:var(--text-secondary);margin-bottom:0.3rem">${ca.salary_range}</div>` : ''}
-          ${ca.job_market_demand ? `<div class="career-panel__demand" style="font-size:0.8rem; margin-bottom:0.2rem;">Demand: <span class="demand-badge demand-badge--${ca.job_market_demand}" style="font-weight:600; padding:0.1rem 0.3rem; border:1px solid currentColor; border-radius:2px;">${ca.job_market_demand.toUpperCase()}</span></div>` : ''}
-          ${ca.demand_rationale ? `<div class="career-panel__outlook" style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:0.2rem;">${ca.demand_rationale}</div>` : ''}
-          ${ca.growth_outlook ? `<div class="career-panel__outlook" style="font-size:0.8rem; margin-top:0.3rem;color:var(--gold)">${ca.growth_outlook}</div>` : ''}
-          ${ca.data_caveat ? `<div style="font-size:0.7rem;color:var(--accent);margin-top:0.2rem">⚠ ${ca.data_caveat}</div>` : ''}
         </div>
 
         <!-- Insight -->
-        <div class="insight-block" style="margin-top: 1rem; padding: 1rem; background: var(--bg-muted); border-left: 3px solid var(--gold); font-size: 0.85rem;">
-          <div class="insight-block__headline" style="font-weight:600; margin-bottom:0.5rem;">${ins.headline || 'Strategic Overview'}</div>
-          ${ins.acceptance_context ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.acceptance_context}</div>` : ''}
-          ${ins.score_context ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.score_context}</div>` : ''}
-          ${ins.rapor_utbk_context ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.rapor_utbk_context}</div>` : ''}
-          ${ins.trend_signal ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.trend_signal}</div>` : ''}
-          ${ins.risk_assessment ? `<div class="insight-block__risk" style="color:var(--accent); margin-bottom:0.3rem;">${ins.risk_assessment}</div>` : ''}
-          ${ins.strategic_note ? `<div class="insight-block__strategic" style="font-style:italic; font-weight:600; margin-top:0.5rem;">${ins.strategic_note}</div>` : ''}
+        <div class="rec-insight">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--primary);">${ins.headline || 'Strategic Overview'}</div>
+          <p style="margin-bottom: 0.5rem;">${ins.acceptance_context || ''} ${ins.score_context || ''}</p>
+          <p style="font-style: italic; color: var(--text-secondary);">${ins.strategic_note || ''}</p>
         </div>
 
         <!-- Sources -->
-        <div class="rec-sources" style="margin-top: 1rem; font-size: 0.7rem; color: var(--text-muted); display:flex; align-items:center; gap:0.5rem;">
-          <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background: ${dq.confidence === 'high' ? 'var(--success)' : dq.confidence === 'medium' ? 'var(--warning)' : 'var(--danger)'};"></span>
-          <span>${(dq.confidence || 'medium').toUpperCase()} confidence</span>
-          <span>&middot; Sources: [${(dq.source_ids || []).join(', ')}]</span>
-          ${dq.caveat ? `<span style="color:var(--accent)">&middot; ${dq.caveat}</span>` : ''}
+        <div class="rec-sources">
+          ${(dq.source_ids || []).map(sid => `<span class="source-chip">${sid}</span>`).join('')}
         </div>
 
         ${m.crowding_risk === 'high' ? '<div class="rec-card__warning" style="background:#FEE2E2; color:#991B1B; border:1px solid #991B1B; padding:0.5rem; font-size:var(--text-xs); margin-top:1rem;">This program\'s recent score drop may attract significantly more applicants this cycle. Proceed with caution.</div>' : ''}
@@ -374,84 +315,35 @@ function renderStats() {
   runCountUp();
 }
 
-function togglePathway(id) {
-  const el = document.getElementById(id);
-  const arrow = document.getElementById(`${id}-arrow`);
-  if (el.style.display === 'none') {
-    el.style.display = 'flex';
-    arrow.style.transform = 'rotate(180deg)';
-  } else {
-    el.style.display = 'none';
-    arrow.style.transform = 'rotate(0deg)';
-  }
-}
-
-// ── Comparative Summary ──────────────────────────────────────────
-function renderComparativeSummary() {
-  const el = document.getElementById('comp-summary');
-  if (!el) return;
-  const cs = S.data.analysis ? S.data.analysis.comparative_summary : null;
-  if (!cs) { el.classList.add('hidden'); return; }
-  el.classList.remove('hidden');
-  el.innerHTML = `
-    <div style="border: 1px solid var(--gold); padding: 1.5rem; border-radius: 4px; background: var(--bg-card); margin-top: 2rem;">
-      <div style="font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--gold); margin-bottom: 1.5rem; text-transform: uppercase;">Comparative Summary — Rank 1 vs Rank 2</div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
-        <div>
-          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Head to Head</div>
-          <div style="font-size: 0.9rem; color: var(--text-primary);">${cs.vs_each_other || ''}</div>
-        </div>
-        <div>
-          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Key Tradeoff</div>
-          <div style="font-size: 0.9rem; color: var(--text-primary);">${cs.key_tradeoff || ''}</div>
-        </div>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div>
-          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Safer Pick</div>
-          <div style="font-size: 0.9rem; color: var(--text-primary);">
-            <span style="display: inline-block; background: var(--gold); color: #fff; padding: 0.2rem 0.5rem; border-radius: 2px; font-weight: 600; margin-right: 0.5rem;">
-              ${cs.safer_pick === 'rank_1' ? 'RANK 1' : cs.safer_pick === 'rank_2' ? 'RANK 2' : 'TIED'}
-            </span>
-            <span style="color: var(--text-secondary); font-size: 0.85rem;">${cs.safer_pick_reason || ''}</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Career Comparison</div>
-          <div style="font-size: 0.9rem; color: var(--text-primary);">${cs.career_comparison || ''}</div>
-        </div>
-      </div>
-      
-      ${cs.cost_comparison ? `<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border);">${cs.cost_comparison}</div>` : ''}
-    </div>
-  `;
-}
-
 // ── Charts ───────────────────────────────────────────────────────
 function renderCharts() {
   const { programs, analysis } = S.data;
   const recs = analysis ? analysis.recommendations : [];
   const recIds = recs.map(r => r.program_id);
 
-  const isDark = document.body.classList.contains('dark-theme');
-  const textColor = isDark ? '#94A3B8' : '#4A4A6A';
-  const gridColor = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(214, 207, 196, 0.4)';
-  const ttipBg = isDark ? '#151F32' : '#FFFFFF';
-  const ttipTitle = isDark ? '#F8FAFC' : '#1B3A6B';
-  const ttipBody = isDark ? '#94A3B8' : '#4A4A6A';
-
-  Chart.defaults.color = textColor;
+  Chart.defaults.color = '#4A4A6A'; // text-secondary
   Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.font.size = 11;
 
   const ttip = {
-    backgroundColor: ttipBg, titleColor: ttipTitle, bodyColor: ttipBody,
+    backgroundColor: '#FFFFFF', titleColor: '#1B3A6B', bodyColor: '#4A4A6A',
     borderColor: '#B8960C', borderWidth: 1, padding: 10, cornerRadius: 2,
     titleFont: { family: "'Cormorant Garamond', serif", size: 14, weight: 'bold' }
   };
-  const grid = { color: gridColor, borderDash: [4, 4] };
+
+  const customTooltip = function(context) {
+    if (!isMobile) return;
+    const tooltipModel = context.tooltip;
+    if (tooltipModel.opacity === 0) return;
+    
+    const title = tooltipModel.title || [];
+    const body = tooltipModel.body ? tooltipModel.body.map(b => b.lines).join('<br>') : '';
+    const html = `<div style="font-weight:600; margin-bottom:0.5rem; color:var(--primary); font-family:var(--font-display); font-size:1.1rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem;">${title}</div><div style="font-size:0.9rem;">${body}</div>`;
+    openChartTooltip(html);
+  };
+
+  const tooltipPlugin = isMobile ? { enabled: false, external: customTooltip } : { ...ttip };
+  const grid = { color: 'rgba(214, 207, 196, 0.4)', borderDash: [4, 4] }; // var(--border) dashed
 
   // Chart A: Acceptance rates (top 10)
   const byRate = [...programs].sort((a, b) => b.acceptance_rate - a.acceptance_rate).slice(0, 10);
@@ -551,7 +443,7 @@ function renderCharts() {
       animation: { duration: 800 },
       plugins: {
         legend: { display: false },
-        tooltip: {
+        tooltip: isMobile ? tooltipPlugin : {
           ...ttip,
           callbacks: {
             title: ctx => ctx[0]?.raw?.program || '',
@@ -567,8 +459,8 @@ function renderCharts() {
         },
       },
       scales: {
-        x: { title: { display: true, text: 'Volatility Index', color: textColor, font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
-        y: { title: { display: true, text: 'Acceptance Rate (%)', color: textColor, font: { size: 10 } }, grid, min: 0 }
+        x: { title: { display: true, text: 'Volatility Index', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
+        y: { title: { display: true, text: 'Acceptance Rate (%)', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0 }
       }
     },
     plugins: [{
@@ -578,7 +470,7 @@ function renderCharts() {
         const midX = (left + right) / 2, midY = (top + bottom) / 2;
         ctx.save();
         ctx.font = "600 8px 'Inter', sans-serif";
-        ctx.globalAlpha = 0.4; ctx.fillStyle = textColor; ctx.textAlign = 'center';
+        ctx.globalAlpha = 0.4; ctx.fillStyle = '#4A4A6A'; ctx.textAlign = 'center';
         ctx.fillText('SAFE ZONE', (left + midX) / 2, top + 18);
         ctx.fillText('RISKY', (midX + right) / 2, top + 18);
         ctx.fillText('STABLE BUT COMPETITIVE', (left + midX) / 2, bottom - 8);
@@ -612,17 +504,45 @@ function renderTable() {
   document.getElementById('table-body').innerHTML = sorted.map((p, i) => {
     const top = recIds.includes(p.name || p.id);
     const pName = p.name || p.program || '';
+    
+    const EaseHtml = `
+      <div style="text-align: right; line-height: 1.2;">
+        <span style="font-weight: 600; font-family: var(--font-display); font-size: 1.125rem; color: var(--gold);">${parseFloat(p.ease_score || 0).toFixed(1)}</span>
+        <div style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase;">Ease</div>
+      </div>
+    `;
+
     return `<tr class="${top ? 'row-top' : ''}">
       <td style="color: var(--text-muted);">${i + 1}</td>
-      <td class="col-program">${pName}</td>
-      <td class="text-secondary" style="font-style: italic;">${p.faculty}</td>
-      <td>${p.capacity || p.quota_mandiri || ''}</td>
-      <td>${p.applicants || p.applicants_mandiri || ''}</td>
-      <td style="font-weight: 600; color: var(--primary);">${p.acceptance_rate}%</td>
-      <td>${p.avg_min_score || ''}</td>
-      <td class="${trendClass(p.score_trend || '')}">${trendArrow(p.score_trend || '')} ${trendText(p.score_trend || '')}</td>
-      <td><span class="crowding-badge crowding-badge--${p.crowding_risk || 'low'}">${crowdLabel(p.crowding_risk || 'low')}</span></td>
-      <td class="col-ease">${parseFloat(p.ease_score || 0).toFixed(1)}</td>
+      <td data-col="name" class="col-program">
+        <div>${pName}</div>
+        <div class="mobile-only">${EaseHtml}</div>
+      </td>
+      <td data-col="faculty" class="text-secondary" style="font-style: italic;">${p.faculty || '—'}</td>
+      <td data-col="capacity" class="desktop-only">${p.capacity || p.quota_mandiri || '—'}</td>
+      <td data-col="applicants" class="desktop-only">${p.applicants || p.applicants_mandiri || '—'}</td>
+      <td data-col="acceptance_rate" class="desktop-only" style="font-weight: 600; color: var(--primary);">${p.acceptance_rate || '—'}%</td>
+      
+      <td class="mobile-only">
+        <div class="mobile-metric-row">
+          <span>${p.capacity || p.quota_mandiri || '—'} Quota</span> &middot;
+          <span>${p.applicants || p.applicants_mandiri || '—'} Applicants</span> &middot;
+          <span>${p.acceptance_rate || '—'}% Rate</span>
+        </div>
+      </td>
+
+      <td data-col="avg_min_score" class="desktop-only">${p.avg_min_score || '—'}</td>
+      <td data-col="score_trend" class="desktop-only ${trendClass(p.score_trend || '')}">${trendArrow(p.score_trend || '')} ${trendText(p.score_trend || '')}</td>
+      
+      <td class="mobile-only">
+        <div class="mobile-bottom-row">
+          <span class="crowding-badge crowding-badge--${p.crowding_risk || 'low'}">${crowdLabel(p.crowding_risk || 'low')}</span>
+          <span class="${trendClass(p.score_trend || '')}">${trendArrow(p.score_trend || '')} ${trendText(p.score_trend || '')}</span>
+        </div>
+      </td>
+
+      <td data-col="crowding_risk" class="desktop-only"><span class="crowding-badge crowding-badge--${p.crowding_risk || 'low'}">${crowdLabel(p.crowding_risk || 'low')}</span></td>
+      <td data-col="ease_score" class="col-ease desktop-only">${parseFloat(p.ease_score || 0).toFixed(1)}</td>
     </tr>`;
   }).join('');
 }
@@ -683,16 +603,32 @@ function renderArchives() {
     const typeBadge = p.source_type || p.data_confidence || 'estimated';
     const pName = p.name || p.program || '';
     return `<tr>
-      <td style="color:var(--text);font-weight:500;">${pName}</td>
-      <td>${p.faculty}</td>
-      <td>${p.capacity || p.quota_mandiri || ''}</td>
-      <td>${p.applicants || p.applicants_mandiri || ''}</td>
-      <td>${p.acceptance_rate}%</td>
-      <td>${(p.scores && p.scores['2022']) || p.min_score_2022 || '—'}</td>
-      <td>${(p.scores && p.scores['2023']) || p.min_score_2023 || '—'}</td>
-      <td>${(p.scores && p.scores['2024']) || p.min_score_2024 || '—'}</td>
-      <td><span class="source-pip source-pip--${srcDot(typeBadge).split('--')[1]}" title="${typeBadge}"></span> ${typeBadge}</td>
-      <td><div class="cite-links">${refs}</div></td>
+      <td data-col="name">
+        <div style="font-weight:600; color:var(--primary);">${pName}</div>
+      </td>
+      <td data-col="faculty">${p.faculty || '—'}</td>
+      <td class="desktop-only">${p.capacity || p.quota_mandiri || '—'}</td>
+      <td class="desktop-only">${p.applicants || p.applicants_mandiri || '—'}</td>
+      <td class="desktop-only">${p.acceptance_rate || '—'}%</td>
+      
+      <td class="mobile-only">
+        <div class="mobile-metric-row">
+          <span>${p.capacity || p.quota_mandiri || '—'} Quota</span> &middot;
+          <span>${p.applicants || p.applicants_mandiri || '—'} Applicants</span> &middot;
+          <span>${p.acceptance_rate || '—'}% Rate</span>
+        </div>
+        <div class="mobile-metric-row" style="margin-top: 0.5rem; justify-content: space-between;">
+          <div style="font-family:var(--font-display); font-size:1rem;">2022: <span style="color:var(--gold);">${(p.scores && p.scores['2022']) || p.min_score_2022 || '—'}</span></div>
+          <div style="font-family:var(--font-display); font-size:1rem;">2023: <span style="color:var(--gold);">${(p.scores && p.scores['2023']) || p.min_score_2023 || '—'}</span></div>
+          <div style="font-family:var(--font-display); font-size:1rem;">2024: <span style="color:var(--gold);">${(p.scores && p.scores['2024']) || p.min_score_2024 || '—'}</span></div>
+        </div>
+      </td>
+
+      <td class="desktop-only">${(p.scores && p.scores['2022']) || p.min_score_2022 || '—'}</td>
+      <td class="desktop-only">${(p.scores && p.scores['2023']) || p.min_score_2023 || '—'}</td>
+      <td class="desktop-only">${(p.scores && p.scores['2024']) || p.min_score_2024 || '—'}</td>
+      <td class="desktop-only"><span class="source-pip source-pip--${srcDot(typeBadge).split('--')[1]}" title="${typeBadge}"></span> ${typeBadge}</td>
+      <td class="desktop-only"><div class="cite-links">${refs}</div></td>
     </tr>`;
   }).join('');
 }
@@ -722,62 +658,35 @@ document.getElementById('archives-toggle').addEventListener('click', () => {
   document.getElementById('archives-arrow').classList.toggle('is-open', S.archivesOpen);
 });
 
-// ── Entry Page ───────────────────────────────────────────────────
-let _booted = false;
-function enterApp() {
-  const entry = document.getElementById('entry-page');
-  const app = document.getElementById('main-app');
-  entry.classList.add('is-exiting');
-  setTimeout(() => {
-    entry.style.display = 'none';
-    app.style.display = '';
-    if (!_booted) {
-      _booted = true;
-      bootApp();
-    }
-  }, 600);
+// ── Mobile UI Logic ──────────────────────────────────────────────
+function toggleMobileDrawer() {
+  const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
+  if (drawer) drawer.classList.toggle('active');
+  if (backdrop) backdrop.classList.toggle('active');
 }
 
-async function bootApp() {
-  const unis = await fetchUnis();
-  renderSelector(unis);
-  if (unis.length) pick('ugm');
-}
-
-// ── Theme Toggle ─────────────────────────────────────────────────
-function toggleTheme() {
-  const isDark = document.body.classList.toggle('dark-theme');
-  localStorage.setItem('aria_theme', isDark ? 'dark' : 'light');
-  
-  // Update icon
-  const icon = document.getElementById('theme-icon');
-  if (isDark) {
-    icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-  } else {
-    icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+function openChartTooltip(html) {
+  const content = document.getElementById('chart-tooltip-content');
+  const sheet = document.getElementById('chart-tooltip-sheet');
+  const backdrop = document.getElementById('chart-tooltip-backdrop');
+  if (content && sheet && backdrop) {
+    content.innerHTML = html;
+    sheet.classList.add('active');
+    backdrop.classList.add('active');
   }
-  
-  // Re-render charts to pick up new colors
-  if (S.data) renderCharts();
 }
 
-function initTheme() {
-  const saved = localStorage.getItem('aria_theme');
-  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.body.classList.add('dark-theme');
-    document.getElementById('theme-icon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-  }
+function closeChartTooltip() {
+  const sheet = document.getElementById('chart-tooltip-sheet');
+  const backdrop = document.getElementById('chart-tooltip-backdrop');
+  if (sheet) sheet.classList.remove('active');
+  if (backdrop) backdrop.classList.remove('active');
 }
 
 // ── Boot ─────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  // Entry page stat counter animation
-  ['e-unis','e-progs','e-paths'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const end = parseInt(el.textContent);
-    if (isNaN(end)) return;
-    animateNum(el, end, 1200);
-  });
+document.addEventListener('DOMContentLoaded', async () => {
+  const unis = await fetchUnis();
+  renderSelector(unis);
+  if (unis.length) pick('ugm');
 });
