@@ -1,0 +1,696 @@
+{
+  "university_id": "polmak",
+  "university_name": "Politeknik Negeri Makassar",
+  "university_type": "D4",
+  "exam_name": "SM Polimak",
+  "score_range": "0-1000",
+  "year": "2024",
+  "programs": [
+    {
+      "name": "Teknik Mesin",
+      "faculty": "Jurusan Teknik Mesin",
+      "program_type": "D4",
+      "capacity": 35,
+      "applicants": 320,
+      "acceptance_rate": 10.94,
+      "avg_min_score": 455,
+      "scores": {
+        "2022": 458,
+        "2023": 455,
+        "2024": 452
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Mechanical Technician",
+          "Manufacturing Supervisor",
+          "Maintenance Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 75,
+        "out_of_province_pct": 25,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 435.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.84,
+      "volatility_index": 0.0054,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0162,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Elektro",
+      "faculty": "Jurusan Teknik Elektro",
+      "program_type": "D4",
+      "capacity": 32,
+      "applicants": 290,
+      "acceptance_rate": 11.03,
+      "avg_min_score": 450,
+      "scores": {
+        "2022": 452,
+        "2023": 450,
+        "2024": 448
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Electrical Technician",
+          "Power Systems Technician",
+          "PLC Programmer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 78,
+        "out_of_province_pct": 22,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 432.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.5,
+      "volatility_index": 0.0036,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0108,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Sipil",
+      "faculty": "Jurusan Teknik Sipil",
+      "program_type": "D4",
+      "capacity": 35,
+      "applicants": 310,
+      "acceptance_rate": 11.29,
+      "avg_min_score": 445,
+      "scores": {
+        "2022": 448,
+        "2023": 445,
+        "2024": 442
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Civil Engineering Technician",
+          "Construction Supervisor"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4200000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 75,
+        "out_of_province_pct": 25,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 428.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 16.25,
+      "volatility_index": 0.0055,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0165,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Kimia",
+      "faculty": "Jurusan Teknik Kimia",
+      "program_type": "D4",
+      "capacity": 28,
+      "applicants": 240,
+      "acceptance_rate": 11.67,
+      "avg_min_score": 435,
+      "scores": {
+        "2022": 438,
+        "2023": 435,
+        "2024": 432
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Chemical Process Technician",
+          "Lab Technician",
+          "Quality Control"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4000000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 78,
+        "out_of_province_pct": 22,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 420.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 16.68,
+      "volatility_index": 0.0056,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0168,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Administrasi Bisnis",
+      "faculty": "Jurusan Administrasi Niaga",
+      "program_type": "D4",
+      "capacity": 38,
+      "applicants": 380,
+      "acceptance_rate": 10.0,
+      "avg_min_score": 440,
+      "scores": {
+        "2022": 442,
+        "2023": 440,
+        "2024": 438
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Business Administrator",
+          "Office Manager",
+          "Administrative Coordinator"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4000000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 72,
+        "out_of_province_pct": 28,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 425.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.08,
+      "volatility_index": 0.0037,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0111,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Akuntansi",
+      "faculty": "Jurusan Akuntansi",
+      "program_type": "D4",
+      "capacity": 35,
+      "applicants": 340,
+      "acceptance_rate": 10.29,
+      "avg_min_score": 442,
+      "scores": {
+        "2022": 445,
+        "2023": 442,
+        "2024": 440
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Accountant",
+          "Bookkeeper",
+          "Tax Assistant"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4200000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 75,
+        "out_of_province_pct": 25,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 428.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.21,
+      "volatility_index": 0.0046,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0138,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Informatika",
+      "faculty": "Jurusan Teknik Elektro",
+      "program_type": "D4",
+      "capacity": 35,
+      "applicants": 420,
+      "acceptance_rate": 8.33,
+      "avg_min_score": 465,
+      "scores": {
+        "2022": 468,
+        "2023": 465,
+        "2024": 462
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Software Developer",
+          "IT Support Specialist",
+          "Web Developer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 68,
+        "out_of_province_pct": 32,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 448.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.08,
+      "volatility_index": 0.0053,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0159,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Multimedia dan Jaringan",
+      "faculty": "Jurusan Teknik Elektro",
+      "program_type": "D4",
+      "capacity": 30,
+      "applicants": 350,
+      "acceptance_rate": 8.57,
+      "avg_min_score": 455,
+      "scores": {
+        "2022": 458,
+        "2023": 455,
+        "2024": 452
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Network Engineer",
+          "Multimedia Developer",
+          "IT Infrastructure Specialist"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 70,
+        "out_of_province_pct": 30,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 438.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.42,
+      "volatility_index": 0.0054,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0162,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen Pemasaran",
+      "faculty": "Jurusan Administrasi Niaga",
+      "program_type": "D4",
+      "capacity": 32,
+      "applicants": 310,
+      "acceptance_rate": 10.32,
+      "avg_min_score": 432,
+      "scores": {
+        "2022": 435,
+        "2023": 432,
+        "2024": 430
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Marketing Coordinator",
+          "Sales Manager",
+          "Digital Marketer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4200000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 75,
+        "out_of_province_pct": 25,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 418.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.44,
+      "volatility_index": 0.0048,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0144,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Listrik",
+      "faculty": "Jurusan Teknik Elektro",
+      "program_type": "D4",
+      "capacity": 28,
+      "applicants": 220,
+      "acceptance_rate": 12.73,
+      "avg_min_score": 425,
+      "scores": {
+        "2022": 428,
+        "2023": 425,
+        "2024": 422
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SM Polimak",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 250000,
+          "ukt_min": 6500000,
+          "ukt_max": 6500000,
+          "ukt_note": "Flat SPP per semester under Kemdikbud",
+          "requirements": [
+            "Academic test",
+            "Portfolio/practical assessment",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://polimakers.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Electrical Installer",
+          "Power Distribution Technician"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4000000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 80,
+        "out_of_province_pct": 20,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 410.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 17.53,
+      "volatility_index": 0.0058,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0174,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    }
+  ],
+  "sources": [
+    {
+      "id": 0,
+      "title": "Daya Tampung Jalur Mandiri Politeknik Negeri Makassar 2024",
+      "publisher": "Kontan",
+      "url": "https://www.kontan.co.id/",
+      "type": "news-report",
+      "accessed": "2024-06-15",
+      "reliability": "medium"
+    },
+    {
+      "id": 1,
+      "title": "Kuota Mandiri Politeknik Negeri Makassar 2024",
+      "publisher": "UTBK-CAK",
+      "url": "https://utbkcak.com/",
+      "type": "education-platform",
+      "accessed": "2024-06-20",
+      "reliability": "medium"
+    },
+    {
+      "id": 2,
+      "title": "Passing Grade Estimasi Politeknik Negeri Makassar 2024",
+      "publisher": "Sindonews",
+      "url": "https://edukasi.sindonews.com/",
+      "type": "news-report",
+      "accessed": "2024-07-10",
+      "reliability": "medium"
+    },
+    {
+      "id": 3,
+      "title": "Portal PMB Politeknik Negeri Makassar",
+      "publisher": "Politeknik Negeri Makassar",
+      "url": "https://polimakers.ac.id",
+      "type": "official-portal",
+      "accessed": "2024-05-28",
+      "reliability": "high"
+    }
+  ]
+}

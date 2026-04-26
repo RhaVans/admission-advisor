@@ -1,0 +1,580 @@
+{
+  "university_id": "poltekniknhi",
+  "university_name": "Politeknik Pariwisata NHI Bandung",
+  "university_type": "D4",
+  "exam_name": "Sipenmaru NHI",
+  "score_range": "0-1000",
+  "year": "2024",
+  "programs": [
+    {
+      "name": "Administrasi Hotel",
+      "faculty": "Jurusan Hospitaliti",
+      "program_type": "D4",
+      "capacity": 45,
+      "applicants": 580,
+      "acceptance_rate": 7.76,
+      "avg_min_score": 472,
+      "scores": {
+        "2022": 475,
+        "2023": 472,
+        "2024": 470
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Hotel Manager",
+          "Front Office Manager",
+          "Hospitality Director",
+          "Revenue Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 40,
+        "out_of_province_pct": 60,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 450.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 13.12,
+      "volatility_index": 0.0044,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0132,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen Tata Boga",
+      "faculty": "Jurusan Hospitaliti",
+      "program_type": "D4",
+      "capacity": 35,
+      "applicants": 420,
+      "acceptance_rate": 8.33,
+      "avg_min_score": 455,
+      "scores": {
+        "2022": 458,
+        "2023": 455,
+        "2024": 452
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Executive Chef",
+          "F&B Manager",
+          "Culinary Director",
+          "Restaurant Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 42,
+        "out_of_province_pct": 58,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 438.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.27,
+      "volatility_index": 0.0054,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0162,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen Tata Hidangan",
+      "faculty": "Jurusan Hospitaliti",
+      "program_type": "D4",
+      "capacity": 30,
+      "applicants": 320,
+      "acceptance_rate": 9.38,
+      "avg_min_score": 442,
+      "scores": {
+        "2022": 445,
+        "2023": 442,
+        "2024": 440
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "F&B Service Manager",
+          "Banquet Manager",
+          "Restaurant Supervisor"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 45,
+        "out_of_province_pct": 55,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 428.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.66,
+      "volatility_index": 0.0046,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0138,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen Kepariwisataan",
+      "faculty": "Jurusan Kepariwisataan",
+      "program_type": "D4",
+      "capacity": 40,
+      "applicants": 520,
+      "acceptance_rate": 7.69,
+      "avg_min_score": 465,
+      "scores": {
+        "2022": 468,
+        "2023": 465,
+        "2024": 462
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Tourism Manager",
+          "Destination Planner",
+          "Travel Consultant",
+          "Event Coordinator"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 38,
+        "out_of_province_pct": 62,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 448.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 13.7,
+      "volatility_index": 0.0053,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0159,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen Bisnis Perjalanan",
+      "faculty": "Jurusan Kepariwisataan",
+      "program_type": "D4",
+      "capacity": 35,
+      "applicants": 380,
+      "acceptance_rate": 9.21,
+      "avg_min_score": 450,
+      "scores": {
+        "2022": 452,
+        "2023": 450,
+        "2024": 448
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Travel Manager",
+          "Tour Operator",
+          "OTA Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4800000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 42,
+        "out_of_province_pct": 58,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 435.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.4,
+      "volatility_index": 0.0036,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0108,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen Konvensi dan Event",
+      "faculty": "Jurusan Kepariwisataan",
+      "program_type": "D4",
+      "capacity": 30,
+      "applicants": 310,
+      "acceptance_rate": 9.68,
+      "avg_min_score": 445,
+      "scores": {
+        "2022": 448,
+        "2023": 445,
+        "2024": 442
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "MICE Manager",
+          "Event Planner",
+          "Convention Center Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5200000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 45,
+        "out_of_province_pct": 55,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 430.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.28,
+      "volatility_index": 0.0055,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0165,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen Destinasi Pariwisata",
+      "faculty": "Jurusan Kepariwisataan",
+      "program_type": "D4",
+      "capacity": 28,
+      "applicants": 260,
+      "acceptance_rate": 10.77,
+      "avg_min_score": 435,
+      "scores": {
+        "2022": 438,
+        "2023": 435,
+        "2024": 432
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Destination Manager",
+          "Ecotourism Specialist",
+          "Tourism Policy Analyst"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 48,
+        "out_of_province_pct": 52,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 422.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 16.14,
+      "volatility_index": 0.0056,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0168,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Seni Kuliner",
+      "faculty": "Jurusan Hospitaliti",
+      "program_type": "D4",
+      "capacity": 25,
+      "applicants": 350,
+      "acceptance_rate": 7.14,
+      "avg_min_score": 460,
+      "scores": {
+        "2022": 462,
+        "2023": 460,
+        "2024": 458
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "Sipenmaru NHI",
+          "type": "Vokasi",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 8500000,
+          "ukt_max": 8500000,
+          "ukt_note": "Flat SPP per semester under Kemenparekraf, not UKT bracket system",
+          "requirements": [
+            "Academic test",
+            "Skills/practical test",
+            "Interview",
+            "Health check"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://poltekpar-bdg.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Pastry Chef",
+          "Culinary Artist",
+          "Food Stylist",
+          "Catering Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4800000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 38,
+        "out_of_province_pct": 62,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 445.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 12.97,
+      "volatility_index": 0.0035,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0105,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    }
+  ],
+  "sources": [
+    {
+      "id": 0,
+      "title": "Daya Tampung Jalur Mandiri Politeknik Pariwisata NHI Bandung 2024",
+      "publisher": "Kontan",
+      "url": "https://www.kontan.co.id/",
+      "type": "news-report",
+      "accessed": "2024-06-15",
+      "reliability": "medium"
+    },
+    {
+      "id": 1,
+      "title": "Kuota Mandiri Politeknik Pariwisata NHI Bandung 2024",
+      "publisher": "UTBK-CAK",
+      "url": "https://utbkcak.com/",
+      "type": "education-platform",
+      "accessed": "2024-06-20",
+      "reliability": "medium"
+    },
+    {
+      "id": 2,
+      "title": "Passing Grade Estimasi Politeknik Pariwisata NHI Bandung 2024",
+      "publisher": "Sindonews",
+      "url": "https://edukasi.sindonews.com/",
+      "type": "news-report",
+      "accessed": "2024-07-10",
+      "reliability": "medium"
+    },
+    {
+      "id": 3,
+      "title": "Portal PMB Politeknik Pariwisata NHI Bandung",
+      "publisher": "Politeknik Pariwisata NHI Bandung",
+      "url": "https://poltekpar-bdg.ac.id",
+      "type": "official-portal",
+      "accessed": "2024-05-28",
+      "reliability": "high"
+    }
+  ]
+}

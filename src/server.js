@@ -18,11 +18,20 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 const UNIVERSITIES = [
-  { id: 'ugm',   name: 'Universitas Gadjah Mada',              logo: '🔵' },
-  { id: 'ui',    name: 'Universitas Indonesia',                 logo: '🟡' },
-  { id: 'itb',   name: 'Institut Teknologi Bandung',            logo: '🟢' },
-  { id: 'its',   name: 'Institut Teknologi Sepuluh Nopember',   logo: '🔴' },
-  { id: 'unpad', name: 'Universitas Padjadjaran',               logo: '🟣' },
+  { id: 'ugm',   name: 'Universitas Gadjah Mada',              type: 'S1', exam: 'UM UGM' },
+  { id: 'ui',    name: 'Universitas Indonesia',                 type: 'S1', exam: 'SIMAK UI' },
+  { id: 'itb',   name: 'Institut Teknologi Bandung',            type: 'S1', exam: 'USM ITB' },
+  { id: 'its',   name: 'Institut Teknologi Sepuluh Nopember',   type: 'S1', exam: 'SM ITS' },
+  { id: 'unpad', name: 'Universitas Padjadjaran',               type: 'S1', exam: 'SMUP Unpad' },
+  { id: 'ub',    name: 'Universitas Brawijaya',                 type: 'S1', exam: 'Selma UB' },
+  { id: 'upn_jogja', name: 'UPN Veteran Yogyakarta',            type: 'S1', exam: 'SMM UPN' },
+  { id: 'undip', name: 'Universitas Diponegoro',                type: 'S1', exam: 'UM Undip' },
+  { id: 'upi',   name: 'Universitas Pendidikan Indonesia',      type: 'S1', exam: 'SM UPI' },
+  { id: 'unair', name: 'Universitas Airlangga',                 type: 'S1', exam: 'Mandiri Unair' },
+  { id: 'unhas', name: 'Universitas Hasanuddin',                type: 'S1', exam: 'SM Unhas' },
+  { id: 'usu',   name: 'Universitas Sumatera Utara',            type: 'S1', exam: 'SMM USU' },
+  { id: 'poltekniknhi', name: 'Politeknik Pariwisata NHI Bandung', type: 'D4', exam: 'Sipenmaru NHI' },
+  { id: 'polmak', name: 'Politeknik Negeri Makassar',           type: 'D4', exam: 'SM Polimak' },
 ];
 const VALID_IDS = new Set(UNIVERSITIES.map(u => u.id));
 

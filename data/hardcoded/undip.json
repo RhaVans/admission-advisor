@@ -1,8 +1,8 @@
 {
-  "university_id": "ui",
-  "university_name": "Universitas Indonesia",
+  "university_id": "undip",
+  "university_name": "Universitas Diponegoro",
   "university_type": "S1",
-  "exam_name": "SIMAK UI",
+  "exam_name": "UM Undip",
   "score_range": "0-1000",
   "year": "2024",
   "programs": [
@@ -10,14 +10,14 @@
       "name": "Teknik Sipil",
       "faculty": "Fakultas Teknik",
       "program_type": "S1",
-      "capacity": 36,
-      "applicants": 1320,
-      "acceptance_rate": 2.73,
-      "avg_min_score": 672,
+      "capacity": 40,
+      "applicants": 1050,
+      "acceptance_rate": 3.81,
+      "avg_min_score": 625,
       "scores": {
-        "2022": 675,
-        "2023": 672,
-        "2024": 670
+        "2022": 628,
+        "2023": 625,
+        "2024": 622
       },
       "avg_rapor": null,
       "avg_utbk": null,
@@ -59,627 +59,40 @@
           "source_tier": "official-affiliated"
         },
         {
-          "name": "SIMAK UI",
+          "name": "UM Undip",
           "type": "Mandiri",
           "capacity": null,
-          "registration_fee": 500000,
+          "registration_fee": 300000,
           "ukt_min": 500000,
-          "ukt_max": 17500000,
+          "ukt_max": 13500000,
           "ukt_note": null,
           "requirements": [
-            "SIMAK UI exam score",
+            "UTBK score or UM Undip exam",
             "Max age 25"
           ],
           "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
+          "portal_url": "https://um.undip.ac.id",
           "source_tier": "third-party-affiliated"
         }
       ],
       "career_prospects": {
         "static": [
           "Civil Engineer",
-          "Structural Engineer",
           "Construction Manager"
         ],
         "ai_generated": null,
-        "avg_starting_salary_idr": 5500000,
+        "avg_starting_salary_idr": 5200000,
         "job_market_demand": "medium",
         "source_tier": "third-party"
       },
       "competition_breakdown": {
-        "local_applicants_pct": 30,
-        "out_of_province_pct": 70,
+        "local_applicants_pct": 60,
+        "out_of_province_pct": 40,
         "top_feeder_schools": null,
-        "avg_applicant_utbk": 585.0,
+        "avg_applicant_utbk": 555.0,
         "source_tier": "third-party"
       },
-      "ease_score": 7.58,
-      "volatility_index": 0.0031,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0093,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Teknik Mesin",
-      "faculty": "Fakultas Teknik",
-      "program_type": "S1",
-      "capacity": 34,
-      "applicants": 1180,
-      "acceptance_rate": 2.88,
-      "avg_min_score": 658,
-      "scores": {
-        "2022": 660,
-        "2023": 658,
-        "2024": 655
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Mechanical Engineer",
-          "Manufacturing Engineer"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 5800000,
-        "job_market_demand": "medium",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 32,
-        "out_of_province_pct": 68,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 580.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.8,
-      "volatility_index": 0.0031,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0093,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Teknik Elektro",
-      "faculty": "Fakultas Teknik",
-      "program_type": "S1",
-      "capacity": 38,
-      "applicants": 1540,
-      "acceptance_rate": 2.47,
-      "avg_min_score": 682,
-      "scores": {
-        "2022": 685,
-        "2023": 682,
-        "2024": 680
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Electrical Engineer",
-          "Telecom Engineer"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 6000000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 28,
-        "out_of_province_pct": 72,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 605.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.34,
-      "volatility_index": 0.003,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.009,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Ilmu Komputer",
-      "faculty": "Fakultas Ilmu Komputer",
-      "program_type": "S1",
-      "capacity": 50,
-      "applicants": 2200,
-      "acceptance_rate": 2.27,
-      "avg_min_score": 692,
-      "scores": {
-        "2022": 695,
-        "2023": 692,
-        "2024": 690
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Software Engineer",
-          "Data Scientist",
-          "ML Engineer",
-          "Product Manager"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 8500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 25,
-        "out_of_province_pct": 75,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 625.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.13,
-      "volatility_index": 0.003,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.009,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Sistem Informasi",
-      "faculty": "Fakultas Ilmu Komputer",
-      "program_type": "S1",
-      "capacity": 45,
-      "applicants": 1850,
-      "acceptance_rate": 2.43,
-      "avg_min_score": 670,
-      "scores": {
-        "2022": 672,
-        "2023": 670,
-        "2024": 668
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "IT Consultant",
-          "Business Analyst",
-          "Systems Analyst"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 7500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 28,
-        "out_of_province_pct": 72,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 600.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.42,
-      "volatility_index": 0.0024,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0072,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Pendidikan Dokter",
-      "faculty": "Fakultas Kedokteran",
-      "program_type": "S1",
-      "capacity": 84,
-      "applicants": 6800,
-      "acceptance_rate": 1.24,
-      "avg_min_score": 782,
-      "scores": {
-        "2022": 780,
-        "2023": 782,
-        "2024": 785
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Medical Doctor",
-          "Specialist Physician",
-          "Medical Researcher"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 8500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 20,
-        "out_of_province_pct": 80,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 740.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 5.85,
-      "volatility_index": 0.0026,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0078,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Ilmu Keperawatan",
-      "faculty": "Fakultas Ilmu Keperawatan",
-      "program_type": "S1",
-      "capacity": 42,
-      "applicants": 560,
-      "acceptance_rate": 7.5,
-      "avg_min_score": 522,
-      "scores": {
-        "2022": 525,
-        "2023": 522,
-        "2024": 520
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Nurse",
-          "Healthcare Manager"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 4500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 45,
-        "out_of_province_pct": 55,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 495.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 12.15,
+      "ease_score": 9.17,
       "volatility_index": 0.0039,
       "sharp_drop_pct": 0.0,
       "crowding_penalty": 0.0117,
@@ -691,1572 +104,12 @@
       "data_confidence": "medium"
     },
     {
-      "name": "Manajemen",
-      "faculty": "Fakultas Ekonomi dan Bisnis",
-      "program_type": "S1",
-      "capacity": 65,
-      "applicants": 3800,
-      "acceptance_rate": 1.71,
-      "avg_min_score": 722,
-      "scores": {
-        "2022": 725,
-        "2023": 722,
-        "2024": 720
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Management Consultant",
-          "Business Analyst",
-          "Financial Analyst"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 8000000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 25,
-        "out_of_province_pct": 75,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 650.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 6.56,
-      "volatility_index": 0.0028,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0084,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Akuntansi",
-      "faculty": "Fakultas Ekonomi dan Bisnis",
-      "program_type": "S1",
-      "capacity": 60,
-      "applicants": 3500,
-      "acceptance_rate": 1.71,
-      "avg_min_score": 718,
-      "scores": {
-        "2022": 720,
-        "2023": 718,
-        "2024": 715
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Accountant",
-          "Auditor",
-          "Tax Consultant"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 7500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 26,
-        "out_of_province_pct": 74,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 645.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 6.59,
-      "volatility_index": 0.0029,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0087,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Ilmu Ekonomi",
-      "faculty": "Fakultas Ekonomi dan Bisnis",
-      "program_type": "S1",
-      "capacity": 55,
-      "applicants": 2600,
-      "acceptance_rate": 2.12,
-      "avg_min_score": 702,
-      "scores": {
-        "2022": 705,
-        "2023": 702,
-        "2024": 700
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Economist",
-          "Policy Analyst",
-          "Banking Professional"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 7000000,
-        "job_market_demand": "medium",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 28,
-        "out_of_province_pct": 72,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 630.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 6.96,
-      "volatility_index": 0.0029,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0087,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Ilmu Hukum",
-      "faculty": "Fakultas Hukum",
-      "program_type": "S1",
-      "capacity": 75,
-      "applicants": 3000,
-      "acceptance_rate": 2.5,
-      "avg_min_score": 655,
-      "scores": {
-        "2022": 658,
-        "2023": 655,
-        "2024": 652
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Lawyer",
-          "Legal Counsel",
-          "Notary",
-          "Judge"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 6500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 30,
-        "out_of_province_pct": 70,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 590.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 8.1,
-      "volatility_index": 0.0037,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0111,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Psikologi",
-      "faculty": "Fakultas Psikologi",
-      "program_type": "S1",
-      "capacity": 55,
-      "applicants": 2300,
-      "acceptance_rate": 2.39,
-      "avg_min_score": 662,
-      "scores": {
-        "2022": 665,
-        "2023": 662,
-        "2024": 660
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Psychologist",
-          "HR Specialist",
-          "Counselor"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 6000000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 28,
-        "out_of_province_pct": 72,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 600.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.47,
-      "volatility_index": 0.0031,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0093,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Fisika",
-      "faculty": "Fakultas MIPA",
-      "program_type": "S1",
-      "capacity": 30,
-      "applicants": 320,
-      "acceptance_rate": 9.38,
-      "avg_min_score": 487,
-      "scores": {
-        "2022": 490,
-        "2023": 487,
-        "2024": 485
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Physicist",
-          "Research Scientist"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 5000000,
-        "job_market_demand": "low",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 45,
-        "out_of_province_pct": 55,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 475.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 13.83,
-      "volatility_index": 0.0042,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0126,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Kimia",
-      "faculty": "Fakultas MIPA",
-      "program_type": "S1",
-      "capacity": 28,
-      "applicants": 300,
-      "acceptance_rate": 9.33,
-      "avg_min_score": 482,
-      "scores": {
-        "2022": 485,
-        "2023": 482,
-        "2024": 480
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Chemist",
-          "Lab Analyst"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 4800000,
-        "job_market_demand": "low",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 48,
-        "out_of_province_pct": 52,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 470.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 13.88,
-      "volatility_index": 0.0043,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0129,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Matematika",
-      "faculty": "Fakultas MIPA",
-      "program_type": "S1",
-      "capacity": 35,
-      "applicants": 460,
-      "acceptance_rate": 7.61,
-      "avg_min_score": 507,
-      "scores": {
-        "2022": 510,
-        "2023": 507,
-        "2024": 505
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Actuary",
-          "Data Analyst",
-          "Quantitative Analyst"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 6500000,
-        "job_market_demand": "medium",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 42,
-        "out_of_province_pct": 58,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 490.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 12.44,
-      "volatility_index": 0.0041,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0123,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Statistika",
-      "faculty": "Fakultas MIPA",
-      "program_type": "S1",
-      "capacity": 38,
-      "applicants": 580,
-      "acceptance_rate": 6.55,
-      "avg_min_score": 542,
-      "scores": {
-        "2022": 545,
-        "2023": 542,
-        "2024": 540
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Statistician",
-          "Data Scientist"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 6500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 40,
-        "out_of_province_pct": 60,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 520.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 11.3,
-      "volatility_index": 0.0038,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0114,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Hubungan Internasional",
-      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
-      "program_type": "S1",
-      "capacity": 38,
-      "applicants": 1950,
-      "acceptance_rate": 1.95,
-      "avg_min_score": 698,
-      "scores": {
-        "2022": 700,
-        "2023": 698,
-        "2024": 695
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Diplomat",
-          "International Relations Analyst"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 6000000,
-        "job_market_demand": "medium",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 25,
-        "out_of_province_pct": 75,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 625.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 6.89,
-      "volatility_index": 0.0029,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0087,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Ilmu Komunikasi",
-      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
-      "program_type": "S1",
-      "capacity": 42,
-      "applicants": 2050,
-      "acceptance_rate": 2.05,
-      "avg_min_score": 688,
-      "scores": {
-        "2022": 690,
-        "2023": 688,
-        "2024": 685
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Public Relations Specialist",
-          "Journalist",
-          "Digital Marketer"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 5500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 27,
-        "out_of_province_pct": 73,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 615.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.03,
-      "volatility_index": 0.003,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.009,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Sosiologi",
-      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
-      "program_type": "S1",
-      "capacity": 32,
-      "applicants": 560,
-      "acceptance_rate": 5.71,
-      "avg_min_score": 540,
-      "scores": {
-        "2022": 542,
-        "2023": 540,
-        "2024": 538
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Social Researcher",
-          "Policy Analyst"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 4800000,
-        "job_market_demand": "low",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 40,
-        "out_of_province_pct": 60,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 510.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 10.82,
-      "volatility_index": 0.003,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.009,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Farmasi",
-      "faculty": "Fakultas Farmasi",
-      "program_type": "S1",
-      "capacity": 40,
-      "applicants": 1150,
-      "acceptance_rate": 3.48,
-      "avg_min_score": 632,
-      "scores": {
-        "2022": 635,
-        "2023": 632,
-        "2024": 630
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Pharmacist",
-          "Pharmaceutical Researcher"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 5500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 35,
-        "out_of_province_pct": 65,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 575.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 8.41,
-      "volatility_index": 0.0032,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0096,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Pendidikan Dokter Gigi",
-      "faculty": "Fakultas Kedokteran Gigi",
-      "program_type": "S1",
-      "capacity": 38,
-      "applicants": 1550,
-      "acceptance_rate": 2.45,
-      "avg_min_score": 712,
-      "scores": {
-        "2022": 715,
-        "2023": 712,
-        "2024": 710
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Dentist",
-          "Orthodontist"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 7500000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 28,
-        "out_of_province_pct": 72,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 645.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.08,
-      "volatility_index": 0.0029,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0087,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Teknik Kimia",
+      "name": "Teknik Mesin",
       "faculty": "Fakultas Teknik",
       "program_type": "S1",
-      "capacity": 32,
-      "applicants": 880,
-      "acceptance_rate": 3.64,
-      "avg_min_score": 638,
-      "scores": {
-        "2022": 640,
-        "2023": 638,
-        "2024": 635
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Chemical Engineer",
-          "Process Engineer"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 6200000,
-        "job_market_demand": "medium",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 32,
-        "out_of_province_pct": 68,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 570.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 8.44,
-      "volatility_index": 0.0032,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0096,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Teknik Industri",
-      "faculty": "Fakultas Teknik",
-      "program_type": "S1",
-      "capacity": 40,
-      "applicants": 1780,
-      "acceptance_rate": 2.25,
-      "avg_min_score": 690,
-      "scores": {
-        "2022": 692,
-        "2023": 690,
-        "2024": 688
-      },
-      "avg_rapor": null,
-      "avg_utbk": null,
-      "rapor_source_tier": null,
-      "utbk_source_tier": null,
-      "admission_pathways": [
-        {
-          "name": "SNBP",
-          "type": "SNBP",
-          "capacity": null,
-          "registration_fee": null,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket (8 groups)",
-          "requirements": [
-            "Top 25% of class ranking",
-            "School must be accredited A/Unggul",
-            "Rapor semester 1-5"
-          ],
-          "open_period": "Feb-Mar",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SNBT (UTBK)",
-          "type": "SNBT",
-          "capacity": null,
-          "registration_fee": 200000,
-          "ukt_min": 500000,
-          "ukt_max": 12500000,
-          "ukt_note": "Based on parents' income bracket",
-          "requirements": [
-            "UTBK score",
-            "Maximum age 25 at registration",
-            "Graduated within last 3 years"
-          ],
-          "open_period": "Mar-Jun",
-          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
-          "source_tier": "official-affiliated"
-        },
-        {
-          "name": "SIMAK UI",
-          "type": "Mandiri",
-          "capacity": null,
-          "registration_fee": 500000,
-          "ukt_min": 500000,
-          "ukt_max": 17500000,
-          "ukt_note": null,
-          "requirements": [
-            "SIMAK UI exam score",
-            "Max age 25"
-          ],
-          "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
-          "source_tier": "third-party-affiliated"
-        }
-      ],
-      "career_prospects": {
-        "static": [
-          "Industrial Engineer",
-          "Operations Manager"
-        ],
-        "ai_generated": null,
-        "avg_starting_salary_idr": 7000000,
-        "job_market_demand": "high",
-        "source_tier": "third-party"
-      },
-      "competition_breakdown": {
-        "local_applicants_pct": 28,
-        "out_of_province_pct": 72,
-        "top_feeder_schools": null,
-        "avg_applicant_utbk": 620.0,
-        "source_tier": "third-party"
-      },
-      "ease_score": 7.14,
-      "volatility_index": 0.0024,
-      "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0072,
-      "crowding_risk": "low",
-      "source_ref": [
-        0,
-        1
-      ],
-      "data_confidence": "medium"
-    },
-    {
-      "name": "Arsitektur",
-      "faculty": "Fakultas Teknik",
-      "program_type": "S1",
-      "capacity": 30,
-      "applicants": 920,
-      "acceptance_rate": 3.26,
+      "capacity": 38,
+      "applicants": 950,
+      "acceptance_rate": 4.0,
       "avg_min_score": 620,
       "scores": {
         "2022": 622,
@@ -2303,40 +156,40 @@
           "source_tier": "official-affiliated"
         },
         {
-          "name": "SIMAK UI",
+          "name": "UM Undip",
           "type": "Mandiri",
           "capacity": null,
-          "registration_fee": 500000,
+          "registration_fee": 300000,
           "ukt_min": 500000,
-          "ukt_max": 17500000,
+          "ukt_max": 13500000,
           "ukt_note": null,
           "requirements": [
-            "SIMAK UI exam score",
+            "UTBK score or UM Undip exam",
             "Max age 25"
           ],
           "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
+          "portal_url": "https://um.undip.ac.id",
           "source_tier": "third-party-affiliated"
         }
       ],
       "career_prospects": {
         "static": [
-          "Architect",
-          "Urban Designer"
+          "Mechanical Engineer",
+          "Manufacturing Engineer"
         ],
         "ai_generated": null,
-        "avg_starting_salary_idr": 5500000,
+        "avg_starting_salary_idr": 5200000,
         "job_market_demand": "medium",
         "source_tier": "third-party"
       },
       "competition_breakdown": {
-        "local_applicants_pct": 35,
-        "out_of_province_pct": 65,
+        "local_applicants_pct": 58,
+        "out_of_province_pct": 42,
         "top_feeder_schools": null,
-        "avg_applicant_utbk": 560.0,
+        "avg_applicant_utbk": 550.0,
         "source_tier": "third-party"
       },
-      "ease_score": 8.4,
+      "ease_score": 8.84,
       "volatility_index": 0.0026,
       "sharp_drop_pct": 0.0,
       "crowding_penalty": 0.0078,
@@ -2348,12 +201,1765 @@
       "data_confidence": "medium"
     },
     {
-      "name": "Biologi",
-      "faculty": "Fakultas MIPA",
+      "name": "Teknik Elektro",
+      "faculty": "Fakultas Teknik",
+      "program_type": "S1",
+      "capacity": 35,
+      "applicants": 880,
+      "acceptance_rate": 3.98,
+      "avg_min_score": 632,
+      "scores": {
+        "2022": 635,
+        "2023": 632,
+        "2024": 630
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Electrical Engineer",
+          "Power Systems Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 565.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.71,
+      "volatility_index": 0.0032,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0096,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Informatika",
+      "faculty": "Fakultas Teknik",
+      "program_type": "S1",
+      "capacity": 42,
+      "applicants": 1800,
+      "acceptance_rate": 2.33,
+      "avg_min_score": 650,
+      "scores": {
+        "2022": 652,
+        "2023": 650,
+        "2024": 648
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Software Engineer",
+          "Data Scientist",
+          "Web Developer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 7000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 45,
+        "out_of_province_pct": 55,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 585.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 7.54,
+      "volatility_index": 0.0025,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0075,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Kimia",
+      "faculty": "Fakultas Teknik",
+      "program_type": "S1",
+      "capacity": 35,
+      "applicants": 780,
+      "acceptance_rate": 4.49,
+      "avg_min_score": 610,
+      "scores": {
+        "2022": 612,
+        "2023": 610,
+        "2024": 608
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Chemical Engineer",
+          "Process Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 548.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 9.24,
+      "volatility_index": 0.0027,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0081,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Arsitektur",
+      "faculty": "Fakultas Teknik",
+      "program_type": "S1",
+      "capacity": 30,
+      "applicants": 620,
+      "acceptance_rate": 4.84,
+      "avg_min_score": 595,
+      "scores": {
+        "2022": 598,
+        "2023": 595,
+        "2024": 592
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Architect",
+          "Urban Designer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5200000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 540.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 10.11,
+      "volatility_index": 0.0041,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0123,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Perkapalan",
+      "faculty": "Fakultas Teknik",
+      "program_type": "S1",
+      "capacity": 32,
+      "applicants": 580,
+      "acceptance_rate": 5.52,
+      "avg_min_score": 565,
+      "scores": {
+        "2022": 568,
+        "2023": 565,
+        "2024": 562
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Naval Architect",
+          "Marine Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 58,
+        "out_of_province_pct": 42,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 530.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 10.88,
+      "volatility_index": 0.0043,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0129,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Pendidikan Dokter",
+      "faculty": "Fakultas Kedokteran",
+      "program_type": "S1",
+      "capacity": 60,
+      "applicants": 4800,
+      "acceptance_rate": 1.25,
+      "avg_min_score": 740,
+      "scores": {
+        "2022": 738,
+        "2023": 740,
+        "2024": 742
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Medical Doctor",
+          "Specialist Physician"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 7500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 50,
+        "out_of_province_pct": 50,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 680.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 6.15,
+      "volatility_index": 0.0022,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0066,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Kesehatan Masyarakat",
+      "faculty": "Fakultas Kesehatan Masyarakat",
+      "program_type": "S1",
+      "capacity": 45,
+      "applicants": 780,
+      "acceptance_rate": 5.77,
+      "avg_min_score": 542,
+      "scores": {
+        "2022": 545,
+        "2023": 542,
+        "2024": 540
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Public Health Officer",
+          "Epidemiologist",
+          "Health Policy Analyst"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4800000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 60,
+        "out_of_province_pct": 40,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 510.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 10.83,
+      "volatility_index": 0.0038,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0114,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Ilmu Kelautan",
+      "faculty": "Fakultas Perikanan dan Ilmu Kelautan",
+      "program_type": "S1",
+      "capacity": 30,
+      "applicants": 320,
+      "acceptance_rate": 9.38,
+      "avg_min_score": 475,
+      "scores": {
+        "2022": 478,
+        "2023": 475,
+        "2024": 472
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Marine Scientist",
+          "Ocean Researcher",
+          "Fisheries Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 65,
+        "out_of_province_pct": 35,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 458.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.53,
+      "volatility_index": 0.0052,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0156,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Perikanan",
+      "faculty": "Fakultas Perikanan dan Ilmu Kelautan",
       "program_type": "S1",
       "capacity": 28,
-      "applicants": 380,
-      "acceptance_rate": 7.37,
+      "applicants": 280,
+      "acceptance_rate": 10.0,
+      "avg_min_score": 462,
+      "scores": {
+        "2022": 465,
+        "2023": 462,
+        "2024": 460
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Fisheries Manager",
+          "Aquaculture Specialist"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4000000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 68,
+        "out_of_province_pct": 32,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 448.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.64,
+      "volatility_index": 0.0044,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0132,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Ilmu Hukum",
+      "faculty": "Fakultas Hukum",
+      "program_type": "S1",
+      "capacity": 75,
+      "applicants": 2200,
+      "acceptance_rate": 3.41,
+      "avg_min_score": 622,
+      "scores": {
+        "2022": 625,
+        "2023": 622,
+        "2024": 620
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Lawyer",
+          "Legal Counsel",
+          "Notary"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 558.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.47,
+      "volatility_index": 0.0033,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0099,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Manajemen",
+      "faculty": "Fakultas Ekonomika dan Bisnis",
+      "program_type": "S1",
+      "capacity": 60,
+      "applicants": 2600,
+      "acceptance_rate": 2.31,
+      "avg_min_score": 640,
+      "scores": {
+        "2022": 642,
+        "2023": 640,
+        "2024": 638
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Management Consultant",
+          "Business Analyst"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 6500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 48,
+        "out_of_province_pct": 52,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 575.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 7.63,
+      "volatility_index": 0.0026,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0078,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Akuntansi",
+      "faculty": "Fakultas Ekonomika dan Bisnis",
+      "program_type": "S1",
+      "capacity": 55,
+      "applicants": 2400,
+      "acceptance_rate": 2.29,
+      "avg_min_score": 635,
+      "scores": {
+        "2022": 638,
+        "2023": 635,
+        "2024": 632
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Accountant",
+          "Auditor",
+          "Tax Consultant"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 6000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 50,
+        "out_of_province_pct": 50,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 570.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.16,
+      "volatility_index": 0.0039,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0117,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Ilmu Komunikasi",
+      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
+      "program_type": "S1",
+      "capacity": 40,
+      "applicants": 1400,
+      "acceptance_rate": 2.86,
+      "avg_min_score": 620,
+      "scores": {
+        "2022": 622,
+        "2023": 620,
+        "2024": 618
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "PR Specialist",
+          "Journalist",
+          "Digital Marketer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 52,
+        "out_of_province_pct": 48,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 555.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.16,
+      "volatility_index": 0.0026,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0078,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Administrasi Publik",
+      "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
+      "program_type": "S1",
+      "capacity": 38,
+      "applicants": 680,
+      "acceptance_rate": 5.59,
+      "avg_min_score": 562,
+      "scores": {
+        "2022": 565,
+        "2023": 562,
+        "2024": 560
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Public Administrator",
+          "Government Official"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4800000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 58,
+        "out_of_province_pct": 42,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 525.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 10.46,
+      "volatility_index": 0.0037,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0111,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Psikologi",
+      "faculty": "Fakultas Psikologi",
+      "program_type": "S1",
+      "capacity": 40,
+      "applicants": 1200,
+      "acceptance_rate": 3.33,
+      "avg_min_score": 615,
+      "scores": {
+        "2022": 618,
+        "2023": 615,
+        "2024": 612
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Psychologist",
+          "HR Specialist",
+          "Counselor"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 50,
+        "out_of_province_pct": 50,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 555.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.99,
+      "volatility_index": 0.004,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.012,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Fisika",
+      "faculty": "Fakultas Sains dan Matematika",
+      "program_type": "S1",
+      "capacity": 30,
+      "applicants": 280,
+      "acceptance_rate": 10.71,
+      "avg_min_score": 460,
+      "scores": {
+        "2022": 462,
+        "2023": 460,
+        "2024": 458
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Physicist",
+          "Research Scientist"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4500000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 62,
+        "out_of_province_pct": 38,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 445.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.11,
+      "volatility_index": 0.0035,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0105,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Kimia",
+      "faculty": "Fakultas Sains dan Matematika",
+      "program_type": "S1",
+      "capacity": 28,
+      "applicants": 265,
+      "acceptance_rate": 10.57,
+      "avg_min_score": 455,
+      "scores": {
+        "2022": 458,
+        "2023": 455,
+        "2024": 452
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Chemist",
+          "Lab Analyst"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4200000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 65,
+        "out_of_province_pct": 35,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 440.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 15.62,
+      "volatility_index": 0.0054,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0162,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Biologi",
+      "faculty": "Fakultas Sains dan Matematika",
+      "program_type": "S1",
+      "capacity": 28,
+      "applicants": 290,
+      "acceptance_rate": 9.66,
+      "avg_min_score": 458,
+      "scores": {
+        "2022": 460,
+        "2023": 458,
+        "2024": 455
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "UM Undip",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 13500000,
+          "ukt_note": null,
+          "requirements": [
+            "UTBK score or UM Undip exam",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://um.undip.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Biologist",
+          "Environmental Consultant"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4000000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 62,
+        "out_of_province_pct": 38,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 442.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.52,
+      "volatility_index": 0.0045,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0135,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Statistika",
+      "faculty": "Fakultas Sains dan Matematika",
+      "program_type": "S1",
+      "capacity": 32,
+      "applicants": 420,
+      "acceptance_rate": 7.62,
       "avg_min_score": 495,
       "scores": {
         "2022": 498,
@@ -2400,40 +2006,40 @@
           "source_tier": "official-affiliated"
         },
         {
-          "name": "SIMAK UI",
+          "name": "UM Undip",
           "type": "Mandiri",
           "capacity": null,
-          "registration_fee": 500000,
+          "registration_fee": 300000,
           "ukt_min": 500000,
-          "ukt_max": 17500000,
+          "ukt_max": 13500000,
           "ukt_note": null,
           "requirements": [
-            "SIMAK UI exam score",
+            "UTBK score or UM Undip exam",
             "Max age 25"
           ],
           "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
+          "portal_url": "https://um.undip.ac.id",
           "source_tier": "third-party-affiliated"
         }
       ],
       "career_prospects": {
         "static": [
-          "Biologist",
-          "Research Scientist"
+          "Statistician",
+          "Data Scientist"
         ],
         "ai_generated": null,
-        "avg_starting_salary_idr": 4500000,
-        "job_market_demand": "low",
+        "avg_starting_salary_idr": 5800000,
+        "job_market_demand": "medium",
         "source_tier": "third-party"
       },
       "competition_breakdown": {
-        "local_applicants_pct": 45,
-        "out_of_province_pct": 55,
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
         "top_feeder_schools": null,
-        "avg_applicant_utbk": 475.0,
+        "avg_applicant_utbk": 478.0,
         "source_tier": "third-party"
       },
-      "ease_score": 12.99,
+      "ease_score": 13.14,
       "volatility_index": 0.0049,
       "sharp_drop_pct": 0.0,
       "crowding_penalty": 0.0147,
@@ -2445,17 +2051,17 @@
       "data_confidence": "medium"
     },
     {
-      "name": "Sastra Indonesia",
-      "faculty": "Fakultas Ilmu Pengetahuan Budaya",
+      "name": "Farmasi",
+      "faculty": "Fakultas Kedokteran",
       "program_type": "S1",
-      "capacity": 30,
-      "applicants": 290,
-      "acceptance_rate": 10.34,
-      "avg_min_score": 452,
+      "capacity": 38,
+      "applicants": 850,
+      "acceptance_rate": 4.47,
+      "avg_min_score": 602,
       "scores": {
-        "2022": 455,
-        "2023": 452,
-        "2024": 450
+        "2022": 605,
+        "2023": 602,
+        "2024": 600
       },
       "avg_rapor": null,
       "avg_utbk": null,
@@ -2497,44 +2103,43 @@
           "source_tier": "official-affiliated"
         },
         {
-          "name": "SIMAK UI",
+          "name": "UM Undip",
           "type": "Mandiri",
           "capacity": null,
-          "registration_fee": 500000,
+          "registration_fee": 300000,
           "ukt_min": 500000,
-          "ukt_max": 17500000,
+          "ukt_max": 13500000,
           "ukt_note": null,
           "requirements": [
-            "SIMAK UI exam score",
+            "UTBK score or UM Undip exam",
             "Max age 25"
           ],
           "open_period": "May-Jul",
-          "portal_url": "https://penerimaan.ui.ac.id",
+          "portal_url": "https://um.undip.ac.id",
           "source_tier": "third-party-affiliated"
         }
       ],
       "career_prospects": {
         "static": [
-          "Editor",
-          "Translator",
-          "Cultural Researcher"
+          "Pharmacist",
+          "Pharmaceutical Researcher"
         ],
         "ai_generated": null,
-        "avg_starting_salary_idr": 4200000,
-        "job_market_demand": "low",
+        "avg_starting_salary_idr": 5200000,
+        "job_market_demand": "high",
         "source_tier": "third-party"
       },
       "competition_breakdown": {
-        "local_applicants_pct": 50,
-        "out_of_province_pct": 50,
+        "local_applicants_pct": 52,
+        "out_of_province_pct": 48,
         "top_feeder_schools": null,
-        "avg_applicant_utbk": 435.0,
+        "avg_applicant_utbk": 545.0,
         "source_tier": "third-party"
       },
-      "ease_score": 15.04,
-      "volatility_index": 0.0045,
+      "ease_score": 9.32,
+      "volatility_index": 0.0034,
       "sharp_drop_pct": 0.0,
-      "crowding_penalty": 0.0135,
+      "crowding_penalty": 0.0102,
       "crowding_risk": "low",
       "source_ref": [
         0,
@@ -2546,7 +2151,7 @@
   "sources": [
     {
       "id": 0,
-      "title": "Daya Tampung Jalur Mandiri Universitas Indonesia 2024",
+      "title": "Daya Tampung Jalur Mandiri Universitas Diponegoro 2024",
       "publisher": "Kontan",
       "url": "https://www.kontan.co.id/",
       "type": "news-report",
@@ -2555,7 +2160,7 @@
     },
     {
       "id": 1,
-      "title": "Kuota Mandiri Universitas Indonesia 2024",
+      "title": "Kuota Mandiri Universitas Diponegoro 2024",
       "publisher": "UTBK-CAK",
       "url": "https://utbkcak.com/",
       "type": "education-platform",
@@ -2564,7 +2169,7 @@
     },
     {
       "id": 2,
-      "title": "Passing Grade Estimasi Universitas Indonesia 2024",
+      "title": "Passing Grade Estimasi Universitas Diponegoro 2024",
       "publisher": "Sindonews",
       "url": "https://edukasi.sindonews.com/",
       "type": "news-report",
@@ -2573,9 +2178,9 @@
     },
     {
       "id": 3,
-      "title": "Portal PMB Universitas Indonesia",
-      "publisher": "Universitas Indonesia",
-      "url": "https://penerimaan.ui.ac.id",
+      "title": "Portal PMB Universitas Diponegoro",
+      "publisher": "Universitas Diponegoro",
+      "url": "https://um.undip.ac.id",
       "type": "official-portal",
       "accessed": "2024-05-28",
       "reliability": "high"

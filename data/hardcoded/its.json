@@ -1,538 +1,1992 @@
 {
-  "university": "its",
+  "university_id": "its",
   "university_name": "Institut Teknologi Sepuluh Nopember",
+  "university_type": "S1",
+  "exam_name": "SM ITS",
+  "score_range": "0-1000",
+  "year": "2024",
   "programs": [
     {
-      "id": "its-teknik-sipil",
+      "name": "Teknik Sipil",
       "faculty": "Fakultas Teknik Sipil, Perencanaan dan Kebumian",
-      "program": "Teknik Sipil",
-      "level": "Sarjana",
-      "quota_mandiri": 38,
-      "applicants_mandiri": 1080,
+      "program_type": "S1",
+      "capacity": 38,
+      "applicants": 1080,
       "acceptance_rate": 3.52,
-      "min_score_2022": 638,
-      "min_score_2023": 635,
-      "min_score_2024": 632,
       "avg_min_score": 635,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 638,
+        "2023": 635,
+        "2024": 632
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Civil Engineer",
+          "Construction Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5200000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 50,
+        "out_of_province_pct": 50,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 560.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.9,
+      "volatility_index": 0.0039,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0117,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-geomatika",
-      "faculty": "Fakultas Teknik Sipil, Perencanaan dan Kebumian",
-      "program": "Teknik Geomatika",
-      "level": "Sarjana",
-      "quota_mandiri": 28,
-      "applicants_mandiri": 380,
-      "acceptance_rate": 7.37,
-      "min_score_2022": 512,
-      "min_score_2023": 510,
-      "min_score_2024": 508,
-      "avg_min_score": 510,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-perencanaan-wilayah",
-      "faculty": "Fakultas Teknik Sipil, Perencanaan dan Kebumian",
-      "program": "Perencanaan Wilayah dan Kota",
-      "level": "Sarjana",
-      "quota_mandiri": 30,
-      "applicants_mandiri": 580,
-      "acceptance_rate": 5.17,
-      "min_score_2022": 555,
-      "min_score_2023": 552,
-      "min_score_2024": 550,
-      "avg_min_score": 552,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-teknik-mesin",
+      "name": "Teknik Mesin",
       "faculty": "Fakultas Teknologi Industri dan Rekayasa Sistem",
-      "program": "Teknik Mesin",
-      "level": "Sarjana",
-      "quota_mandiri": 40,
-      "applicants_mandiri": 1120,
+      "program_type": "S1",
+      "capacity": 40,
+      "applicants": 1120,
       "acceptance_rate": 3.57,
-      "min_score_2022": 642,
-      "min_score_2023": 640,
-      "min_score_2024": 638,
       "avg_min_score": 640,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 642,
+        "2023": 640,
+        "2024": 638
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Mechanical Engineer",
+          "Manufacturing Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 48,
+        "out_of_province_pct": 52,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 565.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.38,
+      "volatility_index": 0.0026,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0078,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-industri",
+      "name": "Teknik Industri",
       "faculty": "Fakultas Teknologi Industri dan Rekayasa Sistem",
-      "program": "Teknik Industri",
-      "level": "Sarjana",
-      "quota_mandiri": 42,
-      "applicants_mandiri": 1480,
+      "program_type": "S1",
+      "capacity": 42,
+      "applicants": 1480,
       "acceptance_rate": 2.84,
-      "min_score_2022": 658,
-      "min_score_2023": 655,
-      "min_score_2024": 652,
       "avg_min_score": 655,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 658,
+        "2023": 655,
+        "2024": 652
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Industrial Engineer",
+          "Operations Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 6500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 42,
+        "out_of_province_pct": 58,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 585.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.3,
+      "volatility_index": 0.0037,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0111,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-kimia",
+      "name": "Teknik Kimia",
       "faculty": "Fakultas Teknologi Industri dan Rekayasa Sistem",
-      "program": "Teknik Kimia",
-      "level": "Sarjana",
-      "quota_mandiri": 35,
-      "applicants_mandiri": 820,
+      "program_type": "S1",
+      "capacity": 35,
+      "applicants": 820,
       "acceptance_rate": 4.27,
-      "min_score_2022": 622,
-      "min_score_2023": 620,
-      "min_score_2024": 618,
       "avg_min_score": 620,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 622,
+        "2023": 620,
+        "2024": 618
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Chemical Engineer",
+          "Process Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5800000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 48,
+        "out_of_province_pct": 52,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 555.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 9.01,
+      "volatility_index": 0.0026,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0078,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-informatika",
+      "name": "Informatika",
       "faculty": "Fakultas Teknologi Elektro dan Informatika Cerdas",
-      "program": "Informatika",
-      "level": "Sarjana",
-      "quota_mandiri": 50,
-      "applicants_mandiri": 2800,
+      "program_type": "S1",
+      "capacity": 50,
+      "applicants": 2800,
       "acceptance_rate": 1.79,
-      "min_score_2022": 685,
-      "min_score_2023": 682,
-      "min_score_2024": 680,
       "avg_min_score": 682,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 685,
+        "2023": 682,
+        "2024": 680
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Software Engineer",
+          "Data Scientist",
+          "ML Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 8000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 35,
+        "out_of_province_pct": 65,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 610.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 6.93,
+      "volatility_index": 0.003,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.009,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-elektro",
+      "name": "Teknik Elektro",
       "faculty": "Fakultas Teknologi Elektro dan Informatika Cerdas",
-      "program": "Teknik Elektro",
-      "level": "Sarjana",
-      "quota_mandiri": 40,
-      "applicants_mandiri": 1350,
+      "program_type": "S1",
+      "capacity": 40,
+      "applicants": 1350,
       "acceptance_rate": 2.96,
-      "min_score_2022": 655,
-      "min_score_2023": 652,
-      "min_score_2024": 650,
       "avg_min_score": 652,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 655,
+        "2023": 652,
+        "2024": 650
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Electrical Engineer",
+          "Power Systems Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 6000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 42,
+        "out_of_province_pct": 58,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 580.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 7.9,
+      "volatility_index": 0.0031,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0093,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-komputer",
+      "name": "Teknik Komputer",
       "faculty": "Fakultas Teknologi Elektro dan Informatika Cerdas",
-      "program": "Teknik Komputer",
-      "level": "Sarjana",
-      "quota_mandiri": 38,
-      "applicants_mandiri": 1200,
+      "program_type": "S1",
+      "capacity": 38,
+      "applicants": 1200,
       "acceptance_rate": 3.17,
-      "min_score_2022": 648,
-      "min_score_2023": 645,
-      "min_score_2024": 642,
       "avg_min_score": 645,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 648,
+        "2023": 645,
+        "2024": 642
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Computer Engineer",
+          "Embedded Systems Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 6500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 40,
+        "out_of_province_pct": 60,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 575.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.59,
+      "volatility_index": 0.0038,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0114,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-perkapalan",
+      "name": "Teknik Perkapalan",
       "faculty": "Fakultas Teknologi Kelautan",
-      "program": "Teknik Perkapalan",
-      "level": "Sarjana",
-      "quota_mandiri": 35,
-      "applicants_mandiri": 680,
+      "program_type": "S1",
+      "capacity": 35,
+      "applicants": 680,
       "acceptance_rate": 5.15,
-      "min_score_2022": 538,
-      "min_score_2023": 535,
-      "min_score_2024": 532,
       "avg_min_score": 535,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 538,
+        "2023": 535,
+        "2024": 532
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Naval Architect",
+          "Marine Engineer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 510.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 11.05,
+      "volatility_index": 0.0046,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0138,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-sistem-perkapalan",
+      "name": "Teknik Kelautan",
       "faculty": "Fakultas Teknologi Kelautan",
-      "program": "Teknik Sistem Perkapalan",
-      "level": "Sarjana",
-      "quota_mandiri": 30,
-      "applicants_mandiri": 480,
-      "acceptance_rate": 6.25,
-      "min_score_2022": 520,
-      "min_score_2023": 518,
-      "min_score_2024": 515,
-      "avg_min_score": 518,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-teknik-kelautan",
-      "faculty": "Fakultas Teknologi Kelautan",
-      "program": "Teknik Kelautan",
-      "level": "Sarjana",
-      "quota_mandiri": 28,
-      "applicants_mandiri": 420,
+      "program_type": "S1",
+      "capacity": 28,
+      "applicants": 420,
       "acceptance_rate": 6.67,
-      "min_score_2022": 515,
-      "min_score_2023": 512,
-      "min_score_2024": 510,
       "avg_min_score": 512,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 515,
+        "2023": 512,
+        "2024": 510
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Ocean Engineer",
+          "Marine Surveyor"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 495.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 11.8,
+      "volatility_index": 0.004,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.012,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-manajemen-bisnis",
+      "name": "Manajemen Bisnis Teknologi",
       "faculty": "Fakultas Desain Kreatif dan Bisnis Digital",
-      "program": "Manajemen Bisnis Teknologi",
-      "level": "Sarjana",
-      "quota_mandiri": 45,
-      "applicants_mandiri": 1850,
+      "program_type": "S1",
+      "capacity": 45,
+      "applicants": 1850,
       "acceptance_rate": 2.43,
-      "min_score_2022": 648,
-      "min_score_2023": 645,
-      "min_score_2024": 642,
       "avg_min_score": 645,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 648,
+        "2023": 645,
+        "2024": 642
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Business Analyst",
+          "Tech Entrepreneur",
+          "Product Manager"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 6500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 38,
+        "out_of_province_pct": 62,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 580.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.15,
+      "volatility_index": 0.0038,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0114,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-desain-produk",
+      "name": "Desain Produk Industri",
       "faculty": "Fakultas Desain Kreatif dan Bisnis Digital",
-      "program": "Desain Produk Industri",
-      "level": "Sarjana",
-      "quota_mandiri": 30,
-      "applicants_mandiri": 680,
+      "program_type": "S1",
+      "capacity": 30,
+      "applicants": 680,
       "acceptance_rate": 4.41,
-      "min_score_2022": 572,
-      "min_score_2023": 570,
-      "min_score_2024": 568,
       "avg_min_score": 570,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 572,
+        "2023": 570,
+        "2024": 568
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Product Designer",
+          "UX Designer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 45,
+        "out_of_province_pct": 55,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 530.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 9.65,
+      "volatility_index": 0.0029,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0087,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-fisika",
+      "name": "Fisika",
       "faculty": "Fakultas Sains dan Analitika Data",
-      "program": "Fisika",
-      "level": "Sarjana",
-      "quota_mandiri": 30,
-      "applicants_mandiri": 320,
+      "program_type": "S1",
+      "capacity": 30,
+      "applicants": 320,
       "acceptance_rate": 9.38,
-      "min_score_2022": 482,
-      "min_score_2023": 480,
-      "min_score_2024": 478,
       "avg_min_score": 480,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 482,
+        "2023": 480,
+        "2024": 478
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Physicist",
+          "Research Scientist"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4800000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 465.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 13.95,
+      "volatility_index": 0.0034,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0102,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-kimia",
+      "name": "Kimia",
       "faculty": "Fakultas Sains dan Analitika Data",
-      "program": "Kimia",
-      "level": "Sarjana",
-      "quota_mandiri": 28,
-      "applicants_mandiri": 295,
+      "program_type": "S1",
+      "capacity": 28,
+      "applicants": 295,
       "acceptance_rate": 9.49,
-      "min_score_2022": 478,
-      "min_score_2023": 475,
-      "min_score_2024": 472,
       "avg_min_score": 475,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 478,
+        "2023": 475,
+        "2024": 472
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Chemist",
+          "Lab Analyst"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4500000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 58,
+        "out_of_province_pct": 42,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 460.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 14.6,
+      "volatility_index": 0.0052,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0156,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-matematika",
+      "name": "Matematika",
       "faculty": "Fakultas Sains dan Analitika Data",
-      "program": "Matematika",
-      "level": "Sarjana",
-      "quota_mandiri": 32,
-      "applicants_mandiri": 420,
+      "program_type": "S1",
+      "capacity": 32,
+      "applicants": 420,
       "acceptance_rate": 7.62,
-      "min_score_2022": 498,
-      "min_score_2023": 495,
-      "min_score_2024": 492,
       "avg_min_score": 495,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 498,
+        "2023": 495,
+        "2024": 492
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Actuary",
+          "Data Analyst"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 50,
+        "out_of_province_pct": 50,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 480.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 13.14,
+      "volatility_index": 0.0049,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0147,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-statistika",
+      "name": "Statistika",
       "faculty": "Fakultas Sains dan Analitika Data",
-      "program": "Statistika",
-      "level": "Sarjana",
-      "quota_mandiri": 35,
-      "applicants_mandiri": 520,
+      "program_type": "S1",
+      "capacity": 35,
+      "applicants": 520,
       "acceptance_rate": 6.73,
-      "min_score_2022": 518,
-      "min_score_2023": 515,
-      "min_score_2024": 512,
       "avg_min_score": 515,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 518,
+        "2023": 515,
+        "2024": 512
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Statistician",
+          "Data Scientist"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 6500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 45,
+        "out_of_province_pct": 55,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 500.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 12.29,
+      "volatility_index": 0.0048,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0144,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-biologi",
+      "name": "Biologi",
       "faculty": "Fakultas Sains dan Analitika Data",
-      "program": "Biologi",
-      "level": "Sarjana",
-      "quota_mandiri": 28,
-      "applicants_mandiri": 310,
+      "program_type": "S1",
+      "capacity": 28,
+      "applicants": 310,
       "acceptance_rate": 9.03,
-      "min_score_2022": 480,
-      "min_score_2023": 478,
-      "min_score_2024": 475,
       "avg_min_score": 478,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 480,
+        "2023": 478,
+        "2024": 475
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Biologist",
+          "Research Scientist"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 4200000,
+        "job_market_demand": "low",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 55,
+        "out_of_province_pct": 45,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 460.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 13.77,
+      "volatility_index": 0.0043,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0129,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
     },
     {
-      "id": "its-teknik-material",
-      "faculty": "Fakultas Teknologi Industri dan Rekayasa Sistem",
-      "program": "Teknik Material dan Metalurgi",
-      "level": "Sarjana",
-      "quota_mandiri": 28,
-      "applicants_mandiri": 480,
-      "acceptance_rate": 5.83,
-      "min_score_2022": 522,
-      "min_score_2023": 520,
-      "min_score_2024": 518,
-      "avg_min_score": 520,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-teknik-fisika",
-      "faculty": "Fakultas Teknologi Industri dan Rekayasa Sistem",
-      "program": "Teknik Fisika",
-      "level": "Sarjana",
-      "quota_mandiri": 30,
-      "applicants_mandiri": 450,
-      "acceptance_rate": 6.67,
-      "min_score_2022": 515,
-      "min_score_2023": 512,
-      "min_score_2024": 510,
-      "avg_min_score": 512,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-teknik-lingkungan",
-      "faculty": "Fakultas Teknik Sipil, Perencanaan dan Kebumian",
-      "program": "Teknik Lingkungan",
-      "level": "Sarjana",
-      "quota_mandiri": 30,
-      "applicants_mandiri": 520,
-      "acceptance_rate": 5.77,
-      "min_score_2022": 528,
-      "min_score_2023": 525,
-      "min_score_2024": 522,
-      "avg_min_score": 525,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-teknik-multimedia",
-      "faculty": "Fakultas Teknologi Elektro dan Informatika Cerdas",
-      "program": "Teknologi Informasi",
-      "level": "Sarjana",
-      "quota_mandiri": 35,
-      "applicants_mandiri": 980,
-      "acceptance_rate": 3.57,
-      "min_score_2022": 638,
-      "min_score_2023": 635,
-      "min_score_2024": 632,
-      "avg_min_score": 635,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-arsitektur",
-      "faculty": "Fakultas Teknik Sipil, Perencanaan dan Kebumian",
-      "program": "Arsitektur",
-      "level": "Sarjana",
-      "quota_mandiri": 28,
-      "applicants_mandiri": 580,
-      "acceptance_rate": 4.83,
-      "min_score_2022": 558,
-      "min_score_2023": 555,
-      "min_score_2024": 552,
-      "avg_min_score": 555,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
-      "source_ref": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "its-sains-data",
+      "name": "Sains Data",
       "faculty": "Fakultas Sains dan Analitika Data",
-      "program": "Sains Data",
-      "level": "Sarjana",
-      "quota_mandiri": 30,
-      "applicants_mandiri": 620,
+      "program_type": "S1",
+      "capacity": 30,
+      "applicants": 620,
       "acceptance_rate": 4.84,
-      "min_score_2022": 545,
-      "min_score_2023": 542,
-      "min_score_2024": 540,
       "avg_min_score": 542,
-      "score_trend": "decreasing",
-      "source_type": "estimated",
-      "ease_score": 0,
+      "scores": {
+        "2022": 545,
+        "2023": 542,
+        "2024": 540
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Data Scientist",
+          "ML Engineer",
+          "Data Analyst"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 7500000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 38,
+        "out_of_province_pct": 62,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 520.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 10.27,
+      "volatility_index": 0.0038,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0114,
+      "crowding_risk": "low",
       "source_ref": [
         0,
-        2
-      ]
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Arsitektur",
+      "faculty": "Fakultas Teknik Sipil, Perencanaan dan Kebumian",
+      "program_type": "S1",
+      "capacity": 28,
+      "applicants": 580,
+      "acceptance_rate": 4.83,
+      "avg_min_score": 555,
+      "scores": {
+        "2022": 558,
+        "2023": 555,
+        "2024": 552
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Architect",
+          "Urban Designer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5500000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 45,
+        "out_of_province_pct": 55,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 520.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 10.59,
+      "volatility_index": 0.0044,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0132,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknik Lingkungan",
+      "faculty": "Fakultas Teknik Sipil, Perencanaan dan Kebumian",
+      "program_type": "S1",
+      "capacity": 30,
+      "applicants": 520,
+      "acceptance_rate": 5.77,
+      "avg_min_score": 525,
+      "scores": {
+        "2022": 528,
+        "2023": 525,
+        "2024": 522
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "Environmental Engineer",
+          "Sustainability Consultant"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 5000000,
+        "job_market_demand": "medium",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 50,
+        "out_of_province_pct": 50,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 505.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 11.57,
+      "volatility_index": 0.0047,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0141,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
+    },
+    {
+      "name": "Teknologi Informasi",
+      "faculty": "Fakultas Teknologi Elektro dan Informatika Cerdas",
+      "program_type": "S1",
+      "capacity": 35,
+      "applicants": 980,
+      "acceptance_rate": 3.57,
+      "avg_min_score": 635,
+      "scores": {
+        "2022": 638,
+        "2023": 635,
+        "2024": 632
+      },
+      "avg_rapor": null,
+      "avg_utbk": null,
+      "rapor_source_tier": null,
+      "utbk_source_tier": null,
+      "admission_pathways": [
+        {
+          "name": "SNBP",
+          "type": "SNBP",
+          "capacity": null,
+          "registration_fee": null,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket (8 groups)",
+          "requirements": [
+            "Top 25% of class ranking",
+            "School must be accredited A/Unggul",
+            "Rapor semester 1-5"
+          ],
+          "open_period": "Feb-Mar",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SNBT (UTBK)",
+          "type": "SNBT",
+          "capacity": null,
+          "registration_fee": 200000,
+          "ukt_min": 500000,
+          "ukt_max": 12500000,
+          "ukt_note": "Based on parents' income bracket",
+          "requirements": [
+            "UTBK score",
+            "Maximum age 25 at registration",
+            "Graduated within last 3 years"
+          ],
+          "open_period": "Mar-Jun",
+          "portal_url": "https://snpmb.bppp.kemdikbud.go.id",
+          "source_tier": "official-affiliated"
+        },
+        {
+          "name": "SM ITS",
+          "type": "Mandiri",
+          "capacity": null,
+          "registration_fee": 300000,
+          "ukt_min": 500000,
+          "ukt_max": 12000000,
+          "ukt_note": null,
+          "requirements": [
+            "SM ITS exam or UTBK score",
+            "Max age 25"
+          ],
+          "open_period": "May-Jul",
+          "portal_url": "https://smits.its.ac.id",
+          "source_tier": "third-party-affiliated"
+        }
+      ],
+      "career_prospects": {
+        "static": [
+          "IT Consultant",
+          "Systems Analyst",
+          "Web Developer"
+        ],
+        "ai_generated": null,
+        "avg_starting_salary_idr": 7000000,
+        "job_market_demand": "high",
+        "source_tier": "third-party"
+      },
+      "competition_breakdown": {
+        "local_applicants_pct": 38,
+        "out_of_province_pct": 62,
+        "top_feeder_schools": null,
+        "avg_applicant_utbk": 575.0,
+        "source_tier": "third-party"
+      },
+      "ease_score": 8.93,
+      "volatility_index": 0.0039,
+      "sharp_drop_pct": 0.0,
+      "crowding_penalty": 0.0117,
+      "crowding_risk": "low",
+      "source_ref": [
+        0,
+        1
+      ],
+      "data_confidence": "medium"
     }
   ],
   "sources": [
     {
       "id": 0,
-      "title": "Penerimaan Mahasiswa Baru Seleksi Mandiri ITS 2024",
-      "publisher": "ITS",
-      "url": "https://www.its.ac.id/admission",
-      "type": "official-portal",
+      "title": "Daya Tampung Jalur Mandiri Institut Teknologi Sepuluh Nopember 2024",
+      "publisher": "Kontan",
+      "url": "https://www.kontan.co.id/",
+      "type": "news-report",
       "accessed": "2024-06-15",
-      "reliability": "high",
-      "notes": "Total mandiri: 2,817 seats (42.88% of intake). Gelombang 1: 15,531 applicants, 2,997 accepted."
+      "reliability": "medium"
     },
     {
       "id": 1,
-      "title": "Kuota Seleksi Mandiri ITS 2024",
-      "publisher": "Detik",
-      "url": "https://www.detik.com/",
-      "type": "news-report",
-      "accessed": "2024-06-25",
-      "reliability": "medium",
-      "notes": "Per-prodi quota approximations. ITS allocates mandiri based on remaining seats after SNBP/SNBT."
+      "title": "Kuota Mandiri Institut Teknologi Sepuluh Nopember 2024",
+      "publisher": "UTBK-CAK",
+      "url": "https://utbkcak.com/",
+      "type": "education-platform",
+      "accessed": "2024-06-20",
+      "reliability": "medium"
     },
     {
       "id": 2,
-      "title": "Passing Grade Estimasi ITS 2024",
+      "title": "Passing Grade Estimasi Institut Teknologi Sepuluh Nopember 2024",
       "publisher": "Sindonews",
       "url": "https://edukasi.sindonews.com/",
       "type": "news-report",
       "accessed": "2024-07-10",
-      "reliability": "medium",
-      "notes": "Historical score estimates for ITS mandiri selection."
+      "reliability": "medium"
+    },
+    {
+      "id": 3,
+      "title": "Portal PMB Institut Teknologi Sepuluh Nopember",
+      "publisher": "Institut Teknologi Sepuluh Nopember",
+      "url": "https://smits.its.ac.id",
+      "type": "official-portal",
+      "accessed": "2024-05-28",
+      "reliability": "high"
     }
   ]
 }
