@@ -256,6 +256,7 @@ body {
 }
 
 /* ── Data Archives ── */
+#archives-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 #archives-body.is-open { max-height: 5000px; }
 #archives-arrow.is-open { transform: rotate(180deg); }
 
