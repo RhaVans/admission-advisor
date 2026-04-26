@@ -52,9 +52,14 @@
         <div class="header__title">ARIA</div>
         <div class="header__sub">Admission Risk & Intelligence Analyzer</div>
       </div>
-      <div id="header-status" class="hidden" style="color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; align-items: center; gap: 1rem;">
-        <span id="header-uni-label" style="font-weight: 600;"></span>
-        <button id="refresh-btn" class="btn btn--gold" style="padding: 0.4rem 1rem; font-size: 0.75rem;">Refresh Data</button>
+      <div class="header__actions">
+        <button id="theme-toggle" class="btn btn--outline" style="border: none; background: transparent; padding: 0.5rem; border-radius: 50%; color: var(--gold); cursor: pointer;" onclick="toggleTheme()" title="Toggle Dark Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="theme-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <div id="header-status" class="hidden" style="color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; align-items: center; gap: 1rem;">
+          <span id="header-uni-label" style="font-weight: 600;"></span>
+          <button id="refresh-btn" class="btn btn--gold" style="padding: 0.4rem 1rem; font-size: 0.75rem;">Refresh Data</button>
+        </div>
       </div>
     </header>
 

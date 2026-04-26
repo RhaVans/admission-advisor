@@ -313,16 +313,23 @@ function renderCharts() {
   const recs = analysis ? analysis.recommendations : [];
   const recIds = recs.map(r => r.program_id);
 
-  Chart.defaults.color = '#4A4A6A'; // text-secondary
+  const isDark = document.body.classList.contains('dark-theme');
+  const textColor = isDark ? '#94A3B8' : '#4A4A6A';
+  const gridColor = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(214, 207, 196, 0.4)';
+  const ttipBg = isDark ? '#151F32' : '#FFFFFF';
+  const ttipTitle = isDark ? '#F8FAFC' : '#1B3A6B';
+  const ttipBody = isDark ? '#94A3B8' : '#4A4A6A';
+
+  Chart.defaults.color = textColor;
   Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.font.size = 11;
 
   const ttip = {
-    backgroundColor: '#FFFFFF', titleColor: '#1B3A6B', bodyColor: '#4A4A6A',
+    backgroundColor: ttipBg, titleColor: ttipTitle, bodyColor: ttipBody,
     borderColor: '#B8960C', borderWidth: 1, padding: 10, cornerRadius: 2,
     titleFont: { family: "'Cormorant Garamond', serif", size: 14, weight: 'bold' }
   };
-  const grid = { color: 'rgba(214, 207, 196, 0.4)', borderDash: [4, 4] }; // var(--border) dashed
+  const grid = { color: gridColor, borderDash: [4, 4] };
 
   // Chart A: Acceptance rates (top 10)
   const byRate = [...programs].sort((a, b) => b.acceptance_rate - a.acceptance_rate).slice(0, 10);
@@ -438,8 +445,8 @@ function renderCharts() {
         },
       },
       scales: {
-        x: { title: { display: true, text: 'Volatility Index', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
-        y: { title: { display: true, text: 'Acceptance Rate (%)', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0 }
+        x: { title: { display: true, text: 'Volatility Index', color: textColor, font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
+        y: { title: { display: true, text: 'Acceptance Rate (%)', color: textColor, font: { size: 10 } }, grid, min: 0 }
       }
     },
     plugins: [{
@@ -449,7 +456,7 @@ function renderCharts() {
         const midX = (left + right) / 2, midY = (top + bottom) / 2;
         ctx.save();
         ctx.font = "600 8px 'Inter', sans-serif";
-        ctx.globalAlpha = 0.4; ctx.fillStyle = '#4A4A6A'; ctx.textAlign = 'center';
+        ctx.globalAlpha = 0.4; ctx.fillStyle = textColor; ctx.textAlign = 'center';
         ctx.fillText('SAFE ZONE', (left + midX) / 2, top + 18);
         ctx.fillText('RISKY', (midX + right) / 2, top + 18);
         ctx.fillText('STABLE BUT COMPETITIVE', (left + midX) / 2, bottom - 8);
@@ -615,8 +622,34 @@ async function bootApp() {
   if (unis.length) pick('ugm');
 }
 
+// ── Theme Toggle ─────────────────────────────────────────────────
+function toggleTheme() {
+  const isDark = document.body.classList.toggle('dark-theme');
+  localStorage.setItem('aria_theme', isDark ? 'dark' : 'light');
+  
+  // Update icon
+  const icon = document.getElementById('theme-icon');
+  if (isDark) {
+    icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+  } else {
+    icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  }
+  
+  // Re-render charts to pick up new colors
+  if (S.data) renderCharts();
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('aria_theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.body.classList.add('dark-theme');
+    document.getElementById('theme-icon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+  }
+}
+
 // ── Boot ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   // Entry page stat counter animation
   ['e-unis','e-progs','e-paths'].forEach(id => {
     const el = document.getElementById(id);
