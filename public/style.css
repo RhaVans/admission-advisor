@@ -116,6 +116,32 @@ body {
   letter-spacing: 0.05em; margin-bottom: 3rem;
 }
 
+.rec-card__warning {
+  background: rgba(153, 27, 27, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(153, 27, 27, 0.2);
+  padding: 0.5rem;
+  font-size: var(--text-xs);
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+/* Restored Detailed Blocks */
+.comp-profile { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.comp-profile__row { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.3rem; }
+.intensity-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 0.1rem 0.4rem; border-radius: 2px; margin-bottom: 0.5rem; }
+.intensity-badge--low { background: rgba(16, 185, 129, 0.1); color: #10B981; border: 1px solid #10B981; }
+.intensity-badge--moderate { background: rgba(245, 158, 11, 0.1); color: #F59E0B; border: 1px solid #F59E0B; }
+.intensity-badge--high { background: rgba(239, 68, 68, 0.1); color: #EF4444; border: 1px solid #EF4444; }
+.demand-badge--high { color: #10B981; }
+.demand-badge--moderate { color: #F59E0B; }
+.demand-badge--low { color: #EF4444; }
+.role-tag { background: var(--bg-muted); color: var(--text-primary); transition: background-color 0.3s ease; }
+.role-tag:hover { background: var(--border); }
+.insight-block { border-radius: 4px; transition: background-color 0.3s ease; }
+.pathway-row { border-bottom: 1px dashed var(--border); padding-bottom: 0.5rem; }
+.pathway-row:last-child { border-bottom: none; }
+
 .entry__stats {
   display: flex; align-items: center; gap: 0;
   border: 1px solid rgba(255,255,255,0.15);

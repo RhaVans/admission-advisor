@@ -148,7 +148,7 @@ function render() {
   // (Source bar removed from design spec, but we could add it back if needed. Skipping for now to match formal layout)
   // (Uni Info Bar removed from design spec, skipping)
   renderRecs();
-  // renderComparativeSummary(); (Removed to match strict clean layout)
+  renderComparativeSummary();
   // renderStats(); (Removed to match strict clean layout)
   renderCharts();
   renderTable();
@@ -221,18 +221,85 @@ function renderRecs() {
             <div class="rec-metric__label">Ease Score</div>
             <div class="rec-metric__val t-primary">${(m.ease_score || 0).toFixed(1)}</div>
           </div>
+          <div class="rec-metric">
+            <div class="rec-metric__label">Crowding</div>
+            <div class="rec-metric__val" style="color:${crowdColor(m.crowding_risk)}">${crowdLabel(m.crowding_risk)}</div>
+          </div>
+        </div>
+
+        <!-- Competition Profile -->
+        <div class="comp-profile">
+          <div class="comp-profile__title" style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Competition Profile</div>
+          <span class="intensity-badge intensity-badge--${cp.competition_intensity || 'low'}">${(cp.competition_intensity || 'low').replace('_',' ').toUpperCase()}</span>
+          <div class="comp-profile__row"><span>Ratio</span><span>${m.competition_ratio || '—'}:1</span></div>
+          ${cp.avg_competitor_utbk ? `<div class="comp-profile__row"><span>Avg Competitor UTBK</span><span>${cp.avg_competitor_utbk}</span></div>` : ''}
+          ${cp.local_dominance ? `<div class="comp-profile__row"><span>Local Dominance</span><span>${cp.local_dominance}</span></div>` : ''}
+          <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.3rem">${cp.intensity_rationale || ''}</div>
+        </div>
+
+        <!-- Rapor & UTBK -->
+        ${(ru.avg_rapor_accepted || ru.avg_utbk_accepted) ? `
+        <div class="comp-profile">
+          <div class="comp-profile__title" style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Rapor & UTBK Profile</div>
+          ${ru.avg_rapor_accepted ? `<div class="comp-profile__row"><span>Avg Rapor (Accepted)</span><span>${ru.avg_rapor_accepted}</span></div>` : ''}
+          ${ru.avg_utbk_accepted ? `<div class="comp-profile__row"><span>Avg UTBK (Accepted)</span><span>${ru.avg_utbk_accepted}</span></div>` : ''}
+          ${ru.rapor_note ? `<div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.2rem">${ru.rapor_note}</div>` : ''}
+          ${ru.utbk_note ? `<div style="font-size:0.75rem;color:var(--text-secondary)">${ru.utbk_note}</div>` : ''}
+          ${ru.data_caveat ? `<div style="font-size:0.7rem;color:var(--accent);margin-top:0.2rem">⚠ ${ru.data_caveat}</div>` : ''}
+        </div>` : ''}
+
+        <!-- Admission Pathways -->
+        ${pw.length ? `
+        <div class="pathways">
+          <div class="pathways__header" onclick="togglePathway('${pwId}')" style="display:flex; justify-content:space-between; cursor:pointer; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">
+            <span>Admission Pathways (${pw.length})</span>
+            <span class="archives__arrow" id="${pwId}-arrow">▼</span>
+          </div>
+          <div class="pathways__body" id="${pwId}" style="display:none; flex-direction:column; gap:0.5rem;">
+            ${pw.map(p => `
+              <div class="pathway-row" style="font-size: 0.8rem; margin-bottom: 0.5rem;">
+                <div class="pathway-row__name" style="font-weight:600;">${p.name} <span style="color:var(--text-secondary); font-weight:normal;">(${p.type})</span></div>
+                <div class="pathway-row__detail">Fee: ${p.registration_fee_idr ? formatIDR(p.registration_fee_idr) : 'Free / Not listed'}</div>
+                <div class="pathway-row__detail">UKT: ${p.ukt_range || '—'}</div>
+                <div class="pathway-row__detail">${p.requirements_summary}</div>
+                ${p.open_period ? `<div class="pathway-row__detail">Period: ${p.open_period}</div>` : ''}
+                ${p.notes ? `<div class="pathway-row__detail" style="color:var(--text-secondary)">${p.notes}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        </div>` : ''}
+
+        <!-- Career Prospects -->
+        <div class="career-panel" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+          <div class="career-panel__title" style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem;">Career Prospects</div>
+          <div class="career-panel__roles" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom: 0.5rem;">
+            ${(ca.top_roles || []).map(r => `<span class="role-tag" style="font-size:0.7rem; padding:0.2rem 0.5rem; border:1px solid var(--border); border-radius:4px;">${r}</span>`).join('')}
+          </div>
+          ${ca.avg_starting_salary_idr ? `<div class="career-panel__salary" style="font-weight:600; color:var(--gold); margin-bottom:0.2rem;">${formatIDR(ca.avg_starting_salary_idr)} avg starting</div>` : ''}
+          ${ca.salary_range ? `<div style="font-size:0.75rem;color:var(--text-secondary);margin-bottom:0.3rem">${ca.salary_range}</div>` : ''}
+          ${ca.job_market_demand ? `<div class="career-panel__demand" style="font-size:0.8rem; margin-bottom:0.2rem;">Demand: <span class="demand-badge demand-badge--${ca.job_market_demand}" style="font-weight:600; padding:0.1rem 0.3rem; border:1px solid currentColor; border-radius:2px;">${ca.job_market_demand.toUpperCase()}</span></div>` : ''}
+          ${ca.demand_rationale ? `<div class="career-panel__outlook" style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:0.2rem;">${ca.demand_rationale}</div>` : ''}
+          ${ca.growth_outlook ? `<div class="career-panel__outlook" style="font-size:0.8rem; margin-top:0.3rem;color:var(--gold)">${ca.growth_outlook}</div>` : ''}
+          ${ca.data_caveat ? `<div style="font-size:0.7rem;color:var(--accent);margin-top:0.2rem">⚠ ${ca.data_caveat}</div>` : ''}
         </div>
 
         <!-- Insight -->
-        <div class="rec-insight">
-          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--primary);">${ins.headline || 'Strategic Overview'}</div>
-          <p style="margin-bottom: 0.5rem;">${ins.acceptance_context || ''} ${ins.score_context || ''}</p>
-          <p style="font-style: italic; color: var(--text-secondary);">${ins.strategic_note || ''}</p>
+        <div class="insight-block" style="margin-top: 1rem; padding: 1rem; background: var(--bg-muted); border-left: 3px solid var(--gold); font-size: 0.85rem;">
+          <div class="insight-block__headline" style="font-weight:600; margin-bottom:0.5rem;">${ins.headline || 'Strategic Overview'}</div>
+          ${ins.acceptance_context ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.acceptance_context}</div>` : ''}
+          ${ins.score_context ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.score_context}</div>` : ''}
+          ${ins.rapor_utbk_context ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.rapor_utbk_context}</div>` : ''}
+          ${ins.trend_signal ? `<div class="insight-block__text" style="margin-bottom:0.3rem;">${ins.trend_signal}</div>` : ''}
+          ${ins.risk_assessment ? `<div class="insight-block__risk" style="color:var(--accent); margin-bottom:0.3rem;">${ins.risk_assessment}</div>` : ''}
+          ${ins.strategic_note ? `<div class="insight-block__strategic" style="font-style:italic; font-weight:600; margin-top:0.5rem;">${ins.strategic_note}</div>` : ''}
         </div>
 
         <!-- Sources -->
-        <div class="rec-sources">
-          ${(dq.source_ids || []).map(sid => `<span class="source-chip">${sid}</span>`).join('')}
+        <div class="rec-sources" style="margin-top: 1rem; font-size: 0.7rem; color: var(--text-muted); display:flex; align-items:center; gap:0.5rem;">
+          <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background: ${dq.confidence === 'high' ? 'var(--success)' : dq.confidence === 'medium' ? 'var(--warning)' : 'var(--danger)'};"></span>
+          <span>${(dq.confidence || 'medium').toUpperCase()} confidence</span>
+          <span>&middot; Sources: [${(dq.source_ids || []).join(', ')}]</span>
+          ${dq.caveat ? `<span style="color:var(--accent)">&middot; ${dq.caveat}</span>` : ''}
         </div>
 
         ${m.crowding_risk === 'high' ? '<div class="rec-card__warning" style="background:#FEE2E2; color:#991B1B; border:1px solid #991B1B; padding:0.5rem; font-size:var(--text-xs); margin-top:1rem;">This program\'s recent score drop may attract significantly more applicants this cycle. Proceed with caution.</div>' : ''}
@@ -305,6 +372,61 @@ function renderStats() {
     </div>`;
   }).join('');
   runCountUp();
+}
+
+function togglePathway(id) {
+  const el = document.getElementById(id);
+  const arrow = document.getElementById(`${id}-arrow`);
+  if (el.style.display === 'none') {
+    el.style.display = 'flex';
+    arrow.style.transform = 'rotate(180deg)';
+  } else {
+    el.style.display = 'none';
+    arrow.style.transform = 'rotate(0deg)';
+  }
+}
+
+// ── Comparative Summary ──────────────────────────────────────────
+function renderComparativeSummary() {
+  const el = document.getElementById('comp-summary');
+  if (!el) return;
+  const cs = S.data.analysis ? S.data.analysis.comparative_summary : null;
+  if (!cs) { el.classList.add('hidden'); return; }
+  el.classList.remove('hidden');
+  el.innerHTML = `
+    <div style="border: 1px solid var(--gold); padding: 1.5rem; border-radius: 4px; background: var(--bg-card); margin-top: 2rem;">
+      <div style="font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--gold); margin-bottom: 1.5rem; text-transform: uppercase;">Comparative Summary — Rank 1 vs Rank 2</div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+        <div>
+          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Head to Head</div>
+          <div style="font-size: 0.9rem; color: var(--text-primary);">${cs.vs_each_other || ''}</div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Key Tradeoff</div>
+          <div style="font-size: 0.9rem; color: var(--text-primary);">${cs.key_tradeoff || ''}</div>
+        </div>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div>
+          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Safer Pick</div>
+          <div style="font-size: 0.9rem; color: var(--text-primary);">
+            <span style="display: inline-block; background: var(--gold); color: #fff; padding: 0.2rem 0.5rem; border-radius: 2px; font-weight: 600; margin-right: 0.5rem;">
+              ${cs.safer_pick === 'rank_1' ? 'RANK 1' : cs.safer_pick === 'rank_2' ? 'RANK 2' : 'TIED'}
+            </span>
+            <span style="color: var(--text-secondary); font-size: 0.85rem;">${cs.safer_pick_reason || ''}</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Career Comparison</div>
+          <div style="font-size: 0.9rem; color: var(--text-primary);">${cs.career_comparison || ''}</div>
+        </div>
+      </div>
+      
+      ${cs.cost_comparison ? `<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border);">${cs.cost_comparison}</div>` : ''}
+    </div>
+  `;
 }
 
 // ── Charts ───────────────────────────────────────────────────────
