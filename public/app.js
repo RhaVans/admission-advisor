@@ -669,9 +669,36 @@ document.getElementById('archives-toggle').addEventListener('click', () => {
   document.getElementById('archives-arrow').classList.toggle('is-open', S.archivesOpen);
 });
 
-// ── Boot ─────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', async () => {
+// ── Entry Page ───────────────────────────────────────────────────
+let _booted = false;
+function enterApp() {
+  const entry = document.getElementById('entry-page');
+  const app = document.getElementById('main-app');
+  entry.classList.add('is-exiting');
+  setTimeout(() => {
+    entry.style.display = 'none';
+    app.style.display = '';
+    if (!_booted) {
+      _booted = true;
+      bootApp();
+    }
+  }, 600);
+}
+
+async function bootApp() {
   const unis = await fetchUnis();
   renderSelector(unis);
   if (unis.length) pick('ugm');
+}
+
+// ── Boot ─────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Entry page stat counter animation
+  ['e-unis','e-progs','e-paths'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const end = parseInt(el.textContent);
+    if (isNaN(end)) return;
+    animateNum(el, end, 1200);
+  });
 });

@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARIA — Admission Risk & Intelligence Analyzer</title>
-  <meta name="description" content="ARIA: Data-driven Indonesian university Jalur Mandiri admission risk analysis platform covering 14 universities with competition profiles, career prospects, and admission pathway intelligence.">
+  <meta name="description"
+    content="ARIA: Data-driven Indonesian university Jalur Mandiri admission risk analysis platform covering 14 universities with competition profiles, career prospects, and admission pathway intelligence.">
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
+
 <body>
-  <div class="app">
+  <!-- ═══ ENTRY PAGE ═══ -->
+  <div id="entry-page" class="entry">
+    <div class="entry__bg">
+      <div class="entry__grid-overlay"></div>
+      <div class="entry__glow entry__glow--1"></div>
+      <div class="entry__glow entry__glow--2"></div>
+    </div>
+    <div class="entry__content">
+      <div class="entry__badge">
+        <span class="entry__dot"></span>
+        INTELLIGENCE PLATFORM
+        <span class="entry__year">2024 / 2025</span>
+      </div>
+      <div class="entry__kicker">JALUR MANDIRI &middot; SELEKSI MASUK PERGURUAN TINGGI</div>
+      <h1 class="entry__title">
+        <span class="entry__title-main">ARI</span><span class="entry__title-accent">A</span>
+      </h1>
+      <p class="entry__subtitle">Admission Risk & Intelligence Analyzer</p>
+      <div class="entry__stats">
+        <div class="entry__stat">
+          <div class="entry__stat-val" id="e-unis">14</div>
+          <div class="entry__stat-label">UNIVERSITAS</div>
+        </div>
+        <div class="entry__stat-divider"></div>
+        <div class="entry__stat">
+          <div class="entry__stat-val" id="e-progs">302</div>
+          <div class="entry__stat-label">PROGRAM STUDI</div>
+        </div>
+        <div class="entry__stat-divider"></div>
+        <div class="entry__stat">
+          <div class="entry__stat-val" id="e-paths">03</div>
+          <div class="entry__stat-label">JALUR MASUK</div>
+        </div>
+      </div>
+      <button class="entry__cta" id="entry-cta" onclick="enterApp()">
+        MULAI ANALISIS
+        <span class="entry__cta-arrow">&longrightarrow;</span>
+      </button>
+      <div class="entry__footer-note">
+        Data-driven admission risk analysis for S1 &amp; D4 programs across Indonesia's top universities.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MAIN APP (hidden until entry) ═══ -->
+  <div class="app" id="main-app" style="display:none;">
     <!-- Header -->
     <header class="header">
       <div>
         <div class="header__title">ARIA</div>
-        <div class="header__sub">Admission Risk & Intelligence Analyzer &middot; Jalur Mandiri</div>
+        <div class="header__sub">Admission Risk & Intelligence Analyzer</div>
       </div>
       <div id="header-status" class="header-status hidden">
         <span id="header-uni-label"></span>
@@ -150,4 +198,5 @@
   </div>
   <script src="/app.js"></script>
 </body>
+
 </html>
