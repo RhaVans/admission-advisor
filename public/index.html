@@ -9,9 +9,44 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
-  <div class="app" id="main-app">
-    
-    <!-- Header -->
+  <!-- Entry Page Overlay -->
+  <div id="entry-page" class="entry">
+    <div class="entry__content">
+      <div class="entry__top-bar">
+        <div class="entry__badge">
+          <span class="entry__dot"></span> INTELLIGENCE PLATFORM
+        </div>
+        <div class="entry__badge entry__badge--outline">2024 / 2025</div>
+      </div>
+      
+      <div class="entry__kicker">JALUR MANDIRI &middot; SELEKSI MASUK PERGURUAN TINGGI</div>
+      <h1 class="entry__title">ARIA</h1>
+      <p class="entry__subtitle">Admission Risk & Intelligence Analyzer</p>
+      
+      <div class="entry__stats">
+        <div class="entry__stat">
+          <div class="entry__stat-val count-up" id="e-unis" data-v="14" data-int="true">14</div>
+          <div class="entry__stat-label">UNIVERSITAS</div>
+        </div>
+        <div class="entry__stat-divider"></div>
+        <div class="entry__stat">
+          <div class="entry__stat-val count-up" id="e-progs" data-v="302" data-int="true">302</div>
+          <div class="entry__stat-label">PROGRAM STUDI</div>
+        </div>
+        <div class="entry__stat-divider"></div>
+        <div class="entry__stat">
+          <div class="entry__stat-val count-up" id="e-paths" data-v="3" data-int="true">3</div>
+          <div class="entry__stat-label">JALUR MASUK</div>
+        </div>
+      </div>
+      
+      <button class="btn btn--primary entry__cta" onclick="enterApp()">
+        MULAI ANALISIS &rarr;
+      </button>
+    </div>
+  </div>
+
+  <div class="app" id="main-app" style="display: none;">
     <header class="header">
       <div class="header__brand">
         <div class="header__title">ARIA</div>
