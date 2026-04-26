@@ -255,6 +255,72 @@ body {
   * { animation: none !important; transition: none !important; }
 }
 
+/* ── Data Archives ── */
+#archives-body.is-open { max-height: 5000px; }
+#archives-arrow.is-open { transform: rotate(180deg); }
+
+.src-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  padding: 1rem;
+  flex: 1 1 280px;
+  max-width: 400px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.src-card__title {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+}
+.src-card__meta {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+.src-card__link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.src-card__link:hover { text-decoration: underline; }
+
+.src-badge {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.src-badge--official { border-color: var(--success); color: var(--success); }
+.src-badge--affiliated { border-color: var(--warning); color: var(--warning); }
+
+.reliability-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+}
+.reliability-dot--high { background: var(--success); }
+.reliability-dot--medium { background: var(--warning); }
+.reliability-dot--low { background: var(--danger); }
+
+.cite-links { display: flex; gap: 0.25rem; }
+.cite-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  font-size: 0.65rem; font-weight: 600;
+  border: 1px solid var(--border);
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cite-link:hover { background: var(--primary); color: #fff; }
+
 .main-content {
   max-width: 1280px;
   width: 100%;
