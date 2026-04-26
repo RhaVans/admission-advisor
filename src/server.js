@@ -140,7 +140,8 @@ app.get('*', (_req, res) => {
 
 if (!process.env.VERCEL) {
   app.listen(PORT, () => {
-    console.log(`\n🟣 Uni Advisor running at http://localhost:${PORT}`);
+    console.log(`\n:: ARIA running at http://localhost:${PORT}`);
+    console.log(`   Admission Risk & Intelligence Analyzer`);
     console.log(`   API: /api/universities | /api/admissions/:id | /api/archives/:id | /api/health\n`);
   });
 }
