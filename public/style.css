@@ -681,10 +681,41 @@ tbody tr:hover { background: rgba(27,58,107,0.04); }
   .footer__grid { grid-template-columns: 1fr; }
 }
 @media(max-width: 600px) {
-  .header { flex-direction: column; text-align: center; gap: 1rem; }
+  .header { padding: 0.5rem 1rem; }
   .hero { padding: 3rem 1rem; }
   .rec-metrics { grid-template-columns: 1fr 1fr; }
   .main-content { padding: 0 1rem 3rem; }
+}
+
+/* ── Comparative Summary ── */
+.comp-summary__title {
+  font-family: var(--font-display); font-size: var(--text-h2);
+  font-weight: 700; color: var(--primary); margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-gold); padding-bottom: 0.5rem;
+}
+.comp-summary__row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-bottom: 1rem;
+}
+.comp-summary__label {
+  font-family: var(--font-body); font-size: var(--text-xs);
+  text-transform: uppercase; color: var(--gold);
+  letter-spacing: 0.08em; margin-bottom: 0.25rem;
+}
+.comp-summary__val {
+  font-family: var(--font-body); font-size: var(--text-sm);
+  color: var(--text-primary); line-height: 1.6;
+}
+.safer-pick {
+  display: inline-block; background: var(--gold); color: #fff;
+  padding: 0.15rem 0.5rem; font-weight: 600; font-size: var(--text-xs);
+  border-radius: 2px;
+}
+#comp-summary > div {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-top: 3px solid var(--gold); padding: 2rem;
+  box-shadow: 0 4px 24px rgba(27,58,107,0.06);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* ── Loading Skeleton (Light Theme) ── */

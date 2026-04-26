@@ -6,7 +6,8 @@ const S = {
   uni: null, data: null, loading: false,
   sortCol: 'ease_score', sortDir: 'desc',
   charts: {},
-  archives: null, archivesOpen: false
+  archives: null, archivesOpen: false,
+  meta: [] // university list cache
 };
 
 const API = '/api';
@@ -47,6 +48,31 @@ function runCountUp() {
     if (isNaN(v)) return;
     animateNum(el, v, 700);
   });
+}
+
+// ── Theme Toggle ─────────────────────────────────────────────────
+function initTheme() {
+  const saved = localStorage.getItem('aria-theme');
+  if (saved === 'dark') document.body.classList.add('dark-theme');
+  updateThemeIcon();
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('dark-theme');
+  const isDark = document.body.classList.contains('dark-theme');
+  localStorage.setItem('aria-theme', isDark ? 'dark' : 'light');
+  updateThemeIcon();
+  // Re-render charts with new colors
+  if (S.data) renderCharts();
+}
+
+function updateThemeIcon() {
+  const icon = document.getElementById('theme-icon');
+  if (!icon) return;
+  const isDark = document.body.classList.contains('dark-theme');
+  icon.innerHTML = isDark
+    ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+    : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
 }
 
 // ── Fetchers ─────────────────────────────────────────────────────
@@ -105,18 +131,22 @@ function hideBanner() { document.getElementById('error-banner').classList.add('h
 function renderSelector(unis) {
   const container = document.getElementById('university-selector');
 
+  S.meta = unis; // cache for pick()
+
+  const shortName = u => u.id.replace(/_/g, ' ').toUpperCase();
+
   const html = unis.map(u => `
     <div class="selector__card" onclick="pick('${u.id}')" id="sel-${u.id}">
-      <div class="selector__title">${u.short_name}</div>
-      <div class="selector__sub">${u.exam_type}</div>
+      <span class="selector__id">${shortName(u)}</span>
+      <span class="selector__name">${u.exam || u.type || ''}</span>
     </div>
   `).join('');
   container.innerHTML = html;
 
   const mobileHtml = unis.map(u => `
     <button class="mobile-uni-card" onclick="pick('${u.id}'); toggleMobileDrawer();" id="msel-${u.id}">
-      <div class="mobile-uni-card__title">${u.short_name}</div>
-      <div class="mobile-uni-card__sub">${u.full_name} &middot; ${u.exam_type}</div>
+      <div class="mobile-uni-card__title">${shortName(u)}</div>
+      <div class="mobile-uni-card__sub">${u.name || ''} &middot; ${u.exam || ''}</div>
     </button>
   `).join('');
   const mobileSel = document.getElementById('mobile-university-selector');
@@ -126,8 +156,9 @@ function renderSelector(unis) {
 function pick(id) {
   if (S.loading) return;
   S.uni = id;
-  document.querySelectorAll('.selector__card').forEach(el => el.classList.remove('active'));
-  document.getElementById(`sel-${id}`).classList.add('active');
+  document.querySelectorAll('.selector__card').forEach(el => el.classList.remove('is-active'));
+  const selEl = document.getElementById(`sel-${id}`);
+  if (selEl) selEl.classList.add('is-active');
 
   // Mobile updates
   document.querySelectorAll('.mobile-uni-card').forEach(el => el.classList.remove('active'));
@@ -136,7 +167,7 @@ function pick(id) {
   const u = S.meta.find(x => x.id === id);
   if (u) {
     const bottomPill = document.getElementById('mobile-bottom-pill');
-    if (bottomPill) bottomPill.textContent = u.short_name;
+    if (bottomPill) bottomPill.textContent = u.id.replace(/_/g, ' ').toUpperCase();
   }
   fetchData(id);
 }
@@ -156,8 +187,7 @@ function render() {
   // (Source bar removed from design spec, but we could add it back if needed. Skipping for now to match formal layout)
   // (Uni Info Bar removed from design spec, skipping)
   renderRecs();
-  // renderComparativeSummary(); (Removed to match strict clean layout)
-  // renderStats(); (Removed to match strict clean layout)
+  renderComparativeSummary();
   renderCharts();
   renderTable();
   renderArchivesReset();
@@ -321,21 +351,27 @@ function renderCharts() {
   const recs = analysis ? analysis.recommendations : [];
   const recIds = recs.map(r => r.program_id);
 
-  Chart.defaults.color = '#4A4A6A'; // text-secondary
+  const isMobile = window.innerWidth <= 768;
+  const isDark = document.body.classList.contains('dark-theme');
+  const textColor = isDark ? '#94A3B8' : '#4A4A6A';
+  const gridColor = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(214, 207, 196, 0.4)';
+  const ttipBg = isDark ? '#151F32' : '#FFFFFF';
+  const ttipTitle = isDark ? '#F8FAFC' : '#1B3A6B';
+  const ttipBody = isDark ? '#94A3B8' : '#4A4A6A';
+
+  Chart.defaults.color = textColor;
   Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.font.size = 11;
 
   const ttip = {
-    backgroundColor: '#FFFFFF', titleColor: '#1B3A6B', bodyColor: '#4A4A6A',
+    backgroundColor: ttipBg, titleColor: ttipTitle, bodyColor: ttipBody,
     borderColor: '#B8960C', borderWidth: 1, padding: 10, cornerRadius: 2,
     titleFont: { family: "'Cormorant Garamond', serif", size: 14, weight: 'bold' }
   };
 
   const customTooltip = function(context) {
-    if (!isMobile) return;
     const tooltipModel = context.tooltip;
     if (tooltipModel.opacity === 0) return;
-    
     const title = tooltipModel.title || [];
     const body = tooltipModel.body ? tooltipModel.body.map(b => b.lines).join('<br>') : '';
     const html = `<div style="font-weight:600; margin-bottom:0.5rem; color:var(--primary); font-family:var(--font-display); font-size:1.1rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem;">${title}</div><div style="font-size:0.9rem;">${body}</div>`;
@@ -343,7 +379,7 @@ function renderCharts() {
   };
 
   const tooltipPlugin = isMobile ? { enabled: false, external: customTooltip } : { ...ttip };
-  const grid = { color: 'rgba(214, 207, 196, 0.4)', borderDash: [4, 4] }; // var(--border) dashed
+  const grid = { color: gridColor, borderDash: [4, 4] };
 
   // Chart A: Acceptance rates (top 10)
   const byRate = [...programs].sort((a, b) => b.acceptance_rate - a.acceptance_rate).slice(0, 10);
@@ -362,7 +398,7 @@ function renderCharts() {
     options: {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false,
       animation: { duration: 800 },
-      plugins: { legend: { display: false }, tooltip: ttip },
+      plugins: { legend: { display: false }, tooltip: tooltipPlugin },
       scales: { x: { grid }, y: { grid: { display: false } } }
     }
   });
@@ -385,7 +421,7 @@ function renderCharts() {
     options: {
       responsive: true, maintainAspectRatio: false,
       animation: { duration: 800 },
-      plugins: { legend: { display: false }, tooltip: ttip },
+      plugins: { legend: { display: false }, tooltip: tooltipPlugin },
       scales: { x: { grid: { display: false } }, y: { grid, min: yMin } }
     }
   });
@@ -411,7 +447,7 @@ function renderCharts() {
       animation: { duration: 800 },
       plugins: {
         legend: { position: 'bottom', labels: { boxWidth: 10, padding: 20, font: { size: 10 } } },
-        tooltip: ttip
+        tooltip: tooltipPlugin
       },
       scales: { x: { grid }, y: { grid } }
     }
@@ -459,8 +495,8 @@ function renderCharts() {
         },
       },
       scales: {
-        x: { title: { display: true, text: 'Volatility Index', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
-        y: { title: { display: true, text: 'Acceptance Rate (%)', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0 }
+        x: { title: { display: true, text: 'Volatility Index', color: textColor, font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
+        y: { title: { display: true, text: 'Acceptance Rate (%)', color: textColor, font: { size: 10 } }, grid, min: 0 }
       }
     },
     plugins: [{
@@ -470,7 +506,7 @@ function renderCharts() {
         const midX = (left + right) / 2, midY = (top + bottom) / 2;
         ctx.save();
         ctx.font = "600 8px 'Inter', sans-serif";
-        ctx.globalAlpha = 0.4; ctx.fillStyle = '#4A4A6A'; ctx.textAlign = 'center';
+        ctx.globalAlpha = 0.4; ctx.fillStyle = textColor; ctx.textAlign = 'center';
         ctx.fillText('SAFE ZONE', (left + midX) / 2, top + 18);
         ctx.fillText('RISKY', (midX + right) / 2, top + 18);
         ctx.fillText('STABLE BUT COMPETITIVE', (left + midX) / 2, bottom - 8);
@@ -684,9 +720,38 @@ function closeChartTooltip() {
   if (backdrop) backdrop.classList.remove('active');
 }
 
-// ── Boot ─────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', async () => {
+// ── Entry Page ───────────────────────────────────────────────────
+let _booted = false;
+function enterApp() {
+  const entry = document.getElementById('entry-page');
+  const app = document.getElementById('main-app');
+  entry.classList.add('is-exiting');
+  setTimeout(() => {
+    entry.style.display = 'none';
+    app.style.display = '';
+    if (!_booted) {
+      _booted = true;
+      bootApp();
+    }
+  }, 600);
+}
+
+async function bootApp() {
   const unis = await fetchUnis();
   renderSelector(unis);
   if (unis.length) pick('ugm');
+}
+
+// ── Boot ─────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  
+  // Entry page stat counter animation
+  ['e-unis','e-progs','e-paths'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const end = parseInt(el.textContent);
+    if (isNaN(end)) return;
+    animateNum(el, end, 1200);
+  });
 });

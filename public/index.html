@@ -211,6 +211,29 @@
       </div>
     </footer>
   </div>
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer-backdrop" onclick="toggleMobileDrawer()"></div>
+  <div id="mobile-drawer">
+    <div class="mobile-drawer__handle"></div>
+    <div class="mobile-drawer__content">
+      <div style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:1rem; font-weight:600;">Select University</div>
+      <div id="mobile-university-selector" style="display:grid; gap:0.75rem;"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Bar -->
+  <div id="mobile-bottom-bar" class="mobile-only">
+    <span class="mobile-bottom-bar__pill" id="mobile-bottom-pill">—</span>
+    <button class="btn btn--gold" style="padding:0.4rem 1rem; font-size:0.75rem;" onclick="if(S.uni) fetchData(S.uni, true);">Refresh</button>
+  </div>
+
+  <!-- Chart Tooltip Bottom Sheet (Mobile) -->
+  <div id="chart-tooltip-backdrop" onclick="closeChartTooltip()"></div>
+  <div id="chart-tooltip-sheet">
+    <div class="mobile-drawer__handle" style="background:var(--border);"></div>
+    <div class="chart-tooltip-sheet__content" id="chart-tooltip-content"></div>
+  </div>
+
   <script src="/app.js"></script>
 </body>
 </html>
