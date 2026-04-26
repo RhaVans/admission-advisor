@@ -24,7 +24,7 @@ const srcLabel = s => {
   return 'Curated Data';
 };
 const confLevel = c => c === 'high' ? 'high' : c === 'medium' ? 'medium' : 'low';
-const crowdColor = r => r === 'high' ? 'var(--red)' : r === 'moderate' ? 'var(--yellow)' : 'var(--green)';
+const crowdColor = r => r === 'high' ? 'var(--danger)' : r === 'moderate' ? 'var(--warning)' : 'var(--success)';
 const crowdLabel = r => r === 'high' ? 'High' : r === 'moderate' ? 'Moderate' : 'Low';
 const formatIDR = v => v ? 'Rp ' + v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') : '—';
 
@@ -86,10 +86,11 @@ function showSkeleton() {
   dash.classList.remove('hidden');
   document.getElementById('rec-container').innerHTML =
     `<div style="border:1px solid var(--border);padding:2rem">${'<div class="skel skel--line"></div>'.repeat(3)}<div class="skel skel--big"></div></div>`.repeat(2);
-  document.getElementById('stat-strip').innerHTML =
-    Array(5).fill('<div class="stat-cell"><div class="skel skel--big"></div><div class="skel skel--line" style="width:60%"></div></div>').join('');
-  document.getElementById('table-body').innerHTML =
-    Array(5).fill(`<tr>${Array(12).fill('<td><div class="skel skel--line"></div></td>').join('')}</tr>`).join('');
+  
+  const tb = document.getElementById('table-body');
+  if (tb) {
+    tb.innerHTML = Array(5).fill(`<tr>${Array(10).fill('<td><div class="skel skel--line"></div></td>').join('')}</tr>`).join('');
+  }
 }
 
 function showBanner(msg, isErr = false) {
@@ -108,14 +109,14 @@ function renderSelector(unis) {
 
   const renderGroup = (title, items, badgeClass) => {
     const cards = items.map(u =>
-      `<button class="selector__item" data-id="${u.id}" onclick="pick('${u.id}')">
-        <span class="selector__id">${u.id.replace('_', ' ')}</span>
+      `<div class="selector__card" data-id="${u.id}" onclick="pick('${u.id}')">
+        <span class="selector__id">${u.id.replace('_', ' ').toUpperCase()}</span>
         <span class="selector__name">${u.name}</span>
         ${badgeClass ? `<span class="type-badge ${badgeClass}">${u.type}</span>` : ''}
-      </button>`
+      </div>`
     ).join('');
     return `<div class="selector__group">
-      <div class="selector__group-title">${title}</div>
+      <div class="selector__group-title t-body" style="font-size: 0.75rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">${title}</div>
       <div class="selector__grid">${cards}</div>
     </div>`;
   };
@@ -126,7 +127,7 @@ function renderSelector(unis) {
 function pick(id) {
   if (S.loading) return;
   S.uni = id;
-  document.querySelectorAll('.selector__item').forEach(el =>
+  document.querySelectorAll('.selector__card').forEach(el =>
     el.classList.toggle('is-active', el.dataset.id === id)
   );
   fetchData(id);
@@ -144,11 +145,11 @@ function render() {
   document.getElementById('header-uni-label').textContent = d.university_name;
   document.getElementById('header-time').textContent = new Date(d.scraped_at).toLocaleString();
 
-  renderSource();
-  renderUniInfo();
+  // (Source bar removed from design spec, but we could add it back if needed. Skipping for now to match formal layout)
+  // (Uni Info Bar removed from design spec, skipping)
   renderRecs();
-  renderComparativeSummary();
-  renderStats();
+  // renderComparativeSummary(); (Removed to match strict clean layout)
+  // renderStats(); (Removed to match strict clean layout)
   renderCharts();
   renderTable();
   renderArchivesReset();
@@ -201,113 +202,40 @@ function renderRecs() {
     const pwId = `pw-${i}`;
 
     return `
-      <div class="rec-card reveal" style="animation-delay:${i * 0.15}s">
-        <div class="rec-card__rank">${rec.rank}</div>
-        <div class="rec-card__program">${rec.program}</div>
+      <div class="rec-card ${i === 0 ? 'rank-1' : ''}">
+        <div class="rec-card__rank">RANK ${rec.rank}</div>
+        <h3 class="rec-card__program">${rec.program}</h3>
         <div class="rec-card__faculty">${rec.faculty} &middot; ${rec.program_type}</div>
-        <div class="rec-card__rate">
-          <span class="count-up" data-v="${m.acceptance_rate_pct || 0}">${m.acceptance_rate_pct || 0}</span><span class="rec-card__rate-unit">%</span>
-        </div>
-        <div class="rec-card__rate-label">Acceptance Rate &middot; Jalur Mandiri</div>
 
         <!-- Core metrics grid -->
-        <div class="rec-card__row">
-          <div class="rec-card__metric">
-            <div class="rec-card__metric-val">${m.avg_min_score || '—'}</div>
-            <div class="rec-card__metric-label">Avg Min Score</div>
+        <div class="rec-metrics">
+          <div class="rec-metric">
+            <div class="rec-metric__label">Acceptance</div>
+            <div class="rec-metric__val"><span class="count-up" data-v="${m.acceptance_rate_pct || 0}">${m.acceptance_rate_pct || 0}</span>%</div>
           </div>
-          <div class="rec-card__metric">
-            <div class="rec-card__metric-val ${trendClass(m.score_trend)}">${trendArrow(m.score_trend)} ${trendText(m.score_trend)}</div>
-            <div class="rec-card__metric-label">Score Trend</div>
+          <div class="rec-metric">
+            <div class="rec-metric__label">Avg Score</div>
+            <div class="rec-metric__val">${m.avg_min_score || '—'}</div>
           </div>
-          <div class="rec-card__metric">
-            <div class="rec-card__metric-val">${(m.ease_score || 0).toFixed(1)}</div>
-            <div class="rec-card__metric-label">Ease Score</div>
+          <div class="rec-metric">
+            <div class="rec-metric__label">Ease Score</div>
+            <div class="rec-metric__val t-primary">${(m.ease_score || 0).toFixed(1)}</div>
           </div>
-          <div class="rec-card__metric">
-            <div class="rec-card__metric-val" style="color:${crowdColor(m.crowding_risk)}">
-              <span class="crowding-dot crowding-dot--${m.crowding_risk || 'low'}"></span>${crowdLabel(m.crowding_risk)}
-            </div>
-            <div class="rec-card__metric-label">Crowding Risk</div>
-          </div>
-        </div>
-
-        <!-- Competition Profile -->
-        <div class="comp-profile">
-          <div class="comp-profile__title">Competition Profile</div>
-          <span class="intensity-badge intensity-badge--${cp.competition_intensity || 'low'}">${(cp.competition_intensity || 'low').replace('_',' ').toUpperCase()}</span>
-          <div class="comp-profile__row"><span>Ratio</span><span>${m.competition_ratio || '—'}:1</span></div>
-          ${cp.avg_competitor_utbk ? `<div class="comp-profile__row"><span>Avg Competitor UTBK</span><span>${cp.avg_competitor_utbk}</span></div>` : ''}
-          ${cp.local_dominance ? `<div class="comp-profile__row"><span>Local Dominance</span><span>${cp.local_dominance}</span></div>` : ''}
-          <div style="font-size:0.6rem;color:var(--text-faint);margin-top:0.3rem">${cp.intensity_rationale || ''}</div>
-        </div>
-
-        <!-- Rapor & UTBK -->
-        ${(ru.avg_rapor_accepted || ru.avg_utbk_accepted) ? `
-        <div class="comp-profile">
-          <div class="comp-profile__title">Rapor & UTBK Profile</div>
-          ${ru.avg_rapor_accepted ? `<div class="comp-profile__row"><span>Avg Rapor (Accepted)</span><span>${ru.avg_rapor_accepted}</span></div>` : ''}
-          ${ru.avg_utbk_accepted ? `<div class="comp-profile__row"><span>Avg UTBK (Accepted)</span><span>${ru.avg_utbk_accepted}</span></div>` : ''}
-          ${ru.rapor_note ? `<div style="font-size:0.6rem;color:var(--text-faint);margin-top:0.2rem">${ru.rapor_note}</div>` : ''}
-          ${ru.utbk_note ? `<div style="font-size:0.6rem;color:var(--text-faint)">${ru.utbk_note}</div>` : ''}
-          ${ru.data_caveat ? `<div style="font-size:0.55rem;color:var(--yellow);margin-top:0.2rem">⚠ ${ru.data_caveat}</div>` : ''}
-        </div>` : ''}
-
-        <!-- Admission Pathways -->
-        ${pw.length ? `
-        <div class="pathways">
-          <div class="pathways__header" onclick="togglePathway('${pwId}')">
-            <span>Admission Pathways (${pw.length})</span>
-            <span class="archives__arrow" id="${pwId}-arrow">▼</span>
-          </div>
-          <div class="pathways__body" id="${pwId}">
-            ${pw.map(p => `
-              <div class="pathway-row">
-                <div class="pathway-row__name">${p.name} <span style="color:var(--text-faint)">(${p.type})</span></div>
-                <div class="pathway-row__detail">Fee: ${p.registration_fee_idr ? formatIDR(p.registration_fee_idr) : 'Free / Not listed'}</div>
-                <div class="pathway-row__detail">UKT: ${p.ukt_range || '—'}</div>
-                <div class="pathway-row__detail">${p.requirements_summary}</div>
-                ${p.open_period ? `<div class="pathway-row__detail">Period: ${p.open_period}</div>` : ''}
-                ${p.notes ? `<div class="pathway-row__detail" style="color:var(--text-faint)">${p.notes}</div>` : ''}
-              </div>
-            `).join('')}
-          </div>
-        </div>` : ''}
-
-        <!-- Career Prospects -->
-        <div class="career-panel">
-          <div class="career-panel__title">Career Prospects</div>
-          <div class="career-panel__roles">
-            ${(ca.top_roles || []).map(r => `<span class="role-tag">${r}</span>`).join('')}
-          </div>
-          ${ca.avg_starting_salary_idr ? `<div class="career-panel__salary">${formatIDR(ca.avg_starting_salary_idr)} avg starting</div>` : ''}
-          ${ca.salary_range ? `<div style="font-size:0.6rem;color:var(--text-dim);margin-bottom:0.3rem">${ca.salary_range}</div>` : ''}
-          ${ca.job_market_demand ? `<div class="career-panel__demand">Demand: <span class="demand-badge demand-badge--${ca.job_market_demand}">${ca.job_market_demand.toUpperCase()}</span></div>` : ''}
-          ${ca.demand_rationale ? `<div class="career-panel__outlook">${ca.demand_rationale}</div>` : ''}
-          ${ca.growth_outlook ? `<div class="career-panel__outlook" style="margin-top:0.3rem;color:var(--gold-dim)">${ca.growth_outlook}</div>` : ''}
-          ${ca.data_caveat ? `<div style="font-size:0.55rem;color:var(--yellow);margin-top:0.2rem">⚠ ${ca.data_caveat}</div>` : ''}
         </div>
 
         <!-- Insight -->
-        <div class="insight-block">
-          <div class="insight-block__headline">${ins.headline || ''}</div>
-          ${ins.acceptance_context ? `<div class="insight-block__text">${ins.acceptance_context}</div>` : ''}
-          ${ins.score_context ? `<div class="insight-block__text">${ins.score_context}</div>` : ''}
-          ${ins.rapor_utbk_context ? `<div class="insight-block__text">${ins.rapor_utbk_context}</div>` : ''}
-          ${ins.trend_signal ? `<div class="insight-block__text">${ins.trend_signal}</div>` : ''}
-          ${ins.risk_assessment ? `<div class="insight-block__risk">${ins.risk_assessment}</div>` : ''}
-          ${ins.strategic_note ? `<div class="insight-block__strategic">${ins.strategic_note}</div>` : ''}
+        <div class="rec-insight">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--primary);">${ins.headline || 'Strategic Overview'}</div>
+          <p style="margin-bottom: 0.5rem;">${ins.acceptance_context || ''} ${ins.score_context || ''}</p>
+          <p style="font-style: italic; color: var(--text-secondary);">${ins.strategic_note || ''}</p>
         </div>
 
-        <!-- Data Quality -->
-        <div class="dq-bar">
-          <span class="dq-dot dq-dot--${dq.confidence || 'medium'}"></span>
-          <span>${(dq.confidence || 'medium').toUpperCase()} confidence</span>
-          <span>&middot; Sources: [${(dq.source_ids || []).join(', ')}]</span>
-          ${dq.caveat ? `<span style="color:var(--yellow)">&middot; ${dq.caveat}</span>` : ''}
+        <!-- Sources -->
+        <div class="rec-sources">
+          ${(dq.source_ids || []).map(sid => `<span class="source-chip">${sid}</span>`).join('')}
         </div>
 
-        ${m.crowding_risk === 'high' ? '<div class="rec-card__warning">This program\'s recent score drop may attract significantly more applicants this cycle. Proceed with caution.</div>' : ''}
+        ${m.crowding_risk === 'high' ? '<div class="rec-card__warning" style="background:#FEE2E2; color:#991B1B; border:1px solid #991B1B; padding:0.5rem; font-size:var(--text-xs); margin-top:1rem;">This program\'s recent score drop may attract significantly more applicants this cycle. Proceed with caution.</div>' : ''}
       </div>`;
   }).join('');
 
@@ -385,15 +313,16 @@ function renderCharts() {
   const recs = analysis ? analysis.recommendations : [];
   const recIds = recs.map(r => r.program_id);
 
-  Chart.defaults.color = '#8a8478';
-  Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+  Chart.defaults.color = '#4A4A6A'; // text-secondary
+  Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.font.size = 11;
 
   const ttip = {
-    backgroundColor: '#0f0f0f', titleColor: '#f2ede6', bodyColor: '#d4a843',
-    borderColor: '#1a1a1a', borderWidth: 1, padding: 10, cornerRadius: 0,
+    backgroundColor: '#FFFFFF', titleColor: '#1B3A6B', bodyColor: '#4A4A6A',
+    borderColor: '#B8960C', borderWidth: 1, padding: 10, cornerRadius: 2,
+    titleFont: { family: "'Cormorant Garamond', serif", size: 14, weight: 'bold' }
   };
-  const grid = { color: 'rgba(255,255,255,0.04)' };
+  const grid = { color: 'rgba(214, 207, 196, 0.4)', borderDash: [4, 4] }; // var(--border) dashed
 
   // Chart A: Acceptance rates (top 10)
   const byRate = [...programs].sort((a, b) => b.acceptance_rate - a.acceptance_rate).slice(0, 10);
@@ -404,8 +333,8 @@ function renderCharts() {
       labels: byRate.map(p => (p.name || p.program || '').length > 22 ? (p.name || p.program).slice(0, 22) + '...' : (p.name || p.program)),
       datasets: [{
         data: byRate.map(p => p.acceptance_rate),
-        backgroundColor: byRate.map(p => recIds.includes(p.name || p.id) ? '#d4a843' : '#1a1a1a'),
-        borderColor: byRate.map(p => recIds.includes(p.name || p.id) ? '#d4a843' : '#2a2a2a'),
+        backgroundColor: byRate.map(p => recIds.includes(p.name || p.id) ? '#B8960C' : '#1B3A6B'),
+        borderColor: byRate.map(p => recIds.includes(p.name || p.id) ? '#B8960C' : '#1B3A6B'),
         borderWidth: 1, borderRadius: 0,
       }]
     },
@@ -427,8 +356,8 @@ function renderCharts() {
       labels: byScore.map(p => (p.name || p.program || '').length > 16 ? (p.name || p.program).slice(0, 16) + '...' : (p.name || p.program)),
       datasets: [{
         data: byScore.map(p => p.avg_min_score),
-        backgroundColor: byScore.map(p => recIds.includes(p.name || p.id) ? '#d4a843' : '#1a1a1a'),
-        borderColor: byScore.map(p => recIds.includes(p.name || p.id) ? '#d4a843' : '#2a2a2a'),
+        backgroundColor: byScore.map(p => recIds.includes(p.name || p.id) ? '#B8960C' : '#1B3A6B'),
+        borderColor: byScore.map(p => recIds.includes(p.name || p.id) ? '#B8960C' : '#1B3A6B'),
         borderWidth: 1, borderRadius: 0,
       }]
     },
@@ -442,7 +371,7 @@ function renderCharts() {
 
   // Chart C: Trend lines (top 5 by ease_score)
   const top5 = [...programs].sort((a, b) => b.ease_score - a.ease_score).slice(0, 5);
-  const palette = ['#d4a843', '#f2ede6', '#8a8478', '#5a9a6b', '#b35a5a'];
+  const palette = ['#1B3A6B', '#9B1D20', '#B8960C', '#2D6A4F', '#4A4A6A'];
   if (S.charts.c) S.charts.c.destroy();
   S.charts.c = new Chart(document.getElementById('chartTrend'), {
     type: 'line',
@@ -468,7 +397,7 @@ function renderCharts() {
   });
 
   // Chart D: Volatility vs Acceptance (Scatter)
-  const riskColor = r => r === 'high' ? '#b35a5a' : r === 'moderate' ? '#c4a94d' : '#5a9a6b';
+  const riskColor = r => r === 'high' ? '#9B1D20' : r === 'moderate' ? '#A05C00' : '#2D6A4F';
   const maxVol = Math.max(...programs.map(p => p.volatility_index || 0), 0.01);
   if (S.charts.d) S.charts.d.destroy();
   S.charts.d = new Chart(document.getElementById('chartScatter'), {
@@ -482,7 +411,7 @@ function renderCharts() {
           penalty: p.crowding_penalty, isRec: recIds.includes(p.name || p.id),
         })),
         backgroundColor: programs.map(p => riskColor(p.crowding_risk) + '99'),
-        borderColor: programs.map(p => recIds.includes(p.name || p.id) ? '#d4a843' : riskColor(p.crowding_risk)),
+        borderColor: programs.map(p => recIds.includes(p.name || p.id) ? '#1B3A6B' : riskColor(p.crowding_risk)),
         borderWidth: programs.map(p => recIds.includes(p.name || p.id) ? 2.5 : 1),
         pointRadius: programs.map(p => Math.max(4, Math.min(14, (p.ease_score || 0) * 0.8))),
         pointHoverRadius: programs.map(p => Math.max(6, Math.min(16, (p.ease_score || 0) * 0.8 + 2))),
@@ -509,8 +438,8 @@ function renderCharts() {
         },
       },
       scales: {
-        x: { title: { display: true, text: 'Volatility Index', color: '#8a8478', font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
-        y: { title: { display: true, text: 'Acceptance Rate (%)', color: '#8a8478', font: { size: 10 } }, grid, min: 0 }
+        x: { title: { display: true, text: 'Volatility Index', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0, max: Math.ceil(maxVol * 120) / 100 },
+        y: { title: { display: true, text: 'Acceptance Rate (%)', color: '#4A4A6A', font: { size: 10 } }, grid, min: 0 }
       }
     },
     plugins: [{
@@ -519,8 +448,8 @@ function renderCharts() {
         const { ctx, chartArea: { left, right, top, bottom } } = chart;
         const midX = (left + right) / 2, midY = (top + bottom) / 2;
         ctx.save();
-        ctx.font = "600 8px 'IBM Plex Mono', monospace";
-        ctx.globalAlpha = 0.12; ctx.fillStyle = '#f2ede6'; ctx.textAlign = 'center';
+        ctx.font = "600 8px 'Inter', sans-serif";
+        ctx.globalAlpha = 0.4; ctx.fillStyle = '#4A4A6A'; ctx.textAlign = 'center';
         ctx.fillText('SAFE ZONE', (left + midX) / 2, top + 18);
         ctx.fillText('RISKY', (midX + right) / 2, top + 18);
         ctx.fillText('STABLE BUT COMPETITIVE', (left + midX) / 2, bottom - 8);
@@ -553,23 +482,18 @@ function renderTable() {
   const maxVol = Math.max(...programs.map(p => p.volatility_index || 0), 0.001);
   document.getElementById('table-body').innerHTML = sorted.map((p, i) => {
     const top = recIds.includes(p.name || p.id);
-    const vi = p.volatility_index || 0;
-    const volPct = Math.min((vi / maxVol) * 100, 100);
-    const volLevel = p.crowding_risk || 'low';
     const pName = p.name || p.program || '';
     return `<tr class="${top ? 'row-top' : ''}">
-      <td>${i + 1}</td>
+      <td style="color: var(--text-muted);">${i + 1}</td>
       <td class="col-program">${pName}</td>
-      <td class="t-small">${p.faculty}</td>
+      <td class="text-secondary" style="font-style: italic;">${p.faculty}</td>
       <td>${p.capacity || p.quota_mandiri || ''}</td>
       <td>${p.applicants || p.applicants_mandiri || ''}</td>
-      <td class="col-rate">${p.acceptance_rate}%</td>
+      <td style="font-weight: 600; color: var(--primary);">${p.acceptance_rate}%</td>
       <td>${p.avg_min_score || ''}</td>
       <td class="${trendClass(p.score_trend || '')}">${trendArrow(p.score_trend || '')} ${trendText(p.score_trend || '')}</td>
-      <td><span class="vol-bar vol-bar--${volLevel}" style="width:${Math.max(volPct, 4)}px;" title="${(vi * 100).toFixed(2)}%"></span> <span style="font-size:9px;color:var(--text-faint)">${(vi * 100).toFixed(1)}%</span></td>
       <td><span class="crowding-badge crowding-badge--${p.crowding_risk || 'low'}">${crowdLabel(p.crowding_risk || 'low')}</span></td>
       <td class="col-ease">${parseFloat(p.ease_score || 0).toFixed(1)}</td>
-      <td><span class="source-pip ${srcDot(p.source_type || 'hardcoded')}" title="${p.source_type || 'hardcoded'}"></span></td>
     </tr>`;
   }).join('');
 }
@@ -669,36 +593,9 @@ document.getElementById('archives-toggle').addEventListener('click', () => {
   document.getElementById('archives-arrow').classList.toggle('is-open', S.archivesOpen);
 });
 
-// ── Entry Page ───────────────────────────────────────────────────
-let _booted = false;
-function enterApp() {
-  const entry = document.getElementById('entry-page');
-  const app = document.getElementById('main-app');
-  entry.classList.add('is-exiting');
-  setTimeout(() => {
-    entry.style.display = 'none';
-    app.style.display = '';
-    if (!_booted) {
-      _booted = true;
-      bootApp();
-    }
-  }, 600);
-}
-
-async function bootApp() {
+// ── Boot ─────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', async () => {
   const unis = await fetchUnis();
   renderSelector(unis);
   if (unis.length) pick('ugm');
-}
-
-// ── Boot ─────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  // Entry page stat counter animation
-  ['e-unis','e-progs','e-paths'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const end = parseInt(el.textContent);
-    if (isNaN(end)) return;
-    animateNum(el, end, 1200);
-  });
 });

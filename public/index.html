@@ -1,136 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARIA — Admission Risk & Intelligence Analyzer</title>
-  <meta name="description"
-    content="ARIA: Data-driven Indonesian university Jalur Mandiri admission risk analysis platform covering 14 universities with competition profiles, career prospects, and admission pathway intelligence.">
+  <meta name="description" content="ARIA: Data-driven Indonesian university Jalur Mandiri admission risk analysis platform covering 14 universities.">
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
-
 <body>
-  <!-- ═══ ENTRY PAGE ═══ -->
-  <div id="entry-page" class="entry">
-    <div class="entry__bg">
-      <div class="entry__grid-overlay"></div>
-      <div class="entry__glow entry__glow--1"></div>
-      <div class="entry__glow entry__glow--2"></div>
-    </div>
-    <div class="entry__content">
-      <div class="entry__badge">
-        <span class="entry__dot"></span>
-        INTELLIGENCE PLATFORM
-        <span class="entry__year">2024 / 2025</span>
-      </div>
-      <div class="entry__kicker">JALUR MANDIRI &middot; SELEKSI MASUK PERGURUAN TINGGI</div>
-      <h1 class="entry__title">
-        <span class="entry__title-main">ARI</span><span class="entry__title-accent">A</span>
-      </h1>
-      <p class="entry__subtitle">Admission Risk & Intelligence Analyzer</p>
-      <div class="entry__stats">
-        <div class="entry__stat">
-          <div class="entry__stat-val" id="e-unis">14</div>
-          <div class="entry__stat-label">UNIVERSITAS</div>
-        </div>
-        <div class="entry__stat-divider"></div>
-        <div class="entry__stat">
-          <div class="entry__stat-val" id="e-progs">302</div>
-          <div class="entry__stat-label">PROGRAM STUDI</div>
-        </div>
-        <div class="entry__stat-divider"></div>
-        <div class="entry__stat">
-          <div class="entry__stat-val" id="e-paths">03</div>
-          <div class="entry__stat-label">JALUR MASUK</div>
-        </div>
-      </div>
-      <button class="entry__cta" id="entry-cta" onclick="enterApp()">
-        MULAI ANALISIS
-        <span class="entry__cta-arrow">&longrightarrow;</span>
-      </button>
-      <div class="entry__footer-note">
-        Data-driven admission risk analysis for S1 &amp; D4 programs across Indonesia's top universities.
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ MAIN APP (hidden until entry) ═══ -->
-  <div class="app" id="main-app" style="display:none;">
+  <div class="app" id="main-app">
+    
     <!-- Header -->
     <header class="header">
-      <div>
+      <div class="header__brand">
         <div class="header__title">ARIA</div>
         <div class="header__sub">Admission Risk & Intelligence Analyzer</div>
       </div>
-      <div id="header-status" class="header-status hidden">
-        <span id="header-uni-label"></span>
-        <span>&middot;</span>
-        <span id="header-time"></span>
-        <button id="refresh-btn" class="refresh-btn">Refresh</button>
+      <div id="header-status" class="hidden" style="color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; align-items: center; gap: 1rem;">
+        <span id="header-uni-label" style="font-weight: 600;"></span>
+        <button id="refresh-btn" class="btn btn--gold" style="padding: 0.4rem 1rem; font-size: 0.75rem;">Refresh Data</button>
       </div>
     </header>
 
-    <!-- University Selector -->
-    <section class="selector">
-      <div class="selector__label">Select University</div>
-      <div id="university-selector"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Find Your Path In.</h1>
+        <p class="hero__sub">Data-driven Jalur Mandiri intelligence for Indonesia's top universities.</p>
+        <hr class="hero__rule">
+        <div class="hero__timestamp">DATABASE LAST UPDATED: <span id="header-time">Loading...</span></div>
+      </div>
     </section>
 
-    <!-- Error Banner -->
-    <div id="error-banner" class="banner hidden">
-      <span id="error-message"></span>
-    </div>
+    <!-- Main Content Container -->
+    <main class="main-content">
+      
+      <!-- University Selector -->
+      <section class="selector">
+        <div id="university-selector" class="selector__grid"></div>
+      </section>
 
-    <!-- Dashboard -->
-    <div id="dashboard" class="hidden">
-      <!-- Source Bar -->
-      <div class="source-bar">
-        <span id="source-dot" class="source-dot"></span>
-        <span id="source-name"></span>
-        <span id="confidence-tag" class="confidence-tag"></span>
-        <span style="margin-left:auto;font-size:0.6rem;color:var(--text-faint)" id="scraped-time"></span>
+      <!-- Error Banner -->
+      <div id="error-banner" class="hidden" style="padding: 1rem; background: #FEE2E2; color: #991B1B; border-left: 4px solid #991B1B; margin-bottom: 2rem;">
+        <span id="error-message"></span>
       </div>
 
-      <!-- University Info -->
-      <div id="uni-info" class="uni-info hidden"></div>
-
-      <!-- Stats Strip -->
-      <div id="stat-strip" class="stat-strip"></div>
-
-      <!-- Recommendations -->
-      <div id="rec-container" class="rec-container"></div>
-
-      <!-- Comparative Summary -->
-      <div id="comp-summary" class="comp-summary hidden"></div>
-
-      <!-- Charts -->
-      <div class="charts">
-        <div class="chart-box">
-          <div class="chart-box__title">Highest Acceptance Rates</div>
-          <div class="chart-wrap"><canvas id="chartAcceptance"></canvas></div>
+      <!-- Dashboard -->
+      <div id="dashboard" class="hidden">
+        
+        <!-- Recommendations Section -->
+        <div class="section-header">
+          <div class="section-header__label">ANALYSIS RESULTS</div>
+          <h2 class="section-header__title">Recommended Programs</h2>
         </div>
-        <div class="chart-box">
-          <div class="chart-box__title">Lowest Minimum Scores</div>
-          <div class="chart-wrap"><canvas id="chartScores"></canvas></div>
-        </div>
-        <div class="chart-box">
-          <div class="chart-box__title">Score Trend — Top 5 Easiest</div>
-          <div class="chart-wrap"><canvas id="chartTrend"></canvas></div>
-        </div>
-        <div class="chart-box">
-          <div class="chart-box__title">Risk Map — Volatility vs Acceptance</div>
-          <div class="chart-wrap"><canvas id="chartScatter"></canvas></div>
-        </div>
-      </div>
+        <div id="rec-container" class="rec-grid"></div>
 
-      <!-- All Programs Table -->
-      <section class="table-section">
-        <div class="table-header">
-          <div class="table-title">All Programs</div>
+        <hr class="hr-gold">
+
+        <!-- Charts Section -->
+        <div class="section-header">
+          <div class="section-header__label">MARKET OVERVIEW</div>
+          <h2 class="section-header__title">Competition & Risk Analysis</h2>
         </div>
-        <div class="table-wrap">
+        <div class="charts-grid">
+          <div class="chart-box">
+            <h3 class="chart-box__title">Highest Acceptance Rates</h3>
+            <div class="chart-wrap"><canvas id="chartAcceptance"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <h3 class="chart-box__title">Lowest Minimum Scores</h3>
+            <div class="chart-wrap"><canvas id="chartScores"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <h3 class="chart-box__title">Score Trend — Top 5 Easiest</h3>
+            <div class="chart-wrap"><canvas id="chartTrend"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <h3 class="chart-box__title">Risk Map — Volatility vs Acceptance</h3>
+            <div class="chart-wrap"><canvas id="chartScatter"></canvas></div>
+          </div>
+        </div>
+
+        <hr class="hr-gold">
+
+        <!-- All Programs Table Section -->
+        <div class="section-header">
+          <div class="section-header__label">FULL DATABASE</div>
+          <h2 class="section-header__title">All Programs Data</h2>
+        </div>
+        <div class="table-wrap" style="margin-bottom: 3rem;">
           <table>
             <thead>
               <tr>
@@ -142,61 +101,68 @@
                 <th data-col="acceptance_rate">Rate <span class="sort-arrow"></span></th>
                 <th data-col="avg_min_score">Avg Score <span class="sort-arrow"></span></th>
                 <th data-col="score_trend">Trend <span class="sort-arrow"></span></th>
-                <th data-col="volatility_index">Volatility <span class="sort-arrow"></span></th>
                 <th data-col="crowding_risk">Crowding <span class="sort-arrow"></span></th>
                 <th data-col="ease_score">Ease <span class="sort-arrow"></span></th>
-                <th>Src</th>
               </tr>
             </thead>
             <tbody id="table-body"></tbody>
           </table>
         </div>
-      </section>
 
-      <!-- Data Archives -->
-      <section class="archives">
-        <div class="archives__header" id="archives-toggle">
+        <!-- Data Archives Section -->
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; cursor: pointer;" id="archives-toggle">
           <div>
-            <span class="archives__title">Data Archives</span>
-            <span id="archives-count" style="margin-left:0.75rem;font-size:0.65rem;color:var(--text-dim)"></span>
+            <div class="section-header__label">SOURCE MATERIAL</div>
+            <h2 class="section-header__title" style="border:none; padding:0; margin:0;">Data Archives</h2>
           </div>
-          <span class="archives__arrow" id="archives-arrow">&#9660;</span>
-        </div>
-        <div class="archives__body" id="archives-body">
-          <div class="archives__content">
-            <div id="archives-sources"></div>
-            <div class="table-wrap" style="margin-top:0.75rem">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Program</th>
-                    <th>Faculty</th>
-                    <th>Quota</th>
-                    <th>Applicants</th>
-                    <th>Rate</th>
-                    <th>2022</th>
-                    <th>2023</th>
-                    <th>2024</th>
-                    <th>Type</th>
-                    <th>Sources</th>
-                  </tr>
-                </thead>
-                <tbody id="archives-table-body"></tbody>
-              </table>
-            </div>
+          <div style="color: var(--primary); font-family: var(--font-body); font-weight: 600; font-size: var(--text-sm);">
+            <span id="archives-count"></span> <span id="archives-arrow" style="display: inline-block; transition: transform 0.3s;">&#9660;</span>
           </div>
         </div>
-      </section>
-    </div>
+        <div id="archives-body" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
+          <div id="archives-sources" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; margin-bottom: 2rem;"></div>
+          <div class="table-wrap" style="margin-bottom: 2rem;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Program</th>
+                  <th>Faculty</th>
+                  <th>Quota</th>
+                  <th>Applicants</th>
+                  <th>Rate</th>
+                  <th>Min 2022</th>
+                  <th>Min 2023</th>
+                  <th>Min 2024</th>
+                  <th>Type</th>
+                  <th>Refs</th>
+                </tr>
+              </thead>
+              <tbody id="archives-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-      Data sourced from official university admissions portals and affiliated educational platforms.<br>
-      Historical minimum scores are estimates derived from public records. For informational purposes only.<br>
-      Not affiliated with any university or government body.
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">ARIA</div>
+          <div class="footer__text">Admission Risk & Intelligence Analyzer<br>Jalur Mandiri S1 & D4 Programs</div>
+        </div>
+        <div>
+          <div class="footer__disclaimer">
+            <strong>Disclaimer:</strong> Data sourced from official university admissions portals and affiliated educational platforms. Historical minimum scores are estimates derived from public records. For informational purposes only. Not affiliated with any university or government body.
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div class="footer__text">&copy; 2026 ARIA Intelligence Platform</div>
+        </div>
+      </div>
     </footer>
   </div>
   <script src="/app.js"></script>
 </body>
-
 </html>
