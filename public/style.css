@@ -178,8 +178,9 @@ body {
   .desktop-only { display: none !important; }
   
   /* Global */
+  html { overflow-x: hidden; }
   body { overflow-x: hidden; scroll-behavior: smooth; }
-  .main-content { padding: 0 1rem; padding-bottom: 72px; }
+  .main-content { padding: 0 1rem; padding-bottom: 72px; overflow-x: hidden; max-width: 100vw; }
   .section-header { margin-top: 2rem; }
   
   /* Header */
@@ -212,11 +213,11 @@ body {
   
   /* Recommendation Cards */
   .rec-grid { grid-template-columns: 1fr; }
-  .rec-card { margin-bottom: 1.25rem; padding: 1.5rem; }
+  .rec-card { margin-bottom: 1.25rem; padding: 1.5rem; overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
   .rec-card__program { font-size: var(--text-h2); }
   .rec-metrics { grid-template-columns: 1fr 1fr; }
   .rec-metric { padding: 0.625rem 0.5rem; }
-  .rec-sources { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 0.5rem; }
+  .rec-sources { white-space: normal; flex-wrap: wrap; padding-bottom: 0.5rem; }
   
   /* Comparative Summary */
   #comp-summary > div { margin-top: 1rem; padding: 1rem; }
