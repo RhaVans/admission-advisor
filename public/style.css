@@ -178,9 +178,10 @@ body {
   .desktop-only { display: none !important; }
   
   /* Global */
-  html { overflow-x: hidden; }
-  body { overflow-x: hidden; scroll-behavior: smooth; }
-  .main-content { padding: 0 1rem; padding-bottom: 72px; overflow-x: hidden; max-width: 100vw; }
+  html, body { overflow-x: hidden; width: 100%; }
+  body { scroll-behavior: smooth; }
+  .main-content { padding: 0 1rem; padding-bottom: 72px; overflow-x: hidden; max-width: 100%; box-sizing: border-box; }
+  #dashboard { max-width: 100%; overflow-x: hidden; }
   .section-header { margin-top: 2rem; }
   
   /* Header */
@@ -220,12 +221,15 @@ body {
   .rec-sources { white-space: normal; flex-wrap: wrap; padding-bottom: 0.5rem; }
   
   /* Comparative Summary */
-  #comp-summary > div { margin-top: 1rem; padding: 1rem; }
+  #comp-summary { max-width: 100%; overflow-x: hidden; }
+  #comp-summary > div { margin-top: 1rem; padding: 1rem; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; }
   #comp-summary > div > div { grid-template-columns: 1fr !important; gap: 1rem !important; }
   
   /* Charts */
-  .charts-grid { display: flex; flex-direction: column; gap: 2rem; }
-  .chart-wrap { height: 220px; width: 100%; }
+  .charts-grid { display: flex; flex-direction: column; gap: 2rem; max-width: 100%; overflow: hidden; }
+  .chart-box { max-width: 100%; overflow: hidden; box-sizing: border-box; }
+  .chart-wrap { height: 220px; width: 100%; max-width: 100%; overflow: hidden; }
+  .chart-wrap canvas { max-width: 100% !important; }
   .chart-box__title { font-size: var(--text-h3); }
   #chartAcceptance-box { order: 1; }
   #chartTrend-box { order: 2; }
@@ -233,7 +237,7 @@ body {
   #chartScatter-box { order: 4; }
   
   /* Data Table Mobile Cards */
-  .table-wrap { background: transparent; border: none; box-shadow: none; overflow-x: visible; }
+  .table-wrap { background: transparent; border: none; box-shadow: none; overflow-x: hidden; max-width: 100%; }
   .table-wrap table, .table-wrap thead, .table-wrap tbody, .table-wrap th, .table-wrap td, .table-wrap tr { display: block; }
   .table-wrap thead { display: none; }
   .table-wrap tr { background: var(--bg-card); border: 1px solid var(--border); margin-bottom: 0.75rem; padding: 0.875rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: background-color 0.3s ease; }
